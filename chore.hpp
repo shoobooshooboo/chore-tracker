@@ -8,13 +8,13 @@
 #include <string>
 #include <unordered_map>
 
-//Availability indicates the availability of some user to complete a particular chore. 
-enum class Availability {
+// indicates the availability of some user to complete a particular chore. 
+enum class Availability : unsigned {
     WILL_DO,
     CONVENIENT,
     INCONVENIENT,
     CANNOT_DO,
-    AVAILABILITY_TYPE_COUNT
+    Count
 };
 
 struct Chore {
@@ -26,9 +26,9 @@ public:
     std::chrono::time_point<std::chrono::system_clock> mDateAndTime;
     bool mCompletionStatus;
     std::string mLocation;
-    // typed to minimize needed conversions for addition with mDateAndTime
-    std::optional<std::chrono::duration<decltype(mDateAndTime)::rep, decltype(mDateAndTime)::duration::period>> mRecurrenceInterval;
+    std::optional<std::chrono::duration<decltype(mDateAndTime)::rep, std::chrono::minutes>> mRecurrenceInterval;
 private:
+    // maps userIDs to availabilities
     std::unordered_map<uint64_t, Availability> mAvailabilities;
 };
 

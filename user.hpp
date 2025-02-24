@@ -19,7 +19,7 @@ public:
     void makeHousehold(const std::string& name);
     void addHousehold(const Household& householdToAdd);
 
-    [[nodiscard]] std::shared_ptr<Household> getHousehold(const size_t householdIndex);
+    [[nodiscard]] std::shared_ptr<Household> getHousehold(const size_t householdIndex) const;
     [[nodiscard]] const std::string& getName(void) const noexcept;
     [[nodiscard]] uint64_t getID(void) const noexcept;
     // names can be valid/invalid -> return type indicates set success

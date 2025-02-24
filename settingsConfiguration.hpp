@@ -5,14 +5,13 @@
 #include <array> 
 #include <cstddef>
 
-enum class NotificationType {
-    NOTIFICATION_TYPE_COUNT
+enum NotificationType : unsigned {
+    Count
 };
 
 struct SettingsConfiguration {
     bool mDarkMode;
-    // TODO: define a container with fixed size that enforces a type specified as a template argument be exclusively used for indexing 
-    std::array<bool, static_cast<size_t>(NotificationType::NOTIFICATION_TYPE_COUNT)> mNotifications;
+    std::array<bool, NotificationType::Count> mNotifications;
 
 };
 

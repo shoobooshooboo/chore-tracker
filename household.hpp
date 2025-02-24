@@ -3,7 +3,7 @@
 #define HOUSEHOLD_HPP
 
 #include <cstdint>
-#include <unordered_map>
+#include <array>
 #include <vector>
 #include <memory>
 #include <ranges>
@@ -14,10 +14,14 @@ class User;
 
 class Household {
 private:
-    enum class SortType {/* TBD */};
+    // ways to sort chores for this household
+    enum SortType : unsigned {
+        NAME,
+        DATE,
+        Count 
+    };
 
-    // TODO: define a container with fixed size that enforces a type specified as a template argument be exclusively used for indexing 
-    static std::unordered_map<SortType, bool (*)(Chore, Chore)> sortingMethods;
+    static const std::array<bool (*)(Chore, Chore), SortType::Count> sortingMethods;
 
     std::string mName;
     std::vector<Chore> mChores;
