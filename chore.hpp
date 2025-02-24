@@ -10,10 +10,10 @@
 
 // indicates the availability of some user to complete a particular chore. 
 enum class Availability : unsigned {
-    WILL_DO,
-    CONVENIENT,
-    INCONVENIENT,
     CANNOT_DO,
+    INCONVENIENT,
+    CONVENIENT,
+    WILL_DO,
     Count
 };
 
