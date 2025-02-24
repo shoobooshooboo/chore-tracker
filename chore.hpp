@@ -26,6 +26,7 @@ public:
     std::chrono::time_point<std::chrono::system_clock> mDateAndTime;
     bool mCompletionStatus;
     std::string mLocation;
+    // typed to minimize needed conversions for addition with mDateAndTime
     std::optional<std::chrono::duration<decltype(mDateAndTime)::rep, decltype(mDateAndTime)::duration::period>> mRecurrenceInterval;
 private:
     std::unordered_map<uint64_t, Availability> mAvailabilities;
