@@ -8,6 +8,7 @@
 #include <memory>
 #include <ranges>
 #include "chore.hpp"
+#include "userManager.hpp"
 
 // forward declared for use in vector<weak_ptr<User>>
 class User;
@@ -21,7 +22,7 @@ private:
         Count 
     };
 
-    static const std::array<bool (*)(Chore, Chore), SortType::Count> sortingMethods;
+    static const std::array<bool (*)(const Chore&, const Chore&), SortType::Count> sortingMethods;
 
     std::string mName;
     std::vector<Chore> mChores;
@@ -32,16 +33,19 @@ public:
     Household(std::string&& name);
 
     void sortChores(SortType sortType);
-    [[nodiscard]] auto filterChores(bool (*filterCondition)(Chore)) const;
+    // full return type is lengthy, is std::ranges::filter_view<...>
+    [[nodiscard]] auto filterChores(bool (*filterCondition)(const Chore&)) const;
 
-    void addUser(uint64_t userID);
-    void removeUser(uint64_t userID);
+    // false if user with this ID does not exist
+    bool addUser(const uint64_t userID);
+    void removeUser(const uint64_t userID);
 
-    [[nodiscard]] Chore& searchForChore(const std::string& searchTerm);
+    // full return type is lengthy, is std::ranges::filter_view<...>
+    [[nodiscard]] auto searchForChores(const std::string_view searchTerm);
     [[nodiscard]] const std::vector<Chore>& getChores(void) const noexcept;
 
-    void addNextOccurence(const Chore& recurringChore);
-    
+    // updates the time of the chore to its next instance if one exists, else deletes the chore
+    void expireChoreInstance(decltype(mChores)::iterator toExpire);
 };
 
 #endif
