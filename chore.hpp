@@ -26,7 +26,7 @@ public:
     std::chrono::time_point<std::chrono::system_clock> mDateAndTime;
     bool mCompletionStatus;
     std::string mLocation;
-    std::optional<std::chrono::duration<decltype(mDateAndTime)::rep, std::chrono::minutes>> mRecurrenceInterval;
+    std::optional<decltype(mDateAndTime)::duration> mRecurrenceInterval;
 private:
     // maps userIDs to availabilities
     std::unordered_map<uint64_t, Availability> mAvailabilities;
