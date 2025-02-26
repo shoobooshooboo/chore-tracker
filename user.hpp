@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include <memory>
-#include "settingsConfiguration.hpp"
+#include "settings_configuration.hpp"
 
 // forward declared for use in vector<shared_ptr<Household>>
 class Household; 

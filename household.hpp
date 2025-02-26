@@ -8,7 +8,7 @@
 #include <memory>
 #include <ranges>
 #include "chore.hpp"
-#include "userManager.hpp"
+#include "user_manager.hpp"
 
 // forward declared for use in vector<weak_ptr<User>>
 class User;
