@@ -1,9 +1,6 @@
 #include "userManager.hpp"
 
 namespace UserManager {
-    bool isLoaded(const uint64_t userID) {
-        return findLoadedUser(userID) != loadedUsers.cend();
-    }
 
     decltype(loadedUsers)::const_iterator findLoadedUser(const uint64_t userID) {
         return std::ranges::find_if(loadedUsers, 
