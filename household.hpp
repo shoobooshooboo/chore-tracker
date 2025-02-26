@@ -27,7 +27,7 @@ private:
         // stdlib sorting functions require strict weak ordering, hence < over <=  
         [](const Chore& a, const Chore& b){ return a.mName < b.mName; }, // string::operator<=> performs lexicographical compare 
         [](const Chore& a, const Chore& b){ return a.mDateAndTime < b.mDateAndTime; }, 
-        [](const Chore& a, const Chore& b){ return a.mPriority < b.mPriority; }
+        [](const Chore& a, const Chore& b){ return a.mPriority > b.mPriority; }
     };
 
     std::string mName;
@@ -35,14 +35,13 @@ private:
     std::vector<std::weak_ptr<User>> mUsers;
 
 public:
-    Household(const std::string& name);
-    Household(std::string&& name);
+    // constructors to be defined when program flow is better defined
 
     void sortChores(SortType sortType);
     // full return type is lengthy, is std::ranges::filter_view<...>
     [[nodiscard]] auto filterChores(bool (*filterCondition)(const Chore&)) const;
 
-    // false if user with this ID does not exist
+    // false if user with this ID is not loaded
     bool addUser(const uint64_t userID);
     void removeUser(const uint64_t userID);
 
