@@ -1,7 +1,7 @@
 #include "household.hpp"
 
 void Household::sortChores(SortType sortType) {
-    std::ranges::sort(mChores, sortingMethods[sortType]);
+    std::ranges::sort(mChores, Household::sortingMethods[sortType]);
 }
 
 auto Household::filterChores(bool(*filterCondition)(const Chore&)) const {
@@ -10,9 +10,9 @@ auto Household::filterChores(bool(*filterCondition)(const Chore&)) const {
 
 bool Household::addUser(const uint64_t userID) {
     const auto it{UserManager::findLoadedUser(userID)};
+    // as findLoadedUser returns cend if no match is found, 
+    // that must be checked to prevent nullptr dereference
     if (it != UserManager::loadedUsers.cend()) {
-        // as findLoadedUser returns cend if no match is found, 
-        // that must be checked for to prevent nullptr dereference
         mUsers.push_back(std::weak_ptr<User>(*it));
         return true;
     } else
@@ -23,12 +23,12 @@ bool Household::addUser(const uint64_t userID) {
 void Household::removeUser(const uint64_t userID) {
     mUsers.erase(std::ranges::find_if(mUsers,
         [userID](const User& user){ return userID == user.getID(); }, 
-        [](const std::weak_ptr<User>& ptr){ return *ptr.lock();}
+        [](const std::weak_ptr<User>& ptr){ return *ptr.lock(); }
     ));
 }
 
 auto Household::searchForChores(const std::string_view searchTerm) {
-    return std::ranges::filter_view(mChores, [searchTerm](const Chore& chore){return chore.mName.contains(searchTerm); });
+    return std::ranges::filter_view(mChores, [searchTerm](const Chore& chore){ return chore.mName.contains(searchTerm); });
 }
 
 const std::vector<Chore>& Household::getChores(void) const noexcept {

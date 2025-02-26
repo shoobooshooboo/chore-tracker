@@ -8,7 +8,7 @@ namespace UserManager {
     decltype(loadedUsers)::const_iterator findLoadedUser(const uint64_t userID) {
         return std::ranges::find_if(loadedUsers, 
             [userID](const User& loadedUser){ return userID == loadedUser.getID(); }, 
-            [](const std::shared_ptr<User>& ptr){ return *ptr.get();}
+            [](const std::shared_ptr<User>& ptr){ return *ptr; }
         );
     }
 
