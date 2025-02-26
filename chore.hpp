@@ -17,6 +17,10 @@ enum class Availability : unsigned {
     Count
 };
 
+enum class Priority : unsigned {
+    Count
+};
+
 struct Chore {
 public:
     // return value indicates success 
@@ -25,6 +29,7 @@ public:
     std::string mName;
     std::chrono::time_point<std::chrono::system_clock> mDateAndTime;
     bool mCompletionStatus;
+    Priority mPriority;
     std::string mLocation;
     std::optional<decltype(mDateAndTime)::duration> mRecurrenceInterval;
 private:
