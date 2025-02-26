@@ -22,7 +22,10 @@ private:
         Count 
     };
 
-    static const std::array<bool (*)(const Chore&, const Chore&), SortType::Count> sortingMethods;
+    static constexpr std::array<bool (*)(const Chore&, const Chore&), SortType::Count> sortingMethods {
+        [](const Chore& a, const Chore& b){ return a.mName <= b.mName; }, // string::operator<=> performs lexicographical compare 
+        [](const Chore& a, const Chore& b){ return a.mDateAndTime <= b.mDateAndTime; }
+    };
 
     std::string mName;
     std::vector<Chore> mChores;
