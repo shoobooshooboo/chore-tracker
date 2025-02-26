@@ -5,11 +5,11 @@
 #include <array> 
 #include <cstddef>
 
-enum NotificationType : unsigned {
-    count
-};
-
 struct SettingsConfiguration {
+    enum NotificationType : unsigned {
+        count
+    };
+    
     bool mDarkMode;
     std::array<bool, NotificationType::count> mNotifications;
 
