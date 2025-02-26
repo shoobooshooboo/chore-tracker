@@ -19,12 +19,15 @@ private:
     enum SortType : unsigned {
         NAME,
         DATE,
+        PRIORITY,
         Count 
     };
 
     static constexpr std::array<bool (*)(const Chore&, const Chore&), SortType::Count> sortingMethods {
-        [](const Chore& a, const Chore& b){ return a.mName <= b.mName; }, // string::operator<=> performs lexicographical compare 
-        [](const Chore& a, const Chore& b){ return a.mDateAndTime <= b.mDateAndTime; }
+        // stdlib sorting functions require strict weak ordering, hence < over <=  
+        [](const Chore& a, const Chore& b){ return a.mName < b.mName; }, // string::operator<=> performs lexicographical compare 
+        [](const Chore& a, const Chore& b){ return a.mDateAndTime < b.mDateAndTime; }, 
+        [](const Chore& a, const Chore& b){ return a.mPriority < b.mPriority; }
     };
 
     std::string mName;
