@@ -20,10 +20,10 @@ private:
         NAME,
         DATE,
         PRIORITY,
-        Count 
+        count 
     };
 
-    static constexpr std::array<bool (*)(const Chore&, const Chore&), SortType::Count> sortingMethods {
+    static constexpr std::array<bool (*)(const Chore&, const Chore&), SortType::count> sortingMethods {
         // stdlib sorting functions require strict weak ordering, hence < over <=  
         [](const Chore& a, const Chore& b){ return a.mName < b.mName; }, // string::operator<=> performs lexicographical compare 
         [](const Chore& a, const Chore& b){ return a.mDateAndTime < b.mDateAndTime; }, 

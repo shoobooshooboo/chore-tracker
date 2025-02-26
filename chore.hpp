@@ -14,11 +14,11 @@ enum class Availability : unsigned {
     INCONVENIENT,
     CONVENIENT,
     WILL_DO,
-    Count
+    count
 };
 
 enum class Priority : unsigned {
-    Count
+    count
 };
 
 struct Chore {

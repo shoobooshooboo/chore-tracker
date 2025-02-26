@@ -6,12 +6,12 @@
 #include <cstddef>
 
 enum NotificationType : unsigned {
-    Count
+    count
 };
 
 struct SettingsConfiguration {
     bool mDarkMode;
-    std::array<bool, NotificationType::Count> mNotifications;
+    std::array<bool, NotificationType::count> mNotifications;
 
 };
 
