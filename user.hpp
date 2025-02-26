@@ -12,27 +12,23 @@
 class Household; 
 
 class User {
-public:
-    User(const std::string& name);
-    User(std::string&& name);
-
-    void makeHousehold(const std::string& name);
-    void addHousehold(const Household& householdToAdd);
-
-    [[nodiscard]] std::shared_ptr<Household> getHousehold(const size_t householdIndex) const;
-    [[nodiscard]] const std::string& getName(void) const noexcept;
-    [[nodiscard]] uint64_t getID(void) const noexcept;
-    // names can be valid/invalid -> return type indicates set success
-    bool setName(const std::string& name);
-    bool setName(std::string&& name);
-
-
-    SettingsConfiguration mSettings;
-    
 private:
     std::string mName;
     uint64_t mUserID;
     std::vector<std::shared_ptr<Household>> mHouseholds;
+    
+public:
+    // constructors to be defined when program flow is better defined
+
+    void makeHousehold(const std::string& name);
+
+    [[nodiscard]] const std::vector<std::shared_ptr<Household>>& getHouseholds() const;
+    [[nodiscard]] const std::string& getName(void) const noexcept;
+    [[nodiscard]] uint64_t getID(void) const noexcept;
+    // names can be valid/invalid -> return type indicates set success
+    bool setName(const std::string_view name);
+
+    SettingsConfiguration mSettings;
 };
 
 #endif
