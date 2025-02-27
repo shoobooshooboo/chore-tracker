@@ -2,9 +2,6 @@
 #ifndef HOUSEHOLD_MANAGER_HPP
 #define HOUSEHOLD_MANAGER_HPP
 
-#include <vector>
-#include <algorithm>
-#include <limits>
 #include <filesystem>
 #include <memory>
 #include "user.hpp"
@@ -19,7 +16,7 @@ namespace HouseholdManager {
     }
 
     // loads a household from file
-    // ONLY USE TO GET THE FIRST INSTANCE OF THE HOUSEHOLD! 
+    // ONLY USE TO GET THE FIRST INSTANCE OF THE HOUSEHOLD! should not be called multiple times with the same householdID
     // return value is owning pointer of the household, with all users loaded
     std::shared_ptr<Household> loadHousehold(const uint64_t householdID); 
 

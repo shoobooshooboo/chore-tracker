@@ -2,10 +2,11 @@
 #ifndef HOUSEHOLD_HPP
 #define HOUSEHOLD_HPP
 
-#include <cstdint>
 #include <algorithm>
 #include <array>
 #include <vector>
+#include <string>
+#include <string_view>
 #include <memory>
 #include <ranges>
 #include "chore.hpp"

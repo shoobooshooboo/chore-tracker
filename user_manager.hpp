@@ -2,10 +2,11 @@
 #ifndef USER_MANAGER_HPP
 #define USER_MANAGER_HPP
 
-#include <vector>
+#include <cstdint>
 #include <algorithm>
-#include <limits>
 #include <filesystem>
+#include <vector>
+#include <memory>
 #include "user.hpp"
 
 namespace UserManager {

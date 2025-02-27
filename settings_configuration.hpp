@@ -3,7 +3,6 @@
 #define SETTINGS_CONFIGURATION_HPP
 
 #include <array> 
-#include <cstddef>
 
 struct SettingsConfiguration {
     enum NotificationType : unsigned {
