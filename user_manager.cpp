@@ -5,6 +5,7 @@ namespace UserManager {
     decltype(loadedUsers)::const_iterator findLoadedUser(const uint64_t userID) {
         return std::ranges::find_if(loadedUsers, 
             [userID](const User& loadedUser){ return userID == loadedUser.getID(); }, 
+            // sometimes doesn't work if you pass std::shared_ptr<User>::operator* for whatever reason therefore lambda needed
             [](const std::shared_ptr<User>& ptr){ return *ptr; }
         );
     }
