@@ -3,12 +3,12 @@
 #define HOUSEHOLD_HPP
 
 #include <cstdint>
+#include <algorithm>
 #include <array>
 #include <vector>
 #include <memory>
 #include <ranges>
 #include "chore.hpp"
-#include "user_manager.hpp"
 
 // forward declared for use in vector<weak_ptr<User>>
 class User;
@@ -35,19 +35,22 @@ private:
     std::vector<std::weak_ptr<User>> mUsers;
 
 public:
-    // constructors to be defined when program flow is better defined
+    // TODO constructors to be defined when program flow is better defined
+
+    // allows this household to reference a user joining the household 
+    void handleUserJoining(std::weak_ptr<User> joiningUser);
+    
+
+
+
 
     void sortChores(SortType sortType);
+    [[nodiscard]] const std::vector<Chore>& getChores(void) const noexcept;
     // full return type is lengthy, is std::ranges::filter_view<...>
     [[nodiscard]] auto filterChores(bool (*filterCondition)(const Chore&)) const;
 
-    // false if user with this ID is not loaded
-    bool addUser(const uint64_t userID);
-    void removeUser(const uint64_t userID);
-
     // full return type is lengthy, is std::ranges::filter_view<...>
     [[nodiscard]] auto searchForChores(const std::string_view searchTerm);
-    [[nodiscard]] const std::vector<Chore>& getChores(void) const noexcept;
 
     // updates the time of the chore to its next instance if one exists, else deletes the chore
     void expireChoreInstance(decltype(mChores)::iterator toExpire);

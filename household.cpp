@@ -8,27 +8,6 @@ auto Household::filterChores(bool(*filterCondition)(const Chore&)) const {
     return std::ranges::filter_view(mChores, filterCondition);
 }
 
-bool Household::addUser(const uint64_t userID) {
-    const auto it{UserManager::findLoadedUser(userID)};
-    // as findLoadedUser returns cend if no match is found, 
-    // that must be checked to prevent nullptr dereference
-    if (it != UserManager::loadedUsers.cend()) {
-        // TODO add household to user also 
-        mUsers.push_back(std::weak_ptr<User>(*it));
-        return true;
-    } else
-        return false;
-        
-}
-
-void Household::removeUser(const uint64_t userID) {
-    // TODO remove household from user as well
-    mUsers.erase(std::ranges::find_if(mUsers,
-        [userID](const User& user){ return userID == user.getID(); }, 
-        [](const std::weak_ptr<User>& ptr){ return *ptr.lock(); }
-    ));
-}
-
 auto Household::searchForChores(const std::string_view searchTerm) {
     return std::ranges::filter_view(mChores, [searchTerm](const Chore& chore){ return chore.mName.contains(searchTerm); });
 }
