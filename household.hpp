@@ -21,6 +21,7 @@ private:
         NAME,
         DATE,
         PRIORITY,
+        LOCATION,
         count 
     };
 
@@ -28,7 +29,8 @@ private:
         // stdlib sorting functions require strict weak ordering, hence < over <=  
         [](const Chore& a, const Chore& b){ return a.mName < b.mName; }, // string::operator<=> performs lexicographical compare 
         [](const Chore& a, const Chore& b){ return a.mDateAndTime < b.mDateAndTime; }, 
-        [](const Chore& a, const Chore& b){ return a.mPriority > b.mPriority; }
+        [](const Chore& a, const Chore& b){ return a.mPriority > b.mPriority; },
+        [](const Chore& a, const Chore& b){ return a.mLocation < b.mLocation; }
     };
 
     std::string mName;
@@ -46,6 +48,7 @@ public:
 
 
     void sortChores(SortType sortType);
+
     [[nodiscard]] const std::vector<Chore>& getChores(void) const noexcept;
     // full return type is lengthy, is std::ranges::filter_view<...>
     [[nodiscard]] auto filterChores(bool (*filterCondition)(const Chore&)) const;
