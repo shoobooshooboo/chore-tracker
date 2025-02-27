@@ -22,6 +22,7 @@ public:
     // constructors to be defined when program flow is better defined
 
     // adds a household to this user's vector of households, granting this user shared ownership of the household 
+    // NOTE: does not automatically add reference to this user to the household. 
     void addHousehold(std::shared_ptr<Household> householdToJoin);
 
     [[nodiscard]] const std::vector<std::shared_ptr<Household>>& getHouseholds() const noexcept;

@@ -12,13 +12,11 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     while (true /*TODO actual condition should be while users left from this household*/) {
         uint64_t userID{/*TODO should have value from file*/};
 
-        auto user{ UserManager::loadUser(userID) };
+        const auto user{ UserManager::loadUser(userID) };
 
         householdPtr->handleUserJoining(std::weak_ptr(*user));
         (*user)->addHousehold(householdPtr);
     }
-
-
 
     return householdPtr;
 }
