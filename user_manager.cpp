@@ -14,6 +14,7 @@ namespace UserManager {
 
         if (it == loadedUsers.cend()) 
         {
+            // TODO 
             // load the new user and push to the back
             // if we decide to maintain ordering by ID in the file, do a binary search
             // otherwise linear also would probably be fine
