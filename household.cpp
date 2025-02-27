@@ -1,5 +1,9 @@
 #include "household.hpp"
 
+void Household::handleUserJoining(std::weak_ptr<User> joiningUser) {
+    mUsers.push_back(joiningUser);
+}
+
 void Household::sortChores(SortType sortType) {
     std::ranges::sort(mChores, Household::sortingMethods[sortType]);
 }
