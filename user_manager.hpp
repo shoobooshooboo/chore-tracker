@@ -13,12 +13,14 @@ namespace UserManager {
     namespace {
         constexpr std::filesystem::path usersFile; 
         
-        std::vector<std::shared_ptr<User>> loadedUsers;
+        using container_t = std::vector<std::shared_ptr<User>>;
+
+        container_t loadedUsers;
     }
 
-    [[nodiscard]] decltype(loadedUsers)::const_iterator findLoadedUser(const uint64_t userID);
+    [[nodiscard]] container_t::const_iterator findLoadedUser(const uint64_t userID);
     // returns iterator to the user, or end if no user matching ID was found
-    decltype(loadedUsers)::const_iterator loadUser(const uint64_t userID);
+    container_t::const_iterator loadUser(const uint64_t userID);
     void storeUser(const User& user);
 };
 
