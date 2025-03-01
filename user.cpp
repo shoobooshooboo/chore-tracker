@@ -17,7 +17,7 @@ uint64_t User::getID(void) const noexcept {
 }
 
 bool User::setName(const std::string_view name) {
-    if (std::ranges::find_if(name, [](const decltype(name)::value_type c){ return !(isalpha(c)); }) != name.cend()) {
+    if (std::ranges::find_if(name, [](const decltype(name)::value_type c){ return !(std::isalpha(c)); }) != name.cend()) {
         return false;
     }
     mName = name;
