@@ -22,19 +22,21 @@ enum class Priority : unsigned {
 };
 
 struct Chore {
+private:
+    using timepoint_t = std::chrono::time_point<std::chrono::system_clock>;
+
+    // maps userIDs to availabilities
+    std::unordered_map<uint64_t, Availability> mAvailabilities;
 public:
     // return value indicates success 
     bool addAvailability(const uint64_t userID, const Availability availability);
 
     std::string mName;
-    std::chrono::time_point<std::chrono::system_clock> mDateAndTime;
+    timepoint_t mDateAndTime;
     bool mCompletionStatus;
     Priority mPriority;
     std::string mLocation;
-    std::optional<decltype(mDateAndTime)::duration> mRecurrenceInterval;
-private:
-    // maps userIDs to availabilities
-    std::unordered_map<uint64_t, Availability> mAvailabilities;
+    std::optional<timepoint_t::duration> mRecurrenceInterval;
 };
 
 #endif

@@ -9,16 +9,24 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
 
     auto householdPtr{ std::make_shared<Household>(house) };
 
+    // feel free to restructure this in a way that makes sense
     while (true /*TODO actual condition should be while users left from this household*/) {
         uint64_t userID{/*TODO should have value from file*/};
 
-        auto user{ UserManager::loadUser(userID) };
+        const auto user{ UserManager::loadUser(userID) };
 
         householdPtr->handleUserJoining(std::weak_ptr(*user));
         (*user)->addHousehold(householdPtr);
     }
 
+    return householdPtr;
+}
 
+std::shared_ptr<Household> HouseholdManager::makeNewHousehold(const UserManager::container_t::const_iterator firstMemberUser, Household&& householdInfo) {
+    auto householdPtr{ std::make_shared<Household>(householdInfo) };
 
+    householdPtr->handleUserJoining(std::weak_ptr(*firstMemberUser));
+    (*firstMemberUser)->addHousehold(householdPtr);
+    
     return householdPtr;
 }
