@@ -50,6 +50,7 @@ public:
 
 
     // App interface
+    void addChore(Chore&& newChore);
 
     void sortChores(SortType sortType);
 
