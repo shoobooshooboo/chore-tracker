@@ -4,10 +4,16 @@
 
 #include "user_manager.hpp"
 #include "household_manager.hpp"
+#include <cassert>
+#include <iostream> // FOR DEMO
 
 namespace App {
-    
+    bool logIn(void);
+    void signUp(void);
+
     void startup(void);
+
+
 } 
 
 
