@@ -1,5 +1,11 @@
 #include "user.hpp"
 
+User::User(void) {}
+
+User::User(uint64_t userID, std::string&& name) :
+    mUserID(userID),
+    mName(name) {}
+
 void User::addHousehold(std::shared_ptr<Household> householdToJoin) {
     mHouseholds.push_back(householdToJoin);
 }

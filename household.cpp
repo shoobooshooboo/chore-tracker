@@ -1,5 +1,8 @@
 #include "household.hpp"
 
+Household::Household(std::string&& name) :
+    mName(name) {}
+
 void Household::handleUserJoining(std::weak_ptr<User> joiningUser) {
     mUsers.push_back(joiningUser);
 }

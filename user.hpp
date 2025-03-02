@@ -14,12 +14,13 @@
 
 class User {
 private:
-    std::string mName;
     uint64_t mUserID;
+    std::string mName;
     std::vector<std::shared_ptr<Household>> mHouseholds;
     
 public:
-    // constructors to be defined when program flow is better defined
+    User(void);
+    User(uint64_t userID, std::string&& name);
 
     // adds a household to this user's vector of households, granting this user shared ownership of the household 
     // NOTE: does not automatically add reference to this user to the household. 

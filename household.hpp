@@ -38,7 +38,7 @@ private:
     std::vector<std::weak_ptr<User>> mUsers;
 
 public:
-    // TODO constructors to be defined when program flow is better defined
+    Household(std::string&& name);
 
     // HouseholdManager interface
 
