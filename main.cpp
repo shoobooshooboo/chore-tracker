@@ -2,7 +2,7 @@
 
 
 // DEMO MAIN
-// All of the user IO here to be replaced with actual UI interaction
+// All of the user IO here to be replaced with actual GUI interaction
 int main(void) {
 
     char input{'\0'};
@@ -19,8 +19,14 @@ int main(void) {
             break;
     }
     
-
     App::startup();
 
+    // TODO put some stuff here 
+    /** features to show
+     * making a household 
+     * inviting users by ID (TODO)
+     * adding chores to a household
+     * chore display: all, filter, search, sort
+     * */ 
 
 }

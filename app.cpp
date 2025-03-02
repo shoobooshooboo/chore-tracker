@@ -57,7 +57,7 @@ void App::signUp(void) {
 void App::startup(void) {
     assert(UserManager::loadedUsers.size() == 1);
 
-    while (1/*placeholder: household IDs are left in the line of the userFile corresponding with loadedUsers.front()'s ID*/) {
+    while (1/*placeholder: while household IDs are left in the line of the userFile corresponding with loadedUsers.front()'s ID*/) {
 
         // loadHousehold loads & links all users automatically, including localUser
         // just need to call that and things get taken care of
