@@ -40,12 +40,16 @@ private:
 public:
     // TODO constructors to be defined when program flow is better defined
 
+    // HouseholdManager interface
+
     // allows this household to reference a user joining the household 
     void handleUserJoining(std::weak_ptr<User> joiningUser);
+
+
     
 
 
-
+    // App interface
 
     void sortChores(SortType sortType);
 
