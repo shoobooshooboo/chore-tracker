@@ -19,7 +19,6 @@ int main(void) {
             break;
     }
     
-    assert(UserManager::loadedUsers.size() == 1);
 
     App::startup();
 

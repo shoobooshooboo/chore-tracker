@@ -1,11 +1,11 @@
 #include "app.hpp"
 
 bool App::logIn(void) {
-    // THIS IS TEMPORARY - REPLACE WITH UI THING
-    std::cout << "Enter Username: ";
+    // THIS IS TEMPORARY - REPLACE WITH GUI THING
+    std::print("Enter Username: ");
     std::string username;
     std::cin >> username;
-    std::cout << "Enter Password: ";
+    std::print("Enter Password: ");
     std::string password;
     std::cin >> password;
 
@@ -21,31 +21,47 @@ bool App::logIn(void) {
 }
 
 void App::signUp(void) {
-    // THIS IS TEMPORARY - REPLACE WITH UI THING
+    // MOST OF THIS IS TEMPORARY - REPLACE WITH GUI THING
 
+    constexpr auto validCheck {
+        [](const std::string& str){
+            return std::ranges::find_if(str, [](const auto c){
+                return !std::isalnum(c);
+            }) != str.cend();
+        }
+    };
+
+    std::string username, password;
     do {
-        // TODO get a username/password
-    } while (0/* TODO condition is while usename/password invalid */);
+        std::print("Sign Up\nEnter Username: ");
+        std::cin >> username;
+        std::print("Enter Password: ");
+        std::cin >> password;
+    } while (!validCheck(username) || !validCheck(password));
 
-    // TODO get any other user information needed at signup
+    std::println("Enter your name below: ");
+    std::string name;
+    std::cin >> name;
 
-    UserManager::loadedUsers.push_back(std::make_shared<User>(User(/**/)));
+    // TODO query for next available unique ID (maybe another reason to enforce ordering in users.csv)
+
+    // TODO write all of the needed info to userfile
+
+    // logs in automatically
+    UserManager::loadedUsers.push_back(std::make_shared<User>(User(/*PLACEHOLDERS!!!*/)));
+
+    // generates the user's personal household
+    HouseholdManager::makeNewHousehold(UserManager::loadedUsers.cbegin(), Household{std::format("{}'s To-Do", name)});
 }
 
 void App::startup(void) {
+    assert(UserManager::loadedUsers.size() == 1);
 
-    // restructure this bit as necessary to be able to get that data put in
-    UserManager::loadedUsers.push_back(
-        std::make_shared<User>(
-            User {/*data from file, line selected as a result of login*/}
-        ) 
-    );
-
-    while (1/*placeholder condition, should read until end of line (ie until all householdIDs are read)*/) {
+    while (1/*placeholder: household IDs are left in the line of the userFile corresponding with loadedUsers.front()'s ID*/) {
 
         // loadHousehold loads & links all users automatically, including localUser
+        // just need to call that and things get taken care of
         HouseholdManager::loadHousehold(0/*placeholder, should be householdID*/);
-
     }
 
 }
