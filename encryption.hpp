@@ -2,6 +2,7 @@
 #ifndef ENCRYPTION_HPP
 #define ENCRYPTION_HPP
 
+#include <cctype>
 #include <string>
 #include <fstream>
 

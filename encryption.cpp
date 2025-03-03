@@ -28,7 +28,7 @@ char Encryption::shiftUp(char c) noexcept {
 
 // takes in a password character and a username character and returns the encrypted version
 char Encryption::shiftEncrypt(char c, char key) noexcept {
-    if (key >= '0' && key <= '9') { // number
+    if (std::isdigit(key)) { 
         while (key > '0') {
             c = shiftDown(c);
             --key;
@@ -44,7 +44,7 @@ char Encryption::shiftEncrypt(char c, char key) noexcept {
 }
 
 char Encryption::shiftDecrypt(char c, char key) {
-    if (key >= '0' && key <= '9') { // number
+    if (std::isdigit(key)) { 
         while (key > '0') {
             c = shiftUp(c);
            --key;
