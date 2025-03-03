@@ -6,12 +6,15 @@
 #include <string>
 #include <fstream>
 
-namespace Encryption{
-    char shiftEncrypt(char c, char key);
-    char shiftDecrypt(char c, char key);
+namespace Encryption {
+    [[nodiscard]] char shiftDown(char c) noexcept;
+    [[nodiscard]] char shiftUp(char c) noexcept;
 
-    std::string encrypt(std::string name, std::string password);
-    std::string decrypt(std::string name, std::string password);
+    [[nodiscard]] char shiftEncrypt(char c, char key) noexcept;
+    [[nodiscard]] char shiftDecrypt(char c, char key) noexcept;
+
+    [[nodiscard]] std::string encrypt(std::string password, const std::string& name);
+    [[nodiscard]] std::string decrypt(std::string password, const std::string& name);
 
     void encryptFile();
     void decryptFile();
