@@ -38,7 +38,7 @@ private:
     std::vector<std::weak_ptr<User>> mUsers;
 
 public:
-    Household(std::string&& name);
+    Household(std::string&& name = "");
 
     // HouseholdManager interface
 
