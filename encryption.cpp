@@ -9,7 +9,7 @@ char Encryption::shiftDown(char c) noexcept {
         case '0': 
             return '9';
         default:
-            return static_cast<char>(c - 1);
+            return --c;
     }
 }
 
