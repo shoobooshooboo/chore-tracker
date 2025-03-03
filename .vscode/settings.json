@@ -55,6 +55,10 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "text_encoding": "cpp"
-    }
+        "text_encoding": "cpp",
+        "fstream": "cpp",
+        "iostream": "cpp",
+        "print": "cpp"
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/g++-14"
 }
