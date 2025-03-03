@@ -9,7 +9,7 @@ char Encryption::shiftDown(char c) noexcept {
         case '0': 
             return '9';
         default:
-            return --c;
+            return c - 1;
     }
 }
 
@@ -22,7 +22,7 @@ char Encryption::shiftUp(char c) noexcept {
         case '9': 
             return '0';
         default:
-            return ++c;
+            return c + 1;
     }
 }
 
@@ -43,7 +43,7 @@ char Encryption::shiftEncrypt(char c, char key) noexcept {
     return c;
 }
 
-char Encryption::shiftDecrypt(char c, char key) {
+char Encryption::shiftDecrypt(char c, char key) noexcept {
     if (std::isdigit(key)) { 
         while (key > '0') {
             c = shiftUp(c);
