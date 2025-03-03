@@ -23,13 +23,9 @@ bool App::logIn(void) {
 void App::signUp(void) {
     // MOST OF THIS IS TEMPORARY - REPLACE WITH GUI THING
 
-    constexpr auto validCheck {
-        [](const std::string& str){
-            return std::ranges::find_if(str, [](const auto c){
-                return !std::isalnum(c);
-            }) != str.cend();
-        }
-    };
+    constexpr auto validCheck {[](const std::string& str){
+        return std::ranges::find_if_not(str, static_cast<int(*)(int)>(std::isalnum)) != str.cend();
+    }};
 
     std::string username, password;
     do {
