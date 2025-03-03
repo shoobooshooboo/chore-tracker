@@ -1,6 +1,6 @@
 #include "encryption.hpp"
 
-char Encryption::shiftDown(char c) noexcept {
+constexpr char Encryption::shiftDown(char c) noexcept {
     switch (c) {
         case 'A': 
             return 'Z';
@@ -13,7 +13,7 @@ char Encryption::shiftDown(char c) noexcept {
     }
 }
 
-char Encryption::shiftUp(char c) noexcept {
+constexpr char Encryption::shiftUp(char c) noexcept {
     switch (c) {
         case 'Z': 
             return 'A';
@@ -27,7 +27,7 @@ char Encryption::shiftUp(char c) noexcept {
 }
 
 // takes in a password character and a username character and returns the encrypted version
-char Encryption::shiftEncrypt(char c, char key) noexcept {
+constexpr char Encryption::shiftEncrypt(char c, char key) noexcept {
     // set key to represent the appropriate integer number of shifts to perform 
     if (std::isdigit(key)) {
         key -= '0'; // 0-9 shifts possible
@@ -43,7 +43,7 @@ char Encryption::shiftEncrypt(char c, char key) noexcept {
     return c;
 }
 
-char Encryption::shiftDecrypt(char c, char key) noexcept {
+constexpr char Encryption::shiftDecrypt(char c, char key) noexcept {
     // set key to represent the appropriate integer number of shifts to perform 
     if (std::isdigit(key)) {
         key -= '0'; // 0-9 shifts possible
