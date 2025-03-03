@@ -27,6 +27,5 @@ bool User::setName(const std::string_view name) {
         return false;
     }
     mName = name;   
-    mName = name;   
     return true;
 }

@@ -23,7 +23,7 @@ bool App::logIn(void) {
 void App::signUp(void) {
     // MOST OF THIS IS TEMPORARY - REPLACE WITH GUI THING
 
-    constexpr auto validCheck {[](const std::string& str){
+    constexpr static auto validCheck {[](const std::string& str){
         return std::ranges::find_if_not(str, static_cast<int(*)(int)>(std::isalnum)) != str.cend();
     }};
 
@@ -45,6 +45,8 @@ void App::signUp(void) {
 
     // logs in automatically
     UserManager::loadedUsers.push_back(std::make_shared<User>(User(/*PLACEHOLDERS!!!*/)));
+
+    assert(UserManager::loadedUsers.size() == 1);
 
     // generates the user's personal household
     HouseholdManager::makeNewHousehold(UserManager::loadedUsers.cbegin(), Household{std::format("{}'s To-Do", name)});
