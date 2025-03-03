@@ -60,41 +60,15 @@ char Encryption::shiftDecrypt(char c, char key) {
 }
 
 std::string Encryption::encrypt(std::string password, const std::string& name) {
-    if (password.size() <= name.size()) { // loop can just loop, no extra checks needed
-        for (size_t i{0}; i < password.size(); ++i) {
-            password[i] = shiftEncrypt(password[i], name[i]);
-        }
-    } else { // needs to check since it has to loop around the password multiple times
-        for (size_t i{0}; i < password.size(); ++i) {
-            if (i >= name.size()) { // without this it would index out of bounds on password
-                size_t j{i};
-                do {
-                    j -= name.size();
-                } while (j >= name.size());
-                password[i] = shiftEncrypt(password[i], name[j]);
-            }
-            else password[i] = shiftEncrypt(password[i], name[i]);
-        }
+    for (size_t i{0}; i < password.size(); ++i) {
+        password[i] = shiftEncrypt(password[i], name[i % name.size()]);
     }
     return password;
 }
 
 std::string Encryption::decrypt(std::string password, const std::string& name) {
-    if (password.size() <= name.size()) { // loop can just loop, no extra checks needed
-        for (size_t i{0}; i < password.size(); ++i) {
-            password[i] = shiftDecrypt(password[i], name[i]);
-        }
-    } else { // needs to check since it has to loop around the password multiple times
-        for (size_t i{0}; i < password.size(); ++i) {
-            if (i >= name.size()) { // without this it would index out of bounds on password
-                size_t j{i};
-                do {
-                    j -= name.size();
-                } while (j >= name.size());
-                password[i] = shiftDecrypt(password[i], name[j]);
-            }
-            else password[i] = shiftDecrypt(password[i], name[i]);
-        }
+    for (size_t i{0}; i < password.size(); ++i) {
+        password[i] = shiftDecrypt(password[i], name[i % name.size()]);
     }
     return password;
 }
