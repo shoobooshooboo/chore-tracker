@@ -28,33 +28,33 @@ char Encryption::shiftUp(char c) noexcept {
 
 // takes in a password character and a username character and returns the encrypted version
 char Encryption::shiftEncrypt(char c, char key) noexcept {
-    if (std::isdigit(key)) { 
-        while (key > '0') {
-            c = shiftDown(c);
-            --key;
-        }
-    } else { // letter
-        key = toupper(key); // guard to make sure it's uppercase for checks
-        while (key >= 'A') {
-            c = shiftDown(c);
-            --key;
-        }
+    // set key to represent the appropriate integer number of shifts to perform 
+    if (std::isdigit(key)) {
+        key -= '0'; // 0-9 shifts possible
+    } else if (std::isupper(key)) {
+        key -= ('A' - 1); // 1-26 shifts possible
+    } else if (std::islower(key)) {
+        key -= ('a' - 1); // 1-26 shifts possible
+    }
+
+    while (key-- > 0) {
+        c = shiftDown(c);
     }
     return c;
 }
 
 char Encryption::shiftDecrypt(char c, char key) noexcept {
-    if (std::isdigit(key)) { 
-        while (key > '0') {
-            c = shiftUp(c);
-           --key;
-        }
-    } else {
-        key = toupper(key); // guard to make sure it's uppercase for checks
-        while (key >= 'A') {
-            c = shiftUp(c);
-            --key;
-        }
+    // set key to represent the appropriate integer number of shifts to perform 
+    if (std::isdigit(key)) {
+        key -= '0'; // 0-9 shifts possible
+    } else if (std::isupper(key)) {
+        key -= ('A' - 1); // 1-26 shifts possible
+    } else if (std::islower(key)) {
+        key -= ('a' - 1); // 1-26 shifts possible
+    }
+
+    while (key-- > 0) {
+        c = shiftUp(c);
     }
     return c;
 }
