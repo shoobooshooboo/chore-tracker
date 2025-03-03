@@ -23,9 +23,10 @@ uint64_t User::getID(void) const noexcept {
 }
 
 bool User::setName(const std::string_view name) {
-    if (std::find_if_not(std::cbegin(name), std::cend(name), static_cast<int(*)(int)>(std::isalnum)) != name.cend()) {
+    if (std::ranges::find_if_not(name, static_cast<int(*)(int)>(std::isalnum)) != name.cend()) {
         return false;
     }
+    mName = name;   
     mName = name;   
     return true;
 }
