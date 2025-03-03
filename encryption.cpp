@@ -22,7 +22,7 @@ char Encryption::shiftUp(char c) noexcept {
         case '9': 
             return '0';
         default:
-            return static_cast<char>(c + 1);
+            return ++c;
     }
 }
 
@@ -31,13 +31,13 @@ char Encryption::shiftEncrypt(char c, char key) noexcept {
     if (key >= '0' && key <= '9') { // number
         while (key > '0') {
             c = shiftDown(c);
-            key = static_cast<char>(key - 1);
+            --key;
         }
     } else { // letter
         key = toupper(key); // guard to make sure it's uppercase for checks
-        while (key > static_cast<char>('A' - 1)) {
+        while (key >= 'A') {
             c = shiftDown(c);
-            key = static_cast<char>(key - 1);
+            --key;
         }
     }
     return c;
@@ -47,13 +47,13 @@ char Encryption::shiftDecrypt(char c, char key) {
     if (key >= '0' && key <= '9') { // number
         while (key > '0') {
             c = shiftUp(c);
-            key = static_cast<char>(key - 1);
+           --key;
         }
     } else {
         key = toupper(key); // guard to make sure it's uppercase for checks
-        while (key > static_cast<char>('A' - 1)) {
+        while (key >= 'A') {
             c = shiftUp(c);
-            key = static_cast<char>(key - 1);
+            --key;
         }
     }
     return c;
