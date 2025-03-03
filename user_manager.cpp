@@ -12,7 +12,7 @@ namespace UserManager {
     container_t::const_iterator loadUser(const uint64_t userID) {
         auto it{findLoadedUser(userID)};
 
-        if (it == loadedUsers.cend()) 
+        if (it == loadedUsers.cend()) // user is not yet loaded
         {
             User userToLoad;
             // TODO 
