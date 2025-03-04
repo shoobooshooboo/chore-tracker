@@ -12,7 +12,7 @@ namespace UserManager {
     container_t::const_iterator loadUser(const uint64_t userID) {
         auto it{findLoadedUser(userID)};
         if (it == loadedUsers.cend()) { // user is not yet loaded
-            std::ifstream infile("test.csv");
+            std::ifstream infile(userFile);
             
             uint64_t testID;
             while (infile.good()) { 
@@ -22,9 +22,9 @@ namespace UserManager {
                 infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
             
-            for (int i{0}; i < 3; ++i) { // chop comma after userID, and discard "username, password,"
-                infile.ignore(std::numeric_limits<std::streamsize>::max(), ',');
-            }
+            // ignore up to the user's "first last" name
+            infile.ignore(std::numeric_limits<std::streamsize>::max(), '|');
+
             std::string name;
             std::getline(infile, name, ',');
             loadedUsers.push_back(std::make_shared<User>(testID, std::move(name)));
@@ -35,7 +35,9 @@ namespace UserManager {
         return it;
     }
 
-    void storeUser(const User& user) {
-        // TODO
+    void createUserToFile(const User& user, const std::string& username, const std::string& password, const uint64_t firstHousehold) {
+        std::ofstream(userFile);
+        std::println("{},{},{}|{},{}", user.getID(), username, password, user.getName(), firstHousehold);
     }
+
 }
