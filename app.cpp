@@ -41,15 +41,22 @@ void App::signUp(void) {
 
     // TODO query for next available unique ID (maybe another reason to enforce ordering in users.csv)
 
-    // TODO write all of the needed info to userfile
+    User newUser(0/*replace with id*/, std::move(name));
 
+    
     // logs in automatically
-    UserManager::loadedUsers.push_back(std::make_shared<User>(User(/*PLACEHOLDERS!!!*/)));
-
+    UserManager::loadedUsers.push_back(std::make_shared<User>(newUser));
+    
     assert(UserManager::loadedUsers.size() == 1);
+    
+    // TODO query for next available unique HOUSEHOLD id
+
+    UserManager::createUserToFile(newUser, username, password, 0/*placeholder, should be personal household (below)'s id*/);
 
     // generates the user's personal household
     HouseholdManager::makeNewHousehold(UserManager::loadedUsers.cbegin(), Household{std::format("{}'s To-Do", name)});
+
+    // TODO actually writing this new household to file.
 }
 
 void App::startup(void) {
