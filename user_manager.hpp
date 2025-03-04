@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <algorithm>
 #include <fstream>
+#include <limits>
 #include <vector>
 #include <memory>
 #include "user.hpp"

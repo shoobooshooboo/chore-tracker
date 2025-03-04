@@ -11,30 +11,23 @@ namespace UserManager {
     // assumes user exists
     container_t::const_iterator loadUser(const uint64_t userID) {
         auto it{findLoadedUser(userID)};
-        if (it == loadedUsers.cend()) // user is not yet loaded
-        {
+        if (it == loadedUsers.cend()) { // user is not yet loaded
             std::ifstream infile("test.csv");
-            std::string buffer, name;
+            
             uint64_t testID;
-
-            while (true) {
-                infile >> std::ws >> testID;
-                if (testID == userID) {
-                    std::getline(infile, buffer);
-                    break;
-                }
+            while (infile.good()) { 
+                infile >> testID;
+                if (testID == userID) // break when line matching usedID is found  
+                    break; 
                 infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
-
-            for (int i = 0; i < 3; i++)
-            {
+            
+            for (int i{0}; i < 3; ++i) { // chop comma after userID, and discard "username, password,"
                 infile.ignore(std::numeric_limits<std::streamsize>::max(), ',');
             }
+            std::string name;
             std::getline(infile, name, ',');
-
-            User userToLoad(testID, std::move(name));
-
-            loadedUsers.push_back(std::make_shared<User>(userToLoad));
+            loadedUsers.push_back(std::make_shared<User>(testID, std::move(name)));
             
             it = std::prev(loadedUsers.cend());
         } 
