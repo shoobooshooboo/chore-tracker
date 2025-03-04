@@ -1,7 +1,6 @@
 #include "user_manager.hpp"
 
 namespace UserManager {
-
     container_t::const_iterator findLoadedUser(const uint64_t userID) {
         return std::ranges::find_if(loadedUsers, 
             [userID](const User& loadedUser){ return userID == loadedUser.getID(); }, 
@@ -41,5 +40,9 @@ namespace UserManager {
         } 
 
         return it;
+    }
+
+    void storeUser(const User& user) {
+        // TODO
     }
 }
