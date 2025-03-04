@@ -18,6 +18,10 @@ enum class Availability : unsigned {
 };
 
 enum class Priority : unsigned {
+    LOW,
+    MEDIUM,
+    HIGH,
+    IMMINENT,
     count
 };
 
