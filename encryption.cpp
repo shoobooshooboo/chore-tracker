@@ -9,6 +9,7 @@ constexpr char Encryption::keyToShiftCount(char key) noexcept {
     } else if (std::isdigit(key)) {
         key -= '0'; // 0-9 shifts possible
     }
+    return key;
 }
 
 constexpr char Encryption::shiftDown(char c) noexcept {
@@ -40,6 +41,7 @@ constexpr char Encryption::shiftUp(char c) noexcept {
 // takes in a password character and a username character and returns the encrypted version
 constexpr char Encryption::shiftEncrypt(char c, char key) noexcept {
     key = keyToShiftCount(key);
+    key = keyToShiftCount(key);
 
     while (key-- > 0) {
         c = shiftDown(c);
@@ -48,7 +50,9 @@ constexpr char Encryption::shiftEncrypt(char c, char key) noexcept {
 }
 
 
+
 constexpr char Encryption::shiftDecrypt(char c, char key) noexcept {
+    key = keyToShiftCount(key);
     key = keyToShiftCount(key);
 
     while (key-- > 0) {
