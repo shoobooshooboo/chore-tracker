@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <algorithm>
 #include <fstream>
+#include <ostream>
 #include <print>
 #include <filesystem>
 #include <limits>

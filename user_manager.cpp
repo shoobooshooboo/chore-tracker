@@ -36,8 +36,7 @@ namespace UserManager {
     }
 
     void createUserToFile(const User& user, const std::string& username, const std::string& password, const uint64_t firstHousehold) {
-        std::ofstream(userFile);
-        std::println("{},{},{}|{},{}", user.getID(), username, password, user.getName(), firstHousehold);
+        std::ofstream(userFile, std::ios::app) << std::format("{},{},{}|{},{}\n", user.getID(), username, password, user.getName(), firstHousehold);
     }
 
 }
