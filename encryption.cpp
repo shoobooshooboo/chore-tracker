@@ -1,5 +1,16 @@
 #include "encryption.hpp"
 
+constexpr char Encryption::keyToShiftCount(char key) noexcept {
+    // set key to represent the appropriate integer number of shifts to perform 
+    if (std::islower(key)) {
+        key -= ('a' - 1); // 1-26 shifts possible
+    } else if (std::isupper(key)) {
+        key -= ('A' - 1); // 1-26 shifts possible
+    } else if (std::isdigit(key)) {
+        key -= '0'; // 0-9 shifts possible
+    }
+}
+
 constexpr char Encryption::shiftDown(char c) noexcept {
     switch (c) {
         case 'A': 
@@ -28,14 +39,7 @@ constexpr char Encryption::shiftUp(char c) noexcept {
 
 // takes in a password character and a username character and returns the encrypted version
 constexpr char Encryption::shiftEncrypt(char c, char key) noexcept {
-    // set key to represent the appropriate integer number of shifts to perform 
-    if (std::isdigit(key)) {
-        key -= '0'; // 0-9 shifts possible
-    } else if (std::isupper(key)) {
-        key -= ('A' - 1); // 1-26 shifts possible
-    } else if (std::islower(key)) {
-        key -= ('a' - 1); // 1-26 shifts possible
-    }
+    key = keyToShiftCount(key);
 
     while (key-- > 0) {
         c = shiftDown(c);
@@ -43,15 +47,9 @@ constexpr char Encryption::shiftEncrypt(char c, char key) noexcept {
     return c;
 }
 
+
 constexpr char Encryption::shiftDecrypt(char c, char key) noexcept {
-    // set key to represent the appropriate integer number of shifts to perform 
-    if (std::isdigit(key)) {
-        key -= '0'; // 0-9 shifts possible
-    } else if (std::isupper(key)) {
-        key -= ('A' - 1); // 1-26 shifts possible
-    } else if (std::islower(key)) {
-        key -= ('a' - 1); // 1-26 shifts possible
-    }
+    key = keyToShiftCount(key);
 
     while (key-- > 0) {
         c = shiftUp(c);
