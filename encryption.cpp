@@ -41,7 +41,6 @@ constexpr char Encryption::shiftUp(char c) noexcept {
 // takes in a password character and a username character and returns the encrypted version
 constexpr char Encryption::shiftEncrypt(char c, char key) noexcept {
     key = keyToShiftCount(key);
-    key = keyToShiftCount(key);
 
     while (key-- > 0) {
         c = shiftDown(c);
@@ -52,7 +51,6 @@ constexpr char Encryption::shiftEncrypt(char c, char key) noexcept {
 
 
 constexpr char Encryption::shiftDecrypt(char c, char key) noexcept {
-    key = keyToShiftCount(key);
     key = keyToShiftCount(key);
 
     while (key-- > 0) {
