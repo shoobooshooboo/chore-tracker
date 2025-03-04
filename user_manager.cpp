@@ -9,18 +9,29 @@ namespace UserManager {
         );
     }
 
+    // assumes user exists
     container_t::const_iterator loadUser(const uint64_t userID) {
         auto it{findLoadedUser(userID)};
-
         if (it == loadedUsers.cend()) // user is not yet loaded
         {
-            User userToLoad;
-            // TODO 
-            // load the new user and push to the back
-            // if we decide to maintain ordering by ID in the file, do a binary search
-            // otherwise linear also would probably be fine
-            // use below to skip lines after parsing the ID token if not a match
-            // <filestream here>.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::ifstream infile("test.csv");
+            std::string buffer, name;
+            uint64_t testID;
+
+            while (testID != userID) {
+                infile >> std::ws >> testID;
+                if (testID == userID)
+                    std::getline(infile, buffer);
+                else
+                    infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                infile.ignore(std::numeric_limits<std::streamsize>::max(), ',');
+            }
+            std::getline(infile, name, ',');
+
+            User userToLoad(testID, std::move(name));
 
             loadedUsers.push_back(std::make_shared<User>(userToLoad));
             
