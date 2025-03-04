@@ -18,13 +18,15 @@ namespace UserManager {
             std::string buffer, name;
             uint64_t testID;
 
-            while (testID != userID) {
+            while (true) {
                 infile >> std::ws >> testID;
-                if (testID == userID)
+                if (testID == userID) {
                     std::getline(infile, buffer);
-                else
-                    infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    break;
+                }
+                infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
+
             for (int i = 0; i < 3; i++)
             {
                 infile.ignore(std::numeric_limits<std::streamsize>::max(), ',');
