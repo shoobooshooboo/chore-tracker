@@ -4,15 +4,13 @@
 
 #include <cstdint>
 #include <algorithm>
-#include <filesystem>
+#include <fstream>
 #include <vector>
 #include <memory>
 #include "user.hpp"
 
 namespace UserManager {
     namespace {
-        constexpr std::filesystem::path usersFile; 
-        
         using container_t = std::vector<std::shared_ptr<User>>;
 
         container_t loadedUsers;
