@@ -20,7 +20,7 @@ namespace HouseholdManager {
     // return value is owning pointer of the household, with all users loaded
     std::shared_ptr<Household> loadHousehold(const uint64_t householdID); 
 
-    std::shared_ptr<Household> makeNewHousehold(const UserManager::container_t::const_iterator firstMemberUser, Household&& householdInfo);
+    std::shared_ptr<Household> makeNewHousehold(const UserManager::container_t::iterator firstMemberUser, Household&& householdInfo);
 
 }  
 

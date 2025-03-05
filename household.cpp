@@ -3,8 +3,8 @@
 Household::Household(std::string&& name) :
     mName(name) {}
 
-void Household::handleUserJoining(std::weak_ptr<User> joiningUser) {
-    mUsers.push_back(joiningUser);
+void Household::handleUserJoining(const User& joiningUser) {
+    mUsers.emplace_back(joiningUser);
 }
 
 void Household::addChore(Chore&& newChore) {

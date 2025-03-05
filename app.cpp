@@ -14,19 +14,19 @@ bool App::logIn(void) {
     
     if (matchFound) {
         User localUser{/*placeholder data from file*/};
-        UserManager::loadedUsers.push_back(std::make_shared<User>(localUser));
+        UserManager::loadedUsers.push_back(localUser);
     }
 
     return matchFound;
 }
 
 void App::signUp(void) {
-    // MOST OF THIS IS TEMPORARY - REPLACE WITH GUI THING
-
+    
     constexpr static auto validCheck {[](const std::string& str){
         return std::ranges::find_if_not(str, static_cast<int(*)(int)>(std::isalnum)) != str.cend();
     }};
-
+    
+    // MOST OF THIS IS TEMPORARY - REPLACE WITH GUI THING
     std::string username, password;
     do {
         std::print("Sign Up\nEnter Username: ");
@@ -45,7 +45,7 @@ void App::signUp(void) {
 
     
     // logs in automatically
-    UserManager::loadedUsers.push_back(std::make_shared<User>(newUser));
+    UserManager::loadedUsers.push_back(newUser);
     
     assert(UserManager::loadedUsers.size() == 1);
     
@@ -54,7 +54,7 @@ void App::signUp(void) {
     UserManager::createUserToFile(newUser, username, password, 0/*placeholder, should be personal household (below)'s id*/);
 
     // generates the user's personal household
-    HouseholdManager::makeNewHousehold(UserManager::loadedUsers.cbegin(), Household{std::format("{}'s To-Do", name)});
+    HouseholdManager::makeNewHousehold(UserManager::loadedUsers.begin(), Household{std::format("{}'s To-Do", name)});
 
     // TODO actually writing this new household to file.
 }

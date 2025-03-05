@@ -1,42 +1,38 @@
 #include "user_manager.hpp"
 
-namespace UserManager {
-    container_t::const_iterator findLoadedUser(const uint64_t userID) {
-        return std::ranges::find_if(loadedUsers, 
-            [userID](const User& loadedUser){ return userID == loadedUser.getID(); }, 
-            std::shared_ptr<User>::operator*
-        );
-    }
+UserManager::container_t::iterator findLoadedUser(const uint64_t userID) {
+    return std::ranges::find_if(UserManager::loadedUsers, 
+        [userID](const User& loadedUser){ return userID == loadedUser.getID(); }
+    );
+}
 
-    // assumes user exists
-    container_t::const_iterator loadUser(const uint64_t userID) {
-        auto it{findLoadedUser(userID)};
-        if (it == loadedUsers.cend()) { // user is not yet loaded
-            std::ifstream infile(userFile);
-            
-            uint64_t testID;
-            while (infile.good()) { 
-                infile >> testID;
-                if (testID == userID) // break when line matching usedID is found  
-                    break; 
-                infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            }
-            
-            // ignore up to the user's "first last" name
-            infile.ignore(std::numeric_limits<std::streamsize>::max(), '|');
+// assumes user exists
+UserManager::container_t::iterator loadUser(const uint64_t userID) {
+    auto it{findLoadedUser(userID)};
+    if (it == UserManager::loadedUsers.cend()) { // user is not yet loaded
+        std::ifstream infile(UserManager::userFile);
+        
+        uint64_t testID;
+        while (infile.good()) { 
+            infile >> testID;
+            if (testID == userID) // break when line matching usedID is found  
+                break; 
+            infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+        
+        // ignore up to the user's "first last" name
+        infile.ignore(std::numeric_limits<std::streamsize>::max(), '|');
 
-            std::string name;
-            std::getline(infile, name, ',');
-            loadedUsers.push_back(std::make_shared<User>(testID, std::move(name)));
-            
-            it = std::prev(loadedUsers.cend());
-        } 
+        std::string name;
+        std::getline(infile, name, ',');
+        UserManager::loadedUsers.emplace_back(testID, std::move(name));
+        
+        it = std::prev(UserManager::loadedUsers.end());
+    } 
 
-        return it;
-    }
+    return it;
+}
 
-    void createUserToFile(const User& user, const std::string& username, const std::string& password, const uint64_t firstHousehold) {
-        std::ofstream(userFile, std::ios::app) << std::format("{},{},{}|{},{}\n", user.getID(), username, password, user.getName(), firstHousehold);
-    }
-
+void createUserToFile(const User& user, const std::string& username, const std::string& password, const uint64_t firstHousehold) {
+    std::ofstream(UserManager::userFile, std::ios::app) << std::format("{},{},{}|{},{}\n", user.getID(), username, password, user.getName(), firstHousehold);
 }

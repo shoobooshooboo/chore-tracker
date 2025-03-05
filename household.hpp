@@ -7,7 +7,7 @@
 #include <vector>
 #include <string>
 #include <string_view>
-#include <memory>
+#include <functional>
 #include <ranges>
 #include "chore.hpp"
 
@@ -35,7 +35,7 @@ private:
 
     std::string mName;
     std::vector<Chore> mChores;
-    std::vector<std::weak_ptr<User>> mUsers;
+    std::vector<std::reference_wrapper<User>> mUsers;
 
 public:
     Household(std::string&& name = "");
@@ -43,7 +43,7 @@ public:
     // HouseholdManager interface
 
     // allows this household to reference a user joining the household 
-    void handleUserJoining(std::weak_ptr<User> joiningUser);
+    void handleUserJoining(const User& joiningUser);
 
 
     
