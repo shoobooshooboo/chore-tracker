@@ -35,6 +35,6 @@ public:
     SettingsConfiguration mSettings;
 };
 
-bool isNameValid(const std::string_view str);
+bool isAllAlphanum(const std::string_view str);
 
 #endif

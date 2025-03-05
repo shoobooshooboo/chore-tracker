@@ -23,13 +23,13 @@ uint64_t User::getID(void) const noexcept {
 }
 
 bool User::setName(const std::string_view name) {
-    if (!isNameValid(name)) {
+    if (!isAllAlphanum(name)) {
         return false;
     }
     mName = name;   
     return true;
 }
 
-bool isNameValid(const std::string_view str) {
+bool isAllAlphanum(const std::string_view str) {
     return std::ranges::find_if_not(str, static_cast<int(*)(int)>(std::isalnum)) != str.cend();
 }

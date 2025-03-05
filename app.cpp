@@ -28,7 +28,7 @@ void App::signUp(void) {
         std::cin >> username;
         std::print("Enter Password: ");
         std::cin >> password;
-    } while (!isNameValid(username) || !isNameValid(password));
+    } while (!isAllAlphanum(username) || !isAllAlphanum(password));
 
     std::println("Enter your name below: ");
     std::string name;
