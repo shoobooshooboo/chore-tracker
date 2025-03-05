@@ -1,16 +1,18 @@
 #include "user_manager.hpp"
 
-UserManager::container_t::iterator findLoadedUser(const uint64_t userID) {
-    return std::ranges::find_if(UserManager::loadedUsers, 
+namespace UserManager {
+
+container_t::iterator findLoadedUser(const uint64_t userID) {
+    return std::ranges::find_if(loadedUsers, 
         [userID](const User& loadedUser){ return userID == loadedUser.getID(); }
     );
 }
 
 // assumes user exists
-UserManager::container_t::iterator loadUser(const uint64_t userID) {
+container_t::iterator loadUser(const uint64_t userID) {
     auto it{findLoadedUser(userID)};
-    if (it == UserManager::loadedUsers.cend()) { // user is not yet loaded
-        std::ifstream infile(UserManager::userFile);
+    if (it == loadedUsers.cend()) { // user is not yet loaded
+        std::ifstream infile(userFile);
         
         uint64_t testID;
         while (infile.good()) { 
@@ -25,14 +27,16 @@ UserManager::container_t::iterator loadUser(const uint64_t userID) {
 
         std::string name;
         std::getline(infile, name, ',');
-        UserManager::loadedUsers.emplace_back(testID, std::move(name));
+        loadedUsers.emplace_back(testID, std::move(name));
         
-        it = std::prev(UserManager::loadedUsers.end());
+        it = std::prev(loadedUsers.end());
     } 
 
     return it;
 }
 
 void createUserToFile(const User& user, const std::string& username, const std::string& password, const uint64_t firstHousehold) {
-    std::ofstream(UserManager::userFile, std::ios::app) << std::format("{},{},{}|{},{}\n", user.getID(), username, password, user.getName(), firstHousehold);
+    std::ofstream(userFile, std::ios::app) << std::format("{},{},{}|{},{}\n", user.getID(), username, password, user.getName(), firstHousehold);
+}
+
 }
