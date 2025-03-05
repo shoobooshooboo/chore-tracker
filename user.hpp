@@ -35,6 +35,6 @@ public:
     SettingsConfiguration mSettings;
 };
 
-bool isAllAlphanum(const std::string_view str);
+[[nodiscard]] bool isAllAlphanum(const std::string_view str);
 
 #endif

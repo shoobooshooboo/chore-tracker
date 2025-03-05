@@ -30,7 +30,7 @@ const std::vector<Chore>& Household::getChores(void) const noexcept {
 
 void Household::expireChoreInstance(decltype(mChores)::iterator toExpire) {
     if (toExpire->mRecurrenceInterval) {
-        toExpire->mDateAndTime += *(toExpire->mRecurrenceInterval);
+        toExpire->mDateAndTime += toExpire->mRecurrenceInterval.value();
     } else {
         mChores.erase(toExpire);
     }
