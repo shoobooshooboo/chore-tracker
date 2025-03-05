@@ -16,11 +16,12 @@ void Household::sortChores(SortType sortType) {
 }
 
 auto Household::filterChores(bool(*filterCondition)(const Chore&)) const {
-    return std::ranges::filter_view(mChores, filterCondition);
+    return mChores | std::views::filter(filterCondition);
 }
 
 auto Household::searchForChores(const std::string_view searchTerm) {
-    return std::ranges::filter_view(mChores, [searchTerm](const Chore& chore){ return chore.mName.contains(searchTerm); });
+    // lambdas with capture are not convertable to function pointer, hence the distinction from filterChores()
+    return mChores | std::views::filter([searchTerm](const Chore& chore){ return chore.mName.contains(searchTerm); });
 }
 
 const std::vector<Chore>& Household::getChores(void) const noexcept {
