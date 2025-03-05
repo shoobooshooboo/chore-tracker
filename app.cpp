@@ -20,12 +20,7 @@ bool App::logIn(void) {
     return matchFound;
 }
 
-void App::signUp(void) {
-    
-    constexpr static auto validCheck {[](const std::string& str){
-        return std::ranges::find_if_not(str, static_cast<int(*)(int)>(std::isalnum)) != str.cend();
-    }};
-    
+void App::signUp(void) {    
     // MOST OF THIS IS TEMPORARY - REPLACE WITH GUI THING
     std::string username, password;
     do {

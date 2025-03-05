@@ -35,4 +35,6 @@ public:
     SettingsConfiguration mSettings;
 };
 
+bool isNameValid(const std::string_view str);
+
 #endif
