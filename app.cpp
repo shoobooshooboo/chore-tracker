@@ -54,7 +54,7 @@ void App::signUp(void) {
     UserManager::createUserToFile(newUser, username, password, 0/*placeholder, should be personal household (below)'s id*/);
 
     // generates the user's personal household
-    HouseholdManager::makeNewHousehold(UserManager::loadedUsers.begin(), Household{std::format("{}'s To-Do", name)});
+    HouseholdManager::makeNewHousehold(UserManager::loadedUsers.front(), Household{std::format("{}'s To-Do", name)});
 
     // TODO actually writing this new household to file.
 }

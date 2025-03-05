@@ -22,11 +22,11 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     return householdPtr;
 }
 
-std::shared_ptr<Household> HouseholdManager::makeNewHousehold(const UserManager::container_t::iterator firstMemberUser, Household&& householdInfo) {
+std::shared_ptr<Household> HouseholdManager::makeNewHousehold(User& firstMemberUser, Household&& householdInfo) {
     auto householdPtr{ std::make_shared<Household>(householdInfo) };
 
-    householdPtr->handleUserJoining(*firstMemberUser);
-    firstMemberUser->addHousehold(householdPtr);
+    householdPtr->handleUserJoining(firstMemberUser);
+    firstMemberUser.addHousehold(householdPtr);
     
     return householdPtr;
 }
