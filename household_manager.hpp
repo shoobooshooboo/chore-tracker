@@ -9,6 +9,16 @@
 #include "user_manager.hpp"
 
 namespace HouseholdManager {
+
+    // non visually printed characters
+    // they do work as delims even if you can't see them
+    namespace Separators {
+        constexpr char FILE {28};
+        constexpr char GROUP {29};
+        constexpr char REC {30};
+        constexpr char UNIT {31};
+    }
+
     namespace {
         constexpr std::filesystem::path householdsFile; 
 
