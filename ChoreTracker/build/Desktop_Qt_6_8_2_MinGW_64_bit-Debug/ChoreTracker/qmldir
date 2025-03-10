@@ -1,0 +1,5 @@
+module ChoreTracker
+typeinfo appChoreTracker.qmltypes
+prefer :/qt/qml/ChoreTracker/
+Main 1.0 Main.qml
+
