@@ -55,7 +55,7 @@ void App::signUp(void) {
 }
 
 void App::startup(void) {
-    assert(UserManager::loadedUsers.size() == 1);
+    [[assume(UserManager::loadedUsers.size() == 1)]];
 
     while (1/*placeholder: while household IDs are left in the line of the userFile corresponding with loadedUsers.front()'s ID*/) {
 
