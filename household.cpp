@@ -11,6 +11,10 @@ void Household::addChore(Chore&& newChore) {
     mChores.push_back(newChore);
 }
 
+void Household::removeChore(decltype(mChores)::const_iterator toRemove) {
+    mChores.erase(toRemove);
+}
+
 void Household::sortChores(SortType sortType) {
     std::ranges::sort(mChores, Household::sortingMethods[sortType]);
 }

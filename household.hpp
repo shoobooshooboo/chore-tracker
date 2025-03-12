@@ -52,6 +52,8 @@ public:
     // App interface
     void addChore(Chore&& newChore);
 
+    void removeChore(decltype(mChores)::const_iterator toRemove);
+
     void sortChores(SortType sortType);
 
     [[nodiscard]] const std::vector<Chore>& getChores(void) const noexcept;
