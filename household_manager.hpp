@@ -20,7 +20,7 @@ namespace HouseholdManager {
     }
 
     namespace {
-        constexpr std::filesystem::path householdsFile; 
+        std::filesystem::path householdsFile; 
 
         // no owning vector in namespace; ownership is solely through users.
     }
