@@ -4,12 +4,15 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     std::ifstream infile(householdsFile);
     std::string buffer;
     
+    constexpr static auto matchesID { [householdID](const std::string& buffer){ 
+        uint64_t id; 
+        return (std::from_chars(buffer.data(), buffer.data() + buffer.size(), id).ec == std::errc() && id == householdID); 
+    } };
+
     do { // search for household info corresponding to householdID
         std::getline(infile, buffer, ',');
-        
         if (!infile.good()) throw std::invalid_argument {"Household matching householdID does not exist"};
-
-    } while (!std::isdigit(buffer.front()) || std::stoull(buffer) != householdID);
+    } while (!matchesID(buffer));
     
     std::getline(infile, buffer); // gets the rest of ID line
 
@@ -32,7 +35,7 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     }
 
     // adds chores
-    while ([&infile, &buffer]{ std::getline(infile, buffer); return buffer != "</>"; }()) { 
+    while (std::getline(infile, buffer), buffer != "</>") { 
         // name, time, completion, priority, location, interval, availabilities...
         auto choreFields { buffer | std::views::split(',') };
         auto it { choreFields.cbegin() };
