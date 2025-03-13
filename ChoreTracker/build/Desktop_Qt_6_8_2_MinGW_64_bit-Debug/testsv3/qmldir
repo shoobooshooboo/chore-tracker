@@ -1,0 +1,6 @@
+module testsv3
+typeinfo apptestv3.qmltypes
+prefer :/qt/qml/testsv3/
+Main 1.0 Main.ui.qml
+Settings 1.0 Settings.qml
+

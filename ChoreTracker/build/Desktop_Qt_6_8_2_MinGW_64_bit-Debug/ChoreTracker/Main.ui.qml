@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls.Basic
-import ChoreTracker
+import testv3
 
 Window {
     width: 640

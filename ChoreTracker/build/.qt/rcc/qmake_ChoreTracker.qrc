@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/ChoreTracker">
+    <file alias="qmldir">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker/qmldir</file>
+  </qresource>
+</RCC>
+
