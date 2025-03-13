@@ -1,8 +1,8 @@
 #include "household_manager.hpp"
 
 std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t householdID) {
-    std::string buffer;
     std::ifstream infile(householdsFile);
+    std::string buffer;
 
     do { // search for household info corresponding to householdID
         std::getline(infile, buffer, ',');
@@ -19,7 +19,7 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     // allocate household constructed with its name
     auto householdPtr { std::make_shared<Household>(houseFields.front() | std::ranges::to<std::string>()) };
     
-    auto userIDs { houseFields 
+    const std::vector<uint64_t> userIDs { houseFields 
         | std::ranges::views::drop(1)
         | std::ranges::views::transform([](auto idString){ return std::stoull(idString | std::ranges::to<std::string>()); })
         | std::ranges::to<std::vector<uint64_t>>()
@@ -27,49 +27,41 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
 
     // adds users
     for (uint64_t userID : userIDs) { 
-        // auto user { UserManager::loadUser(std::forward<uint64_t>(userID)) };
-
         mutuallyLink(*UserManager::loadUser(std::forward<uint64_t>(userID)), householdPtr);
     }
 
-    std::getline(infile, buffer);
-    while (buffer != "</>") { // adds chores
+    // adds chores
+    while ([&infile, &buffer]{ std::getline(infile, buffer); return buffer != "</>"; }()) { 
         // name, time, completion, priority, location, interval, availabilities...
         auto choreFields { buffer | std::views::split(',') };
         auto it { choreFields.cbegin() };
         
-        Chore newChore;
-        newChore.mName = *it | std::ranges::to<std::string>();
-        
-        std::istringstream { *(++it) | std::ranges::to<std::string>() } 
-            >> std::chrono::parse("%F %T", newChore.mDateAndTime);
-        
-        newChore.mCompletionStatus = std::string_view(*(++it)) != "0";
-        
-        newChore.mPriority = static_cast<Priority>(std::stoul(*(++it) | std::ranges::to<std::string>()));
-        
-        newChore.mLocation = *(++it) | std::ranges::to<std::string>();
-        
-        Chore::timepoint_t::duration d{};
-        std::istringstream { *(++it) | std::ranges::to<std::string>() }
-            >> std::chrono::parse("%F %T", d);
+        Chore newChore( // name, time, completion, priority, location
+            *it | std::ranges::to<std::string>(),
+            strToChrono<Chore::timepoint_t>(std::string_view(*++it)),
+            std::string_view(*++it) != "0",
+            strToEnum<Priority>(std::string_view(*++it)),
+            *++it | std::ranges::to<std::string>()
+        );
 
+        // interval
+        auto d { strToChrono<Chore::timepoint_t::duration>(std::string_view(*++it)) };
         if (d != decltype(d)::zero()) 
             newChore.mRecurrenceInterval = d;
 
-        for (uint64_t userID : userIDs) {
+        for (uint64_t userID : userIDs) { // availabilities
             // ensure that there are no more users than availabilities
             assert(std::next(it) != choreFields.cend());
             [[assume(std::next(it) != choreFields.cend())]];
 
+            const std::string_view svAvailability(*++it);
             newChore.addAvailability(
                 std::forward<uint64_t>(userID), 
-                static_cast<Availability>(std::stoul(*(++it) | std::ranges::to<std::string>()))
+                strToEnum<Availability>(std::string_view(*++it))    
             );
         }
         
         householdPtr->addChore(std::move(newChore));
-        std::getline(infile, buffer);
     }
 
     return householdPtr;

@@ -4,8 +4,10 @@
 
 #include <cassert>
 #include <filesystem>
+#include <type_traits>
 #include <memory>
 #include <exception>
+#include <charconv>
 #include <cctype>
 #include <sstream>
 #include "user.hpp"
@@ -37,6 +39,20 @@ namespace HouseholdManager {
     std::shared_ptr<Household> makeNewHousehold(User& firstMemberUser, Household&& householdInfo);
 
     void mutuallyLink(User& user, const std::shared_ptr<Household>& household);
+
+    template<class Enum>
+    Enum strToEnum(std::string_view sv) {
+        std::underlying_type(Enum) buff;
+        return static_cast<Enum>(*std::from_chars(sv.data(), sv.data() + sv.size(), buff).ptr);
+    }
+
+    template<class ChronoType>
+    ChronoType strToChrono(std::string_view sv) {
+        ChronoType t{};
+        std::istringstream { sv } >> std::chrono::parse("%F %T", t);
+        return t;
+    }
+    
 }  
 
 
