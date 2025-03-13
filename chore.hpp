@@ -10,6 +10,7 @@
 
 // indicates the availability of some user to complete a particular chore. 
 enum class Availability : unsigned {
+    UNSPECIFIED,
     CANNOT_DO,
     INCONVENIENT,
     CONVENIENT,
@@ -26,25 +27,22 @@ enum class Priority : unsigned {
 };
 
 struct Chore {
-private:
-    using timepoint_t = std::chrono::time_point<std::chrono::system_clock>;
-
-    // maps userIDs to availabilities
-    std::unordered_map<uint64_t, Availability> mAvailabilities;
 public:
-    Chore(const std::string& name, timepoint_t dateTime, Priority priority, const std::string& location);
-    Chore(const std::string& name, timepoint_t dateTime, Priority priority, const std::string& location, timepoint_t::duration recurrenceInterval);
-
-
+    using timepoint_t = std::chrono::time_point<std::chrono::system_clock>;
+    
     // return value indicates success 
-    bool addAvailability(const uint64_t userID, const Availability availability);
-
+    bool addAvailability(uint64_t userID, Availability availability);
+    
     std::string mName;
     timepoint_t mDateAndTime;
     bool mCompletionStatus;
     Priority mPriority;
     std::string mLocation;
     std::optional<timepoint_t::duration> mRecurrenceInterval;
+
+private:
+    // maps userIDs to availabilities
+    std::unordered_map<uint64_t, Availability> mAvailabilities;
 };
 
 #endif

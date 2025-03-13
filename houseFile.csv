@@ -1,8 +1,8 @@
-0,HouseWith3PeopleAnd2Chores,12345,23456,34567,<chores>
-FirstChore,2025/03/04|16:45:00,0,2,kitchen,7d|3,2,1,
-SecondChore,2025/03/04|16:45:00,1,1,bathroom,1d|1,2,3
-</chores>
-1,HouseWithJustOneGuy,12345,<chores>
-FirstChore,2025/03/04|16:45:00,0,2,kitchen,7d|3,
-SecondChore,2025/03/04|16:45:00,1,1,bathroom,1d|1
-</chores>
+0,HouseWith3PeopleAnd2Chores,12345,23456,34567
+FirstChore,2025-03-04 16:45:00,0,2,kitchen,0-0-7 0:0:0,3,2,1,
+SecondChore,2025-03-04 16:45:00,1,1,bathroom,0-0-1 0:0:0,1,2,3
+</>
+1,HouseWithJustOneGuy,12345
+FirstChore,2025-03-04 16:45:00,0,2,kitchen,0-0-7 0:0:0,3,
+SecondChore,2025-03-04 16:45:00,1,1,bathroom,0-0-1 0:0:0,1
+</>

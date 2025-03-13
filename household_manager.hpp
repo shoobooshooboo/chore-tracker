@@ -2,9 +2,12 @@
 #ifndef HOUSEHOLD_MANAGER_HPP
 #define HOUSEHOLD_MANAGER_HPP
 
+#include <cassert>
 #include <filesystem>
 #include <memory>
 #include <exception>
+#include <cctype>
+#include <sstream>
 #include "user.hpp"
 #include "household.hpp"
 #include "user_manager.hpp"
@@ -21,7 +24,7 @@ namespace HouseholdManager {
     }
 
     namespace {
-        std::filesystem::path householdsFile; 
+        std::filesystem::path householdsFile{"houseFile.csv"}; 
 
         // no owning vector in namespace; ownership is solely through users.
     }

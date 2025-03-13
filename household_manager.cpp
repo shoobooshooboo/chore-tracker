@@ -1,81 +1,77 @@
 #include "household_manager.hpp"
 
 std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t householdID) {
-    // TODO read all data into household from file
     std::string buffer;
-    std::ifstream infile("houseFile.csv");
-    while (infile.good())
-    {
-        std::getline(infile, buffer,',');
-        if (buffer[0] >= '0' && buffer[0] <= '9' && std::stoull(buffer) == householdID) // found the household
-            break;
-    }
-    if (!infile.good()) // went through file and did not find the ID
-    {
-        throw std::invalid_argument {"Shit."}; // what happened
-    }
+    std::ifstream infile(householdsFile);
 
+    do { // search for household info corresponding to householdID
+        std::getline(infile, buffer, ',');
+        
+        if (!infile.good()) throw std::invalid_argument {"Household matching householdID does not exist"};
+
+    } while (!std::isdigit(buffer.front()) || std::stoull(buffer) != householdID);
+
+    std::getline(infile, buffer); // gets the rest of ID line
+
+    // name, userIDs...
+    auto houseFields { buffer | std::views::split(',') };
+
+    // allocate household constructed with its name
+    auto householdPtr { std::make_shared<Household>(houseFields.front()) };
     
-    getline(infile, buffer); // gets the rest of ID line
-    // TODO read the userIDs for this household from file and plug into below
-    buffer.erase(0,1); // gets rid of first ,
-    Household house(buffer.substr(0,buffer.find(','))); 
-    buffer = buffer.substr(buffer.find(',') + 1, buffer.size() - buffer.find(',') - 1);
-    
-    auto householdPtr{ std::make_shared<Household>(house) };
+    auto userIDs { houseFields 
+        | std::ranges::views::drop(1)
+        | std::ranges::views::transform([](auto idString){ return std::stoull(idString | std::ranges::to<std::string>()); })
+        | std::ranges::to<std::vector<uint64_t>>()
+    };
 
-    std::vector<uint64_t> ids;
-
-    while (buffer != "<chores>") { // adds users
-        getline(infile, buffer);
-        std::string id {buffer.substr(0,buffer.find(','))};
-
-        uint64_t userID{std::stoull(id)};
-        ids.push_back(userID);
-        auto user{ UserManager::loadUser(userID) };
+    // adds users
+    for (uint64_t userID : userIDs) { 
+        auto user { UserManager::loadUser(std::forward<uint64_t>(userID)) };
 
         householdPtr->handleUserJoining(*user);
         user->addHousehold(householdPtr);
-
-        buffer = buffer.substr(buffer.find(',') + 1, buffer.size() - buffer.find(',') - 1);
     }
-    getline(infile, buffer);
-    while (buffer != "</chores>") // adds chores
-    {
+
+    std::getline(infile, buffer);
+    while (buffer != "</>") { // adds chores
+        // name, time, completion, priority, location, interval, availabilities...
+        auto choreFields { buffer | std::views::split(',') };
+        auto it { choreFields.cbegin() };
+        
         Chore newChore;
-        // FirstChore,2025/03/04|16:45:00,0,2,kitchen,7d|3,2,1,
-        newChore.mName = buffer.substr(0, buffer.find(',') - 1);
-        buffer = buffer.substr(buffer.find(',') + 1, buffer.size() - buffer.find(',') - 1);
-        //newChore.mDateAndTime = buffer.substr(0,buffer.find(',') - 1); 
-        buffer = buffer.substr(buffer.find(',') + 1, buffer.size() - buffer.find(',') - 1);
-        if (!(buffer[0] - 'a')) // buffer[0] = 0
-            newChore.mCompletionStatus = false;
-        else
-            newChore.mCompletionStatus = true;
-        buffer = buffer.substr(buffer.find(',') + 1, buffer.size() - buffer.find(',') - 1);
+        newChore.mName = *it | std::ranges::to<std::string>();
+        
+        std::istringstream { *(++it) | std::ranges::to<std::string>() } 
+            >> std::chrono::parse("%F %T", newChore.mDateAndTime);
+        
+        newChore.mCompletionStatus = std::string_view(*(++it)) != "0";
+        
+        newChore.mPriority = static_cast<Priority>(std::stoul(*(++it) | std::ranges::to<std::string>()));
+        
+        newChore.mLocation = *(++it) | std::ranges::to<std::string>();
+        
+        Chore::timepoint_t::duration d;
+        std::istringstream { *(++it) | std::ranges::to<std::string>() }
+            >> std::chrono::parse("%F %T", d);
 
-        switch(buffer[0])
-        {
-            case '0': newChore.mPriority = Priority::LOW;
-            case '1': newChore.mPriority = Priority::MEDIUM;
-            case '2': newChore.mPriority = Priority::HIGH;
-            case '3': newChore.mPriority = Priority::IMMINENT;
+        if (d != decltype(d)::zero()) 
+            newChore.mRecurrenceInterval = d;
+
+        for (uint64_t userID : userIDs) {
+            // ensure that there are no more users than availabilities
+            assert(std::next(it) != choreFields.cend());
+            [[assume(std::next(it) != choreFields.cend())]];
+
+            newChore.addAvailability(
+                std::forward<uint64_t>(userID), 
+                static_cast<Availability>(std::stoul(*(++it) | std::ranges::to<std::string>()))
+            );
         }
-        buffer = buffer.substr(buffer.find(',') + 1, buffer.size() - buffer.find(',') - 1);
-        newChore.mLocation = buffer.substr(0,buffer.find(',') - 1);
-        buffer = buffer.substr(buffer.find(',') + 1, buffer.size() - buffer.find(',') - 1);
-        // newChore.mRecurrenceInterval = buffer.substr(0,buffer.find(',') - 1);
-        buffer = buffer.substr(buffer.find(',') + 1, buffer.size() - buffer.find(',') - 1);
-        buffer.erase(0,1); // deletes '|'
-        for (uint64_t i : ids)
-        {
-            newChore.addAvailability(i, static_cast<Availability>(buffer.front())); // think about 2 digit availability later
-        }
-        getline(infile, buffer);
-        house.addChore(std::move(newChore));
+        
+        householdPtr->addChore(std::move(newChore));
+        std::getline(infile, buffer);
     }
-
-    infile.close();
 
     return householdPtr;
 }
