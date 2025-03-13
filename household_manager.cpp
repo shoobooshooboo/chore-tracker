@@ -1,13 +1,12 @@
 #include "household_manager.hpp"
 
 std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t householdID) {
-    Household house;
 
     // TODO read all data into household from file
 
     // TODO read the userIDs for this household from file and plug into below
 
-    auto householdPtr{ std::make_shared<Household>(house) };
+    auto householdPtr{ std::make_shared<Household>("placeholder") };
 
     // feel free to restructure this in a way that makes sense
     while (true /*TODO actual condition should be while users left from this household*/) {

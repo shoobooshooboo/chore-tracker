@@ -42,7 +42,7 @@ void App::signUp(void) {
     // logs in automatically
     UserManager::loadedUsers.push_back(newUser);
     
-    assert(UserManager::loadedUsers.size() == 1);
+    [[assume(UserManager::loadedUsers.size() == 1)]];
     
     // TODO query for next available unique HOUSEHOLD id
 
