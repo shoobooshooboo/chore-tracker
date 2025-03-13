@@ -17,7 +17,7 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     auto houseFields { buffer | std::views::split(',') };
 
     // allocate household constructed with its name
-    auto householdPtr { std::make_shared<Household>(houseFields.front() | std::ranges::to<std::string>()) };
+    auto householdPtr { std::make_shared<Household>(std::ranges::to<std::string>(houseFields.front())) };
     
     const std::vector<uint64_t> userIDs { houseFields 
         | std::ranges::views::drop(1)
