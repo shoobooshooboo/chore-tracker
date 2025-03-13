@@ -11,7 +11,7 @@
 #include <ranges>
 #include "chore.hpp"
 
-// forward declared for use in vector<weak_ptr<User>>
+// forward declared for use in vector<reference_wrapper<User>>
 class User;
 
 class Household {
@@ -38,7 +38,7 @@ private:
     std::vector<std::reference_wrapper<User>> mUsers;
 
 public:
-    Household(std::string&& name = "");
+    Household(std::string&& name);
 
     // HouseholdManager interface
 
@@ -51,6 +51,8 @@ public:
 
     // App interface
     void addChore(Chore&& newChore);
+
+    void removeChore(decltype(mChores)::const_iterator toRemove);
 
     void sortChores(SortType sortType);
 

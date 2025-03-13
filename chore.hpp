@@ -32,6 +32,10 @@ private:
     // maps userIDs to availabilities
     std::unordered_map<uint64_t, Availability> mAvailabilities;
 public:
+    Chore(const std::string& name, timepoint_t dateTime, Priority priority, const std::string& location);
+    Chore(const std::string& name, timepoint_t dateTime, Priority priority, const std::string& location, timepoint_t::duration recurrenceInterval);
+
+
     // return value indicates success 
     bool addAvailability(const uint64_t userID, const Availability availability);
 

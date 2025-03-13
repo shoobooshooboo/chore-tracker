@@ -8,7 +8,6 @@ container_t::iterator findLoadedUser(const uint64_t userID) {
     );
 }
 
-// assumes user exists
 container_t::iterator loadUser(const uint64_t userID) {
     auto it{findLoadedUser(userID)};
     if (it == loadedUsers.cend()) { // user is not yet loaded

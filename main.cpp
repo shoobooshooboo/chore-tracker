@@ -5,11 +5,12 @@
 // All of the user IO here to be replaced with actual GUI interaction
 int main(void) {
 
-    char input{'\0'};
-    while (input < '1' || input > '2') {
+    char input;
+    do {
         std::cout << "1. Log In\n2. Sign Up\n";
         std::cin >> input;
-    }
+    } while (input < '1' || input > '2');
+
     switch (input) {
         case '1':
             App::logIn();
@@ -20,13 +21,5 @@ int main(void) {
     }
     
     App::startup();
-
-    // TODO put some stuff here 
-    /** features to show
-     * making a household 
-     * inviting users by ID (TODO)
-     * adding chores to a household
-     * chore display: all, filter, search, sort
-     * */ 
 
 }
