@@ -1,0 +1,36 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 134,
+                        "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
+                        "functionName": "background_color",
+                        "line": 7
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
+                        "functionName": "text_color",
+                        "line": 11
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 5,
+                        "durationMicroseconds": 186,
+                        "errorMessage": "",
+                        "functionName": "toggle_dark_mode",
+                        "line": 15
+                    }
+                ],
+                "filepath": "C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/testv3/testv3/Settings.qml"
+            }
+        ],
+        "moduleId": "testv3(apptestv3)"
+    }
+]
