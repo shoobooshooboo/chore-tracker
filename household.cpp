@@ -8,7 +8,7 @@ void Household::handleUserJoining(const User& joiningUser) {
 }
 
 void Household::addChore(Chore&& newChore) {
-    mChores.push_back(newChore);
+    mChores.push_back(std::forward<Chore>(newChore));
 }
 
 void Household::removeChore(decltype(mChores)::const_iterator toRemove) {
