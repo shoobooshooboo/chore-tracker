@@ -4,17 +4,14 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     std::ifstream infile(householdsFile);
     std::string buffer;
     
-    while (true) { // scan for entry matching provided householdID
+    uint64_t houseFileID; 
+    do { // scan for entry matching provided householdID
+        infile.ignore(std::numeric_limits<std::streamsize>::max(), '@');
         std::getline(infile, buffer, ',');
         if (!infile.good()) 
             throw std::invalid_argument {"Household matching householdID does not exist"};
 
-        uint64_t id; 
-        if ((std::from_chars(buffer.data(), buffer.data() + buffer.size(), id).ec == std::errc{} && id == householdID)) 
-            break;
-        else 
-            infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
+    } while (std::from_chars(buffer.data(), buffer.data() + buffer.size(), houseFileID).ec != std::errc{} || houseFileID != householdID);
     
     std::getline(infile, buffer, ','); // gets name field
 
@@ -36,7 +33,7 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     }
 
     // adds chores
-    while (std::getline(infile, buffer), buffer != "</>") { 
+    while (std::getline(infile, buffer), buffer.front() != '@') { 
         // name, time, completion, priority, location, interval, availabilities...
         auto choreFields { buffer | std::views::split(',') };
         auto it { choreFields.cbegin() };
