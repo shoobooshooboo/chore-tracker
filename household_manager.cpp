@@ -4,12 +4,14 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     std::ifstream infile(householdsFile);
     std::string buffer;
 
+    uint64_t id;
     do { // search for household info corresponding to householdID
         std::getline(infile, buffer, ',');
         
         if (!infile.good()) throw std::invalid_argument {"Household matching householdID does not exist"};
 
-    } while (!std::isdigit(buffer.front()) || std::stoull(buffer) != householdID);
+        // value initialized errc == no error
+    } while (std::from_chars(buffer.data(), buffer.data() + buffer.size(), id).ec != std::errc() || id != householdID);
 
     std::getline(infile, buffer); // gets the rest of ID line
 
@@ -21,7 +23,12 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     
     const std::vector<uint64_t> userIDs { houseFields 
         | std::ranges::views::drop(1)
-        | std::ranges::views::transform([](auto idString){ return std::stoull(idString | std::ranges::to<std::string>()); })
+        | std::ranges::views::transform([](auto idString){ 
+            uint64_t userID; 
+            if (std::from_chars(idString.data(), idString.data() + idString.size(), userID).ec != std::errc()) 
+                throw std::runtime_error{"bad parse"};
+            return userID; 
+        })
         | std::ranges::to<std::vector<uint64_t>>()
     };
 

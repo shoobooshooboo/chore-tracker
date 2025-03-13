@@ -43,7 +43,9 @@ namespace HouseholdManager {
     template<class Enum>
     Enum strToEnum(std::string_view sv) {
         std::underlying_type_t<Enum> buff;
-        return static_cast<Enum>(*std::from_chars(sv.data(), sv.data() + sv.size(), buff).ptr);
+        if (std::from_chars(sv.data(), sv.data() + sv.size(), buff).ec != std::errc()) 
+            throw std::runtime_error{"bad parse"};
+        return static_cast<Enum>(buff);
     }
 
     template<class ChronoType>
