@@ -36,6 +36,7 @@ namespace HouseholdManager {
 
     std::shared_ptr<Household> makeNewHousehold(User& firstMemberUser, Household&& householdInfo);
 
+    void mutuallyLink(User& user, const std::shared_ptr<Household>& household);
 }  
 
 

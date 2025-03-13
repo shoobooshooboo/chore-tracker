@@ -5,7 +5,7 @@ project(ChoreTracker)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED On)
-set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -O3 -flto=auto \
+set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -O3 -flto=auto -fdiagnostics-all-candidates\
      -Wall -Wextra -Wpedantic -Werror \
      -Wnrvo -Wshadow -Wsign-conversion -Wconversion -Wmisleading-indentation -Wnull-dereference -Wdouble-promotion \
      -Wunused -Wduplicated-cond -Wduplicated-branches -Wuseless-cast -Wold-style-cast \

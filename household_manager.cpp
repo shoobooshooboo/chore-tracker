@@ -27,10 +27,9 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
 
     // adds users
     for (uint64_t userID : userIDs) { 
-        auto user { UserManager::loadUser(std::forward<uint64_t>(userID)) };
+        // auto user { UserManager::loadUser(std::forward<uint64_t>(userID)) };
 
-        user->addHousehold(householdPtr); 
-        householdPtr->handleUserJoining(std::move(*user));
+        mutuallyLink(*UserManager::loadUser(std::forward<uint64_t>(userID)), householdPtr);
     }
 
     std::getline(infile, buffer);
@@ -79,8 +78,12 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
 std::shared_ptr<Household> HouseholdManager::makeNewHousehold(User& firstMemberUser, Household&& householdInfo) {
     auto householdPtr{ std::make_shared<Household>(householdInfo) };
 
-    firstMemberUser.addHousehold(householdPtr);
-    householdPtr->handleUserJoining(std::move(firstMemberUser));
+    mutuallyLink(firstMemberUser, householdPtr);
     
     return householdPtr;
+}
+
+void HouseholdManager::mutuallyLink(User& user, const std::shared_ptr<Household>& household) {
+    user.addHousehold(household);
+    household->handleUserJoining(std::move(user));
 }
