@@ -4,27 +4,30 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     std::ifstream infile(householdsFile);
     std::string buffer;
     
-    constexpr static auto matchesID { [householdID](const std::string& buffer){ 
+    const auto matchesID { [householdID](const std::string& buff) -> bool { 
         uint64_t id; 
-        return (std::from_chars(buffer.data(), buffer.data() + buffer.size(), id).ec == std::errc() && id == householdID); 
+        return (std::from_chars(buff.data(), buff.data() + buff.size(), id).ec == std::errc{} && id == householdID); 
     } };
 
-    do { // search for household info corresponding to householdID
+    while (true) { // scan for entry matching provided householdID
         std::getline(infile, buffer, ',');
-        if (!infile.good()) throw std::invalid_argument {"Household matching householdID does not exist"};
-    } while (!matchesID(buffer));
-    
-    std::getline(infile, buffer); // gets the rest of ID line
+        if (!infile.good()) 
+            throw std::invalid_argument {"Household matching householdID does not exist"};
 
-    // name, userIDs...
-    auto houseFields { buffer | std::views::split(',') };
+        if (matchesID(buffer)) break;
+        else infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+    
+    std::getline(infile, buffer, ','); // gets name field
 
     // allocate household constructed with its name
-    auto householdPtr { std::make_shared<Household>(std::ranges::to<std::string>(houseFields.front())) };
+    auto householdPtr { std::make_shared<Household>(buffer) };
     
-    const std::vector<uint64_t> userIDs { houseFields 
-        | std::ranges::views::drop(1)
-        | std::ranges::views::transform([](auto subrange){ return std::string_view(subrange); })
+    // gets user ids associated with this household
+    std::getline(infile, buffer)
+    const std::vector<uint64_t> userIDs { buffer 
+        | std::ranges::views::split(',')
+        | std::ranges::views::transform([](auto&& subrange){ return std::string_view(subrange); })
         | std::ranges::views::transform(strToInt<uint64_t>)
         | std::ranges::to<std::vector<uint64_t>>()
     };
