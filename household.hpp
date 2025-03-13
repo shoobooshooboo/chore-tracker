@@ -11,7 +11,7 @@
 #include <ranges>
 #include "chore.hpp"
 
-// forward declared for use in vector<weak_ptr<User>>
+// forward declared for use in vector<reference_wrapper<User>>
 class User;
 
 class Household {

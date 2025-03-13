@@ -4,7 +4,8 @@ Chore::Chore(const std::string& name, timepoint_t dateTime, Priority priority, c
     mName(name), 
     mDateAndTime(dateTime),
     mPriority(priority), 
-    mLocation(location) {}
+    mLocation(location),
+    mRecurrenceInterval(std::nullopt) {}
 
 Chore::Chore(const std::string& name, timepoint_t dateTime, Priority priority, const std::string& location, timepoint_t::duration recurrenceInterval) :
     mName(name), 
