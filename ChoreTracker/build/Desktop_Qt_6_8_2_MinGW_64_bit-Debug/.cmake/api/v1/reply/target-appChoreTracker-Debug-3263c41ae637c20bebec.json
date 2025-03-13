@@ -422,7 +422,7 @@
 			{
 				"command" : 14,
 				"file" : 10,
-				"line" : 3454,
+				"line" : 3448,
 				"parent" : 63
 			},
 			{
@@ -434,7 +434,7 @@
 			{
 				"command" : 14,
 				"file" : 10,
-				"line" : 3448,
+				"line" : 3454,
 				"parent" : 63
 			},
 			{
@@ -999,10 +999,6 @@
 	[
 		{
 			"backtrace" : 65,
-			"id" : "appChoreTracker_copy_res::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 67,
 			"id" : "appChoreTracker_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -1010,11 +1006,15 @@
 			"id" : "appChoreTracker_autogen::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "appChoreTracker_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 67,
+			"id" : "appChoreTracker_copy_res::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 74,
 			"id" : "appChoreTracker_qmlimportscan::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "appChoreTracker_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "appChoreTracker::@6890427a1f51a3e7e1df",
@@ -1262,7 +1262,7 @@
 		},
 		{
 			"backtrace" : 86,
-			"path" : "Main.ui.qml",
+			"path" : "Main.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -1276,7 +1276,7 @@
 			"backtrace" : 89,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/.rcc/qmlcache/appChoreTracker_Main.ui_qml.cpp",
+			"path" : "build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/.rcc/qmlcache/appChoreTracker_Main_qml.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -1354,7 +1354,7 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/.rcc/qmlcache/appChoreTracker_Main.ui_qml.cpp.rule",
+			"path" : "build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/.rcc/qmlcache/appChoreTracker_Main_qml.cpp.rule",
 			"sourceGroupIndex" : 4
 		},
 		{

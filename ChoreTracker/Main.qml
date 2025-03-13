@@ -21,7 +21,9 @@ Window {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Toggle dark mode")
 
-            onClicked: Settings.toggle_dark_mode()
+            onClicked:{
+                Settings.toggle_dark_mode()
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
 #include <QtCore/qstring.h>
 
 namespace QmlCacheGeneratedCode {
-namespace _qt_qml_ChoreTracker_Main_ui_0x2e_qml { 
+namespace _qt_qml_ChoreTracker_Main_qml { 
     extern const unsigned char qmlData[];
     extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
     const QQmlPrivate::CachedQmlUnit unit = {
@@ -33,7 +33,7 @@ Q_GLOBAL_STATIC(Registry, unitRegistry)
 
 
 Registry::Registry() {
-    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/ChoreTracker/Main.ui.qml"), &QmlCacheGeneratedCode::_qt_qml_ChoreTracker_Main_ui_0x2e_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/ChoreTracker/Main.qml"), &QmlCacheGeneratedCode::_qt_qml_ChoreTracker_Main_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/ChoreTracker/Settings.qml"), &QmlCacheGeneratedCode::_qt_qml_ChoreTracker_Settings_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;

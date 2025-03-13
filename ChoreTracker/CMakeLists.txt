@@ -16,7 +16,7 @@ qt_add_qml_module(appChoreTracker
     URI ChoreTracker
     VERSION 1.0
     QML_FILES
-    Main.ui.qml
+    Main.qml
         RESOURCES qmldir
         QML_FILES Settings.qml
 )
