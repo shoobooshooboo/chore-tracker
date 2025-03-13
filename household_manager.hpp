@@ -42,14 +42,14 @@ namespace HouseholdManager {
 
     template<class Enum>
     Enum strToEnum(std::string_view sv) {
-        std::underlying_type<Enum> buff;
+        std::underlying_type_t<Enum> buff;
         return static_cast<Enum>(*std::from_chars(sv.data(), sv.data() + sv.size(), buff).ptr);
     }
 
     template<class ChronoType>
     ChronoType strToChrono(std::string_view sv) {
         ChronoType t{};
-        std::istringstream { sv } >> std::chrono::parse("%F %T", t);
+        std::istringstream { std::string(sv) } >> std::chrono::parse("%F %T", t);
         return t;
     }
     
