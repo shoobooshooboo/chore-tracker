@@ -3,16 +3,14 @@
 std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t householdID) {
     std::ifstream infile(householdsFile);
     std::string buffer;
-
-    uint64_t id;
+    
     do { // search for household info corresponding to householdID
         std::getline(infile, buffer, ',');
         
         if (!infile.good()) throw std::invalid_argument {"Household matching householdID does not exist"};
 
-        // value initialized errc == no error
-    } while (std::from_chars(buffer.data(), buffer.data() + buffer.size(), id).ec != std::errc() || id != householdID);
-
+    } while (!std::isdigit(buffer.front()) || std::stoull(buffer) != householdID);
+    
     std::getline(infile, buffer); // gets the rest of ID line
 
     // name, userIDs...
@@ -23,12 +21,8 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     
     const std::vector<uint64_t> userIDs { houseFields 
         | std::ranges::views::drop(1)
-        | std::ranges::views::transform([](auto idString){ 
-            uint64_t userID; 
-            if (std::from_chars(idString.data(), idString.data() + idString.size(), userID).ec != std::errc()) 
-                throw std::runtime_error{"bad parse"};
-            return userID; 
-        })
+        | std::ranges::views::transform([](auto subrange){ return std::string_view(subrange); })
+        | std::ranges::views::transform(strToInt<uint64_t>)
         | std::ranges::to<std::vector<uint64_t>>()
     };
 
@@ -43,18 +37,14 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
         auto choreFields { buffer | std::views::split(',') };
         auto it { choreFields.cbegin() };
         
-        Chore newChore( // name, time, completion, priority, location
-            *it | std::ranges::to<std::string>(),
+        Chore newChore( // name, time, completion, priority, location, interval
+            std::ranges::to<std::string>(*it),
             strToChrono<Chore::timepoint_t>(std::string_view(*++it)),
             std::string_view(*++it) != "0",
             strToEnum<Priority>(std::string_view(*++it)),
-            *++it | std::ranges::to<std::string>()
+            std::ranges::to<std::string>(*++it),
+            strToChrono<Chore::timepoint_t::duration>(std::string_view(*++it))
         );
-
-        // interval
-        auto d { strToChrono<Chore::timepoint_t::duration>(std::string_view(*++it)) };
-        if (d != decltype(d)::zero()) 
-            newChore.mRecurrenceInterval = d;
 
         for (uint64_t userID : userIDs) { // availabilities
             // ensure that there are no more users than availabilities

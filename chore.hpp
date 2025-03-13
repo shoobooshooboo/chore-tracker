@@ -30,8 +30,7 @@ struct Chore {
 public:
     using timepoint_t = std::chrono::time_point<std::chrono::system_clock>;
 
-    Chore() = default;
-    Chore(std::string&& name, timepoint_t dateTime, bool completionStatus, Priority priority, std::string&& location);
+    Chore(std::string&& name, timepoint_t dateTime, bool completionStatus, Priority priority, std::string&& location, timepoint_t::duration duration);
     
     // return value indicates success 
     bool addAvailability(uint64_t userID, Availability availability);

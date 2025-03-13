@@ -42,10 +42,10 @@ namespace HouseholdManager {
 
     template<class Enum>
     Enum strToEnum(std::string_view sv) {
-        std::underlying_type_t<Enum> buff;
-        if (std::from_chars(sv.data(), sv.data() + sv.size(), buff).ec != std::errc()) 
+        std::underlying_type_t<Enum> val;
+        if (std::from_chars(sv.data(), sv.data() + sv.size(), val).ec != std::errc()) 
             throw std::runtime_error{"bad parse"};
-        return static_cast<Enum>(buff);
+        return static_cast<Enum>(val);
     }
 
     template<class ChronoType>
@@ -53,6 +53,14 @@ namespace HouseholdManager {
         ChronoType t{};
         std::istringstream { std::string(sv) } >> std::chrono::parse("%F %T", t);
         return t;
+    }
+
+    template<class IntegralType>
+    IntegralType strToInt(std::string_view sv) {
+        IntegralType val;
+        if (std::from_chars(sv.data(), sv.data() + sv.size(), val).ec != std::errc()) 
+            throw std::runtime_error{"bad parse"};
+        return val;
     }
     
 }  
