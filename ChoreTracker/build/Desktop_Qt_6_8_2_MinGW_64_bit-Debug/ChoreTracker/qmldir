@@ -1,3 +1,6 @@
 module ChoreTracker
+typeinfo apptestv3.qmltypes
+prefer :/qt/qml/ChoreTracker/
 Main 1.0 Main.ui.qml
-singleton Settings 1.0 Settings.qml
+Settings 1.0 Settings.qml
+
