@@ -4,6 +4,7 @@
 
 #include <filesystem>
 #include <memory>
+#include <exception>
 #include "user.hpp"
 #include "household.hpp"
 #include "user_manager.hpp"
