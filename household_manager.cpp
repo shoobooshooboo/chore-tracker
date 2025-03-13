@@ -54,7 +54,6 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
             assert(std::next(it) != choreFields.cend());
             [[assume(std::next(it) != choreFields.cend())]];
 
-            const std::string_view svAvailability(*++it);
             newChore.addAvailability(
                 std::forward<uint64_t>(userID), 
                 strToEnum<Availability>(std::string_view(*++it))    
