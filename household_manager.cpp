@@ -4,18 +4,16 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     std::ifstream infile(householdsFile);
     std::string buffer;
     
-    const auto matchesID { [householdID](const std::string& buff) -> bool { 
-        uint64_t id; 
-        return (std::from_chars(buff.data(), buff.data() + buff.size(), id).ec == std::errc{} && id == householdID); 
-    } };
-
     while (true) { // scan for entry matching provided householdID
         std::getline(infile, buffer, ',');
         if (!infile.good()) 
             throw std::invalid_argument {"Household matching householdID does not exist"};
 
-        if (matchesID(buffer)) break;
-        else infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        uint64_t id; 
+        if ((std::from_chars(buffer.data(), buffer.data() + buffer.size(), id).ec == std::errc{} && id == householdID)) 
+            break;
+        else 
+            infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
     
     std::getline(infile, buffer, ','); // gets name field
