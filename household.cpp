@@ -3,7 +3,7 @@
 Household::Household(std::string&& name) :
     mName(name) {}
 
-void Household::handleUserJoining(const User& joiningUser) {
+void Household::handleUserJoining(User&& joiningUser) {
     mUsers.emplace_back(joiningUser);
 }
 

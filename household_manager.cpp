@@ -17,7 +17,7 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     auto houseFields { buffer | std::views::split(',') };
 
     // allocate household constructed with its name
-    auto householdPtr { std::make_shared<Household>(houseFields.front()) };
+    auto householdPtr { std::make_shared<Household>(houseFields.front() | std::ranges::to<std::string>()) };
     
     auto userIDs { houseFields 
         | std::ranges::views::drop(1)
@@ -29,8 +29,8 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     for (uint64_t userID : userIDs) { 
         auto user { UserManager::loadUser(std::forward<uint64_t>(userID)) };
 
-        householdPtr->handleUserJoining(*user);
-        user->addHousehold(householdPtr);
+        user->addHousehold(householdPtr); 
+        householdPtr->handleUserJoining(std::move(*user));
     }
 
     std::getline(infile, buffer);
@@ -51,7 +51,7 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
         
         newChore.mLocation = *(++it) | std::ranges::to<std::string>();
         
-        Chore::timepoint_t::duration d;
+        Chore::timepoint_t::duration d{};
         std::istringstream { *(++it) | std::ranges::to<std::string>() }
             >> std::chrono::parse("%F %T", d);
 
@@ -79,8 +79,8 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
 std::shared_ptr<Household> HouseholdManager::makeNewHousehold(User& firstMemberUser, Household&& householdInfo) {
     auto householdPtr{ std::make_shared<Household>(householdInfo) };
 
-    householdPtr->handleUserJoining(firstMemberUser);
     firstMemberUser.addHousehold(householdPtr);
+    householdPtr->handleUserJoining(std::move(firstMemberUser));
     
     return householdPtr;
 }

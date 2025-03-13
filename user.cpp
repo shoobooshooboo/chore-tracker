@@ -10,7 +10,7 @@ void User::addHousehold(std::shared_ptr<Household> householdToJoin) {
     mHouseholds.push_back(householdToJoin);
 }
 
-const std::vector<std::shared_ptr<Household>>& User::getHouseholds() const {
+const std::vector<std::shared_ptr<Household>>& User::getHouseholds() const noexcept {
     return mHouseholds;
 }
 

@@ -43,7 +43,7 @@ public:
     // HouseholdManager interface
 
     // allows this household to reference a user joining the household 
-    void handleUserJoining(const User& joiningUser);
+    void handleUserJoining(User&& joiningUser);
 
 
     
