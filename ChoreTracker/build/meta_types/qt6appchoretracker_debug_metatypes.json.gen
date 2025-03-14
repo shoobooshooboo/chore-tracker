@@ -9,13 +9,31 @@
                     }
                 ],
                 "className": "Backend",
-                "lineNumber": 7,
+                "lineNumber": 9,
                 "methods": [
                     {
                         "access": "public",
-                        "index": 1,
+                        "index": 2,
                         "name": "increment_toggledCount",
                         "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 3,
+                        "name": "get_chores_count",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "get_chore",
+                        "returnType": "QString"
                     }
                 ],
                 "object": true,
@@ -33,6 +51,20 @@
                         "stored": true,
                         "type": "QString",
                         "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "choresList",
+                        "notify": "choresList_changed",
+                        "read": "get_choresList",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "std::vector<QString>",
+                        "user": false
                     }
                 ],
                 "qualifiedClassName": "Backend",
@@ -41,6 +73,12 @@
                         "access": "public",
                         "index": 0,
                         "name": "toggledCount_changed",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "name": "choresList_changed",
                         "returnType": "void"
                     }
                 ],

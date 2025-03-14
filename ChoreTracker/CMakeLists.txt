@@ -4,7 +4,7 @@ project(ChoreTracker VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Quick Core)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
@@ -35,6 +35,7 @@ set_target_properties(appChoreTracker PROPERTIES
 
 target_link_libraries(appChoreTracker
     PRIVATE Qt6::Quick
+    PRIVATE Qt6::Core
 )
 
 include(GNUInstallDirs)

@@ -44,8 +44,14 @@ static constexpr auto qt_meta_stringdata_ZN7BackendE = QtMocHelpers::stringData(
     "auto",
     "toggledCount_changed",
     "",
+    "choresList_changed",
     "increment_toggledCount",
-    "toggledCount"
+    "get_chores_count",
+    "get_chore",
+    "index",
+    "toggledCount",
+    "choresList",
+    "std::vector<QString>"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -57,30 +63,37 @@ Q_CONSTINIT static const uint qt_meta_data_ZN7BackendE[] = {
       12,       // revision
        0,       // classname
        1,   14, // classinfo
-       2,   16, // methods
-       1,   30, // properties
+       5,   16, // methods
+       2,   53, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // classinfo: key, value
        1,    2,
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    0,   28,    4, 0x06,    2 /* Public */,
+       3,    0,   46,    4, 0x06,    3 /* Public */,
+       5,    0,   47,    4, 0x06,    4 /* Public */,
 
  // methods: name, argc, parameters, tag, flags, initial metatype offsets
-       5,    0,   29,    4, 0x02,    3 /* Public */,
+       6,    0,   48,    4, 0x02,    5 /* Public */,
+       7,    0,   49,    4, 0x02,    6 /* Public */,
+       8,    1,   50,    4, 0x02,    7 /* Public */,
 
  // signals: parameters
+    QMetaType::Void,
     QMetaType::Void,
 
  // methods: parameters
     QMetaType::Void,
+    QMetaType::Int,
+    QMetaType::QString, QMetaType::Int,    9,
 
  // properties: name, type, flags, notifyId, revision
-       6, QMetaType::QString, 0x00015001, uint(0), 0,
+      10, QMetaType::QString, 0x00015001, uint(0), 0,
+      11, 0x80000000 | 12, 0x00015009, uint(1), 0,
 
        0        // eod
 };
@@ -94,12 +107,21 @@ Q_CONSTINIT const QMetaObject Backend::staticMetaObject = { {
     qt_metaTypeArray<
         // property 'toggledCount'
         QString,
+        // property 'choresList'
+        std::vector<QString>,
         // Q_OBJECT / Q_GADGET
         Backend,
         // method 'toggledCount_changed'
         void,
+        // method 'choresList_changed'
+        void,
         // method 'increment_toggledCount'
-        void
+        void,
+        // method 'get_chores_count'
+        int,
+        // method 'get_chore'
+        QString,
+        int
     >,
     nullptr
 } };
@@ -110,7 +132,12 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->toggledCount_changed(); break;
-        case 1: _t->increment_toggledCount(); break;
+        case 1: _t->choresList_changed(); break;
+        case 2: _t->increment_toggledCount(); break;
+        case 3: { int _r = _t->get_chores_count();
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
+        case 4: { QString _r = _t->get_chore((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
@@ -123,11 +150,19 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
                 return;
             }
         }
+        {
+            using _q_method_type = void (Backend::*)();
+            if (_q_method_type _q_method = &Backend::choresList_changed; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+                *result = 1;
+                return;
+            }
+        }
     }
     if (_c == QMetaObject::ReadProperty) {
         void *_v = _a[0];
         switch (_id) {
         case 0: *reinterpret_cast< QString*>(_v) = _t->get_toggledCount(); break;
+        case 1: *reinterpret_cast< std::vector<QString>*>(_v) = _t->get_choresList(); break;
         default: break;
         }
     }
@@ -152,20 +187,20 @@ int Backend::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 5;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
@@ -174,5 +209,11 @@ int Backend::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void Backend::toggledCount_changed()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void Backend::choresList_changed()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP

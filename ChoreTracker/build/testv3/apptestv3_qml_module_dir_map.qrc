@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/qt/qml/testv3">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/testv3</file>
-
-  </qresource>
-</RCC>

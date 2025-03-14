@@ -21,7 +21,22 @@ Module {
             index: 0
             isReadonly: true
         }
+        Property {
+            name: "choresList"
+            type: "std::vector<QString>"
+            read: "get_choresList"
+            notify: "choresList_changed"
+            index: 1
+            isReadonly: true
+        }
         Signal { name: "toggledCount_changed" }
+        Signal { name: "choresList_changed" }
         Method { name: "increment_toggledCount" }
+        Method { name: "get_chores_count"; type: "int" }
+        Method {
+            name: "get_chore"
+            type: "QString"
+            Parameter { name: "index"; type: "int" }
+        }
     }
 }
