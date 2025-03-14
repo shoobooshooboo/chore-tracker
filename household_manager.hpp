@@ -7,6 +7,7 @@
 #include <type_traits>
 #include <memory>
 #include <exception>
+#include <span>
 #include <charconv>
 #include <cctype>
 #include <sstream>
@@ -37,6 +38,8 @@ namespace HouseholdManager {
     std::shared_ptr<Household> loadHousehold(const uint64_t householdID); 
 
     std::shared_ptr<Household> makeNewHousehold(User& firstMemberUser, Household&& householdInfo);
+
+    Chore parseChoreLine(const std::string& buffer, const std::vector<uint64_t>& userIDs);
 
     void mutuallyLink(User& user, const std::shared_ptr<Household>& household);
 

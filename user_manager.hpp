@@ -9,7 +9,7 @@
 #include <print>
 #include <filesystem>
 #include <limits>
-#include <vector>
+#include <deque>
 #include <memory>
 #include "user.hpp"
 
@@ -19,7 +19,8 @@ namespace UserManager {
         // id number,username,password|first last,household_id,next_household_id,...,last_household_id\n
         const std::filesystem::path userFile{"users.csv"};
 
-        using container_t = std::vector<User>;
+        // deque preserves references to its elements
+        using container_t = std::deque<User>;
 
         container_t loadedUsers;
     }
