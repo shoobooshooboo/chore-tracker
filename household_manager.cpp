@@ -5,7 +5,7 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     std::string buffer;
     
     do { // scan for entry matching provided householdID
-        // @ indicates a new chore
+        // @ indicates a new household
         infile.ignore(std::numeric_limits<std::streamsize>::max(), '@');
         std::getline(infile, buffer, ',');
         if (!infile.good()) 
@@ -65,7 +65,7 @@ Chore HouseholdManager::parseChoreLine(const std::string& buffer, const std::vec
         assert(std::next(it) != choreFields.cend());
         [[assume(std::next(it) != choreFields.cend())]];
 
-        newChore.addAvailability(std::forward<uint64_t>(userID), strToEnum<Availability>(std::string_view(*++it)));
+        newChore.addAvailability(userID, strToEnum<Availability>(std::string_view(*++it)));
     }
     return newChore;
 }

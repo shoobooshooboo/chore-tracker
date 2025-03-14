@@ -8,7 +8,7 @@ Chore::Chore(std::string&& name, timepoint_t dateTime, bool completionStatus, Pr
     mLocation(std::forward<std::string>(location)),
     mRecurrenceInterval(interval) 
 {
-    if (mRecurrenceInterval == Chore::timepoint_t::duration::zero()) 
+    if (mRecurrenceInterval == timepoint_t::duration::zero()) 
         mRecurrenceInterval.reset();
 }
 
