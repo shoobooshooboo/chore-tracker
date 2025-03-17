@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/testv3">
-    <file alias="qmldir">C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/testv3/testv3/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/testv3/qmldir</file>
-  </qresource>
-</RCC>
-
