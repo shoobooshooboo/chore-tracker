@@ -60,7 +60,6 @@ Window {
         var choreCount = backend.get_chores_count()
         for(var i = 0; i < choreCount; i++){
             choresList.append({"name": backend.get_chore(i)})
-            console.log(backend.get_chore(i))
         }
     }
 
