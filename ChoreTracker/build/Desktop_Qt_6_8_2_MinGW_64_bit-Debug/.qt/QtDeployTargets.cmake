@@ -1,3 +1,3 @@
-set(__QT_DEPLOY_TARGET_apptestv3_FILE C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/testv3/testv3/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/apptestv3.exe)
-set(__QT_DEPLOY_TARGET_apptestv3_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_apptestv3_RUNTIME_DLLS C:/Qt/6.8.2/mingw_64/bin/Qt6Quick.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6QmlMeta.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6QmlWorkerScript.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6QmlModels.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6Qml.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6Network.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6OpenGL.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6Gui.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6Core.dll)
+set(__QT_DEPLOY_TARGET_appChoreTracker_FILE C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/chore-tracker/ChoreTracker/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/appChoreTracker.exe)
+set(__QT_DEPLOY_TARGET_appChoreTracker_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_appChoreTracker_RUNTIME_DLLS C:/Qt/6.8.2/mingw_64/bin/Qt6Quick.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6QmlMeta.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6QmlWorkerScript.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6QmlModels.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6Qml.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6Network.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6OpenGL.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6Gui.dll;C:/Qt/6.8.2/mingw_64/bin/Qt6Core.dll)

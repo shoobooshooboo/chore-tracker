@@ -6,6 +6,13 @@ Backend::Backend() {
     }
 }
 
+
+QString Backend::get_dynamicText() {
+    return _dynamicText;
+}
+
+
+
 QString Backend::get_toggledCount(){
     return "Times toggled: " + QString::number(this->_toggledCount);
 }
@@ -25,4 +32,19 @@ int Backend::get_chores_count(){
 
 QString Backend::get_chore(int index){
     return this->_choresList[index];
+}
+
+
+void Backend::set_dynamicText(QString &newText) {
+    if (_dynamicText != newText) {
+        _dynamicText = newText;
+        QFile file("dynamicTextLog.txt");
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+            QTextStream out(&file);
+            out << newText;
+            file.close();
+        }
+
+        emit dynamicText_changed();
+    }
 }
