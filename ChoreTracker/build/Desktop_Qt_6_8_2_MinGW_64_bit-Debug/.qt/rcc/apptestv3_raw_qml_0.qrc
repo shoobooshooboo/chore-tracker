@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/testv3/">
-    <file alias="Main.ui.qml">C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/testv3/testv3/Main.ui.qml</file>
-    <file alias="Settings.qml">C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/testv3/testv3/Settings.qml</file>
-    <file alias="qmldir">C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/testv3/testv3/qmldir</file>
-  </qresource>
-</RCC>
-

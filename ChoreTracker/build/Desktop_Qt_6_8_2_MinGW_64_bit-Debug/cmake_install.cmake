@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/testv3/testv3
+# Install script for directory: C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/chore-tracker
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/testv3")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ChoreTracker")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,11 +38,11 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/testv3/testv3/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/apptestv3.exe")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/apptestv3.exe" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/apptestv3.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/chore-tracker/ChoreTracker/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/appChoreTracker.exe")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appChoreTracker.exe" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appChoreTracker.exe")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "C:/Qt/Tools/mingw1310_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/apptestv3.exe")
+      execute_process(COMMAND "C:/Qt/Tools/mingw1310_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appChoreTracker.exe")
     endif()
   endif()
 endif()
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/testv3/testv3/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/chore-tracker/ChoreTracker/build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

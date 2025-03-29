@@ -132,7 +132,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/testv3
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/ChoreTracker
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -402,15 +402,6 @@ Vulkan_LIBRARY:FILEPATH=Vulkan_LIBRARY-NOTFOUND
 
 //Path to a program.
 WINDEPLOYQT_EXECUTABLE:FILEPATH=C:/Qt/6.8.2/mingw_64/bin/windeployqt.exe
-
-//Value Computed by CMake
-testv3_BINARY_DIR:STATIC=C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build
-
-//Value Computed by CMake
-testv3_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-testv3_SOURCE_DIR:STATIC=C:/Desktop/code/Personal/chore-tracker/ChoreTracker
 
 
 ########################
@@ -1491,6 +1482,6 @@ Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/testv3
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/ChoreTracker
 __qt_qml_macros_module_base_dir:INTERNAL=C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Qml
 

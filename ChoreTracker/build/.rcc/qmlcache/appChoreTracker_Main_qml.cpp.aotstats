@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 1807,
+                        "durationMicroseconds": 2088,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 11
@@ -14,15 +14,15 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot retrieve a non-object type by ID: backend",
                         "functionName": "create_chores_list",
-                        "line": 59
+                        "line": 69
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 23
@@ -33,55 +33,71 @@
                         "durationMicroseconds": 123,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
-                        "line": 28
+                        "line": 30
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 19,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot retrieve a non-object type by ID: backend",
                         "functionName": "text",
-                        "line": 29
+                        "line": 31
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 136,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 27
+                        "line": 29
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot retrieve a non-object type by ID: backend",
                         "functionName": "onClicked",
+                        "line": 37
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 39,
+                        "durationMicroseconds": 104,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
                         "line": 35
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 39,
-                        "durationMicroseconds": 92,
+                        "column": 19,
+                        "durationMicroseconds": 44,
                         "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 33
+                        "functionName": "text",
+                        "line": 45
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 146,
+                        "errorMessage": "Cannot generate efficient code for LoadClosure",
+                        "functionName": "onTextChanged",
+                        "line": 46
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "model",
-                        "line": 44
+                        "line": 54
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 143,
+                        "durationMicroseconds": 152,
                         "errorMessage": "Cannot access value for name name",
                         "functionName": "text",
-                        "line": 48
+                        "line": 58
                     },
                     {
                         "codegenSuccessfull": false,
@@ -89,23 +105,23 @@
                         "durationMicroseconds": 122,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
-                        "line": 49
+                        "line": 59
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 36,
-                        "durationMicroseconds": 1620,
+                        "durationMicroseconds": 172,
                         "errorMessage": "",
                         "functionName": "onCompleted",
-                        "line": 53
+                        "line": 63
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "onCompleted",
-                        "line": 66
+                        "line": 76
                     }
                 ],
                 "filepath": "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Main.qml"

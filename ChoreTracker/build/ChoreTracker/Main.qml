@@ -22,6 +22,8 @@ Window {
     Column{
         anchors.centerIn: parent
         spacing: 10
+
+
         Text{
             id: counter
             anchors.horizontalCenter: parent.horizontalCenter
@@ -37,8 +39,16 @@ Window {
                 Settings.toggle_dark_mode()
             }
         }
+        TextField{
+            id: dynamicTextField
+            width: 200
+            text: text
+            onTextChanged: {
+                    Qt.callLater(() => backend.dynamicText = text);
+                }
+        }
         ScrollView{
-            height: 200
+            height: 202
             ScrollBar.vertical.interactive: true
             ListView{
                 model: choresList
@@ -51,7 +61,7 @@ Window {
                 }
             }
             Component.onCompleted: {
-                y = button.y + button.height
+                y = dynamicTextField.y + dynamicTextField.height
             }
         }
     }

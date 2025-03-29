@@ -3,6 +3,7 @@ C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/appChoreTracker_autoge
   C:/Qt/6.8.2/mingw_64/include/QtCore/QByteArray \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QCryptographicHash \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QDeadlineTimer \
+  C:/Qt/6.8.2/mingw_64/include/QtCore/QFile \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QFlags \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QHash \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QIODevice \
@@ -14,6 +15,7 @@ C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/appChoreTracker_autoge
   C:/Qt/6.8.2/mingw_64/include/QtCore/QSharedDataPointer \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QString \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QStringList \
+  C:/Qt/6.8.2/mingw_64/include/QtCore/QTextStream \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QUrl \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QtCore \

@@ -1,4 +1,4 @@
-set(qml_import_scanner_imports_count 13)
+set(qml_import_scanner_imports_count 12)
 set(qml_import_scanner_import_0 "CLASSNAME;QtQuick2Plugin;LINKTARGET;Qt6::qtquick2plugin;NAME;QtQuick;PATH;C:/Qt/6.8.2/mingw_64/qml/QtQuick;PLUGIN;qtquick2plugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQuick/;RELATIVEPATH;QtQuick;TYPE;module;")
 set(qml_import_scanner_import_1 "CLASSNAME;QtQmlPlugin;LINKTARGET;Qt6::qmlplugin;NAME;QtQml;PATH;C:/Qt/6.8.2/mingw_64/qml/QtQml;PLUGIN;qmlplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQml/;RELATIVEPATH;QtQml;TYPE;module;")
 set(qml_import_scanner_import_2 "NAME;QML;PATH;C:/Qt/6.8.2/mingw_64/qml/QML;PREFER;:/qt-project.org/imports/QML/;RELATIVEPATH;QML;TYPE;module;")
@@ -11,5 +11,4 @@ set(qml_import_scanner_import_8 "CLASSNAME;QtQuickControls2ImplPlugin;LINKTARGET
 set(qml_import_scanner_import_9 "CLASSNAME;QtQuickControls2BasicStyleImplPlugin;LINKTARGET;Qt6::qtquickcontrols2basicstyleimplplugin;NAME;QtQuick.Controls.Basic.impl;PATH;C:/Qt/6.8.2/mingw_64/qml/QtQuick/Controls/Basic/impl;PLUGIN;qtquickcontrols2basicstyleimplplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQuick/Controls/Basic/impl/;RELATIVEPATH;QtQuick/Controls/Basic/impl;TYPE;module;")
 set(qml_import_scanner_import_10 "CLASSNAME;QmlShapesPlugin;LINKTARGET;Qt6::qmlshapesplugin;NAME;QtQuick.Shapes;PATH;C:/Qt/6.8.2/mingw_64/qml/QtQuick/Shapes;PLUGIN;qmlshapesplugin;PREFER;:/qt-project.org/imports/QtQuick/Shapes/;RELATIVEPATH;QtQuick/Shapes;TYPE;module;")
 set(qml_import_scanner_import_11 "COMPONENTS;C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker/Main.qml;C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker/Settings.qml;NAME;ChoreTracker;PATH;C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker;PREFER;:/qt/qml/ChoreTracker/;RELATIVEPATH;ChoreTracker;TYPE;module;")
-set(qml_import_scanner_import_12 "NAME;testv3;TYPE;module;")
 
