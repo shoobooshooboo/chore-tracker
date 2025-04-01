@@ -21,14 +21,6 @@
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 22,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on initialItem.",
-                        "functionName": "initialItem",
-                        "line": 13
-                    },
-                    {
-                        "codegenSuccessfull": false,
                         "column": 23,
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on fill.",
@@ -37,11 +29,11 @@
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 28,
-                        "durationMicroseconds": 65,
+                        "column": 27,
+                        "durationMicroseconds": 30877,
                         "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
-                        "functionName": "stackViewRef",
-                        "line": 18
+                        "functionName": "onCompleted",
+                        "line": 16
                     }
                 ],
                 "filepath": "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/WindowManager.qml"

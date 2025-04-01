@@ -46,11 +46,11 @@ Rectangle {
             text: "Go to household page"
             onClicked:{
                 if (stackViewRef){
-                    stackViewRef.push("Household.qml")
-                    print("woo!")
+                    stackViewRef.push(Settings.householdWindow)
                 }
-                else
-                    print("nuh-uh")
+                else{
+                    print("goddamnit")
+                }
             }
         }
     }

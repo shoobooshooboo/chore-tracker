@@ -10,11 +10,12 @@ ApplicationWindow {
     StackView{
         id: stackView
         anchors.fill: parent
-        initialItem: mainWindowComponent
+        //initialItem: Settings.mainWindow
     }
 
-    Rectangle {
-        id: mainWindowComponent
-        Main{stackViewRef: stackView}
+    Component.onCompleted:{
+        Settings.mainWindow.stackViewRef = stackView
+        Settings.householdWindow.stackViewRef = stackView
+        stackView.push(Settings.mainWindow)
     }
 }

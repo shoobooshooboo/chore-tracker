@@ -1,4 +1,3 @@
-pragma Singleton
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
@@ -11,6 +10,8 @@ Rectangle {
     color: Settings.background_color()
     // title: qsTr("Hello World")
     // visible: true
+
+    property var stackViewRef
 
     ListModel{
         id: choresList
@@ -28,6 +29,7 @@ Rectangle {
         }
 
         ScrollView{
+            id: choresScrollView
             ScrollBar.vertical.interactive: true
             ListView{
                 model: choresList
@@ -42,6 +44,20 @@ Rectangle {
             Component.onCompleted: {
                 y = header.y + header.height
                 height = Settings.height - y
+            }
+        }
+    }
+    Button{
+        id:backButton
+        anchors.horizontalCenter: parent.left + backButton.width / 2
+        anchors.verticalCenter: parent.top + backButton.height / 2
+        text: qsTr("Back")
+        onClicked:{
+            if (stackViewRef){
+                stackViewRef.pop()
+                print("Woo!")
+            }else{
+                print("Boo!")
             }
         }
     }

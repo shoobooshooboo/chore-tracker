@@ -1,5 +1,5 @@
 module ChoreTracker
 WindowManager 1.0 WindowManager.qml
 Main 1.0 Main.qml
-singleton Household 1.0 Household.qml
+Household 1.0 Household.qml
 singleton Settings 1.0 Settings.qml

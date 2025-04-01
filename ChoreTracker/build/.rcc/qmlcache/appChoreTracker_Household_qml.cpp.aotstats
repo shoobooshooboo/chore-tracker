@@ -6,98 +6,122 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 2421,
+                        "durationMicroseconds": 8058,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 9
+                        "line": 8
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 13,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 84,
                         "errorMessage": "",
                         "functionName": "height",
-                        "line": 10
+                        "line": 9
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 152,
+                        "durationMicroseconds": 147,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
-                        "line": 11
+                        "line": 10
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "create_chores_list",
-                        "line": 49
+                        "line": 65
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 108,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 20
+                        "line": 21
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 182,
+                        "durationMicroseconds": 126,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
-                        "line": 27
+                        "line": 28
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 99,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 26
+                        "line": 27
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "model",
-                        "line": 33
+                        "line": 35
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 174,
+                        "durationMicroseconds": 172,
                         "errorMessage": "Cannot access value for name name",
                         "functionName": "text",
-                        "line": 37
+                        "line": 39
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 133,
+                        "durationMicroseconds": 123,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
-                        "line": 38
+                        "line": 40
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 36,
-                        "durationMicroseconds": 322,
+                        "durationMicroseconds": 305,
                         "errorMessage": "",
                         "functionName": "onCompleted",
-                        "line": 42
+                        "line": 44
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 19,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "Cannot access value for name stackViewRef",
+                        "functionName": "onClicked",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 35,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "cannot convert from QQuickItem::left with type QQuickAnchorLine to QJSPrimitiveValue",
+                        "functionName": "horizontalCenter",
+                        "line": 52
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 33,
+                        "durationMicroseconds": 47,
+                        "errorMessage": "cannot convert from QQuickItem::top with type QQuickAnchorLine to QJSPrimitiveValue",
+                        "functionName": "verticalCenter",
+                        "line": 53
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 55,
                         "errorMessage": "",
                         "functionName": "onCompleted",
-                        "line": 56
+                        "line": 72
                     }
                 ],
                 "filepath": "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Household.qml"

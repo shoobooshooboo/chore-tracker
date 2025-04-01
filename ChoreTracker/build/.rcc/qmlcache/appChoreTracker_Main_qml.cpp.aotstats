@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 1974,
+                        "durationMicroseconds": 9291,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 13,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 9
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 149,
+                        "durationMicroseconds": 150,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 50,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 15
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 106,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 22
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 102,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 21
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "onClicked",
                         "line": 29
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 27
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 19,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "text",
                         "line": 37
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 136,
+                        "durationMicroseconds": 148,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "onTextChanged",
                         "line": 38
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 45

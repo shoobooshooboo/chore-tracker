@@ -6,6 +6,8 @@ QtObject {
     property int height: 896
     property int width: 414
     property Backend backend: new Backend()
+    property var mainWindow: Main{}
+    property var householdWindow: Household{}
 
     function background_color(){
         return darkMode ? "#000000" : "#ffffff"
