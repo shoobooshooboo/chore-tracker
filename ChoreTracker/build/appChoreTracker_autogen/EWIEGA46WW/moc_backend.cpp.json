@@ -8,6 +8,14 @@
                 }
             ],
             "className": "Backend",
+            "constructors": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "Backend",
+                    "returnType": ""
+                }
+            ],
             "lineNumber": 10,
             "methods": [
                 {

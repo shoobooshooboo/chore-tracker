@@ -3,21 +3,13 @@ import QtQuick.Layouts
 import QtQuick.Controls.Basic
 import ChoreTracker
 
-Window {
+Rectangle {
     id: window
-    width: 640
-    height: 480
-    visible: true
+    width: Settings.width
+    height: Settings.height
     color: Settings.background_color()
-    title: qsTr("Hello World")
 
-    Backend{
-        id:backend
-    }
-
-    ListModel{
-        id: choresList
-    }
+    property var stackViewRef
 
     Column{
         anchors.centerIn: parent
@@ -28,14 +20,14 @@ Window {
             id: counter
             anchors.horizontalCenter: parent.horizontalCenter
             color: Settings.text_color()
-            text: backend.toggledCount
+            text: Settings.backend.toggledCount
         }
         Button{
             id: button
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Toggle dark mode")
             onClicked: {
-                backend.increment_toggledCount()
+                Settings.backend.increment_toggledCount()
                 Settings.toggle_dark_mode()
             }
         }
@@ -44,36 +36,22 @@ Window {
             width: 200
             text: text
             onTextChanged: {
-                    Qt.callLater(() => backend.dynamicText = text);
+                    Qt.callLater(() => Settings.backend.dynamicText = text);
                 }
         }
-        ScrollView{
-            height: 202
-            ScrollBar.vertical.interactive: true
-            ListView{
-                model: choresList
-                spacing: 10
-                delegate: Row{
-                    Text {
-                        text: name
-                        color: Settings.text_color()
-                    }
+
+        Button{
+            id: toHouseholdMenu
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: "Go to household page"
+            onClicked:{
+                if (stackViewRef){
+                    stackViewRef.push("Household.qml")
+                    print("woo!")
                 }
-            }
-            Component.onCompleted: {
-                y = dynamicTextField.y + dynamicTextField.height
+                else
+                    print("nuh-uh")
             }
         }
-    }
-
-    function create_chores_list(): void{
-        var choreCount = backend.get_chores_count()
-        for(var i = 0; i < choreCount; i++){
-            choresList.append({"name": backend.get_chore(i)})
-        }
-    }
-
-    Component.onCompleted:{
-        create_chores_list()
     }
 }

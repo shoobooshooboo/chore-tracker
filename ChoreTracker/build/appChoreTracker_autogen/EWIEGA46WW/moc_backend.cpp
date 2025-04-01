@@ -66,9 +66,9 @@ Q_CONSTINIT static const uint qt_meta_data_ZN7BackendE[] = {
        0,       // classname
        1,   14, // classinfo
        6,   16, // methods
-       3,   60, // properties
+       3,   61, // properties
        0,    0, // enums/sets
-       0,    0, // constructors
+       1,   76, // constructors
        0,       // flags
        3,       // signalCount
 
@@ -95,10 +95,16 @@ Q_CONSTINIT static const uint qt_meta_data_ZN7BackendE[] = {
     QMetaType::Int,
     QMetaType::QString, QMetaType::Int,   10,
 
+ // constructors: parameters
+    0x80000000 | 4,
+
  // properties: name, type, flags, notifyId, revision
       11, QMetaType::QString, 0x00015001, uint(0), 0,
       12, 0x80000000 | 13, 0x00015009, uint(1), 0,
       14, QMetaType::QString, 0x00015003, uint(2), 0,
+
+ // constructors: name, argc, parameters, tag, flags, initial metatype offsets
+       0,    0,   60,    4, 0x0e,   11 /* Public */,
 
        0        // eod
 };
@@ -138,6 +144,19 @@ Q_CONSTINIT const QMetaObject Backend::staticMetaObject = { {
 void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     auto *_t = static_cast<Backend *>(_o);
+    if (_c == QMetaObject::CreateInstance) {
+        switch (_id) {
+        case 0: { Backend *_r = new Backend();
+            if (_a[0]) *reinterpret_cast<QObject**>(_a[0]) = _r; } break;
+        default: break;
+        }
+    }
+    if (_c == QMetaObject::ConstructInPlace) {
+        switch (_id) {
+        case 0: { new (_a[0]) Backend(); } break;
+        default: break;
+        }
+    }
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->toggledCount_changed(); break;

@@ -3,6 +3,9 @@ import QtQuick
 
 QtObject {
     property bool darkMode: true
+    property int height: 896
+    property int width: 414
+    property Backend backend: new Backend()
 
     function background_color(){
         return darkMode ? "#000000" : "#ffffff"

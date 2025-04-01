@@ -5,27 +5,35 @@
                 "entries": [
                     {
                         "codegenSuccessfull": false,
-                        "column": 5,
-                        "durationMicroseconds": 112,
-                        "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
-                        "functionName": "background_color",
-                        "line": 7
+                        "column": 31,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type Backend for binding on backend.",
+                        "functionName": "backend",
+                        "line": 8
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 107,
+                        "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
+                        "functionName": "background_color",
+                        "line": 10
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 41,
                         "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
                         "functionName": "text_color",
-                        "line": 11
+                        "line": 14
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 153,
+                        "durationMicroseconds": 168,
                         "errorMessage": "",
                         "functionName": "toggle_dark_mode",
-                        "line": 15
+                        "line": 18
                     }
                 ],
                 "filepath": "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Settings.qml"

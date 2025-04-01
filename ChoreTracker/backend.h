@@ -16,7 +16,7 @@ class Backend : public QObject
     Q_PROPERTY(QString dynamicText READ get_dynamicText WRITE set_dynamicText NOTIFY dynamicText_changed)
 
 public:
-    Backend();
+    Q_INVOKABLE Backend();
     //toggledCount
     QString get_toggledCount();
     Q_INVOKABLE void increment_toggledCount();
@@ -41,5 +41,4 @@ signals:
     void choresList_changed();
     void dynamicText_changed();
 };
-
 #endif // BACKEND_H

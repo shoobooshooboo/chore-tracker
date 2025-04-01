@@ -4,124 +4,108 @@
             {
                 "entries": [
                     {
-                        "codegenSuccessfull": false,
+                        "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 2088,
-                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
-                        "functionName": "color",
-                        "line": 11
+                        "durationMicroseconds": 1974,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 8
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 13,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 9
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 5,
-                        "durationMicroseconds": 44,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: backend",
-                        "functionName": "create_chores_list",
-                        "line": 69
+                        "column": 12,
+                        "durationMicroseconds": 149,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
+                        "functionName": "color",
+                        "line": 10
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 47,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 23
+                        "line": 15
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 112,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
-                        "line": 30
+                        "line": 22
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 19,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: backend",
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
-                        "line": 31
+                        "line": 23
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 136,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 29
+                        "line": 21
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 28,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: backend",
+                        "durationMicroseconds": 18,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "onClicked",
-                        "line": 37
+                        "line": 29
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 35
+                        "line": 27
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 19,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "text",
-                        "line": 45
+                        "line": 37
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 146,
+                        "durationMicroseconds": 136,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "onTextChanged",
-                        "line": 46
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 62,
-                        "errorMessage": "",
-                        "functionName": "model",
-                        "line": 54
+                        "line": 38
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 31,
-                        "durationMicroseconds": 152,
-                        "errorMessage": "Cannot access value for name name",
-                        "functionName": "text",
-                        "line": 58
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 122,
-                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
-                        "functionName": "color",
-                        "line": 59
+                        "column": 23,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "Cannot access value for name stackViewRef",
+                        "functionName": "onClicked",
+                        "line": 47
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 36,
-                        "durationMicroseconds": 172,
+                        "column": 39,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
-                        "functionName": "onCompleted",
-                        "line": 63
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 27,
-                        "durationMicroseconds": 58,
-                        "errorMessage": "",
-                        "functionName": "onCompleted",
-                        "line": 76
+                        "functionName": "horizontalCenter",
+                        "line": 45
                     }
                 ],
                 "filepath": "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Main.qml"

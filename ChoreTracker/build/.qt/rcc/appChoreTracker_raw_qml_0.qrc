@@ -2,6 +2,8 @@
   <qresource prefix="/qt/qml/ChoreTracker/">
     <file alias="Main.qml">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Main.qml</file>
     <file alias="Settings.qml">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Settings.qml</file>
+    <file alias="Household.qml">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Household.qml</file>
+    <file alias="WindowManager.qml">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/WindowManager.qml</file>
     <file alias="qmldir">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/qmldir</file>
   </qresource>
 </RCC>

@@ -47,5 +47,6 @@ Module {
             type: "QString"
             Parameter { name: "index"; type: "int" }
         }
+        Method { name: "Backend"; isConstructor: true }
     }
 }
