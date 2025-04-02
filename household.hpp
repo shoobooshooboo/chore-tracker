@@ -40,6 +40,8 @@ private:
 public:
     Household(std::string&& name);
 
+    [[nodiscard]] std::string_view getName(void) const noexcept;
+
     // HouseholdManager interface
 
     // allows this household to reference a user joining the household 
