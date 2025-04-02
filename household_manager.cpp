@@ -46,6 +46,10 @@ std::shared_ptr<Household> HouseholdManager::makeNewHousehold(User& firstMemberU
     return householdPtr;
 }
 
+void HouseholdManager::storeHousehold(const Household& household) {
+    
+}
+
 Chore HouseholdManager::parseChoreLine(const std::string& buffer, const std::vector<uint64_t>& userIDs) {
     // name, time, completion, priority, location, interval, availabilities...
     auto choreFields { buffer | std::views::split(',') };

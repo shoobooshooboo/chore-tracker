@@ -4,6 +4,7 @@
 
 #include <cassert>
 #include <filesystem>
+#include <fstream>
 #include <type_traits>
 #include <memory>
 #include <exception>
@@ -38,6 +39,8 @@ namespace HouseholdManager {
     std::shared_ptr<Household> loadHousehold(const uint64_t householdID); 
 
     std::shared_ptr<Household> makeNewHousehold(User& firstMemberUser, Household&& householdInfo);
+
+    void storeHousehold(const Household& household);
 
     Chore parseChoreLine(const std::string& buffer, const std::vector<uint64_t>& userIDs);
 
