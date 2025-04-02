@@ -1,6 +1,7 @@
 #include "household.hpp"
 
-Household::Household(std::string&& name) :
+Household::Household(uint64_t id, std::string&& name) :
+    mId(id),
     mName(name) {}
 
 std::string_view Household::getName(void) const noexcept {

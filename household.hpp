@@ -33,12 +33,13 @@ private:
         [](const Chore& a, const Chore& b){ return a.mLocation < b.mLocation; }
     };
 
+    uint64_t mId;
     std::string mName;
     std::vector<Chore> mChores;
     std::vector<std::reference_wrapper<User>> mUsers;
 
 public:
-    Household(std::string&& name);
+    Household(uint64_t id, std::string&& name);
 
     [[nodiscard]] std::string_view getName(void) const noexcept;
 

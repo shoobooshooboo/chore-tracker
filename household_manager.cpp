@@ -12,9 +12,9 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
             throw std::invalid_argument {"Household matching householdID does not exist"};
 
     } while (strToInt<uint64_t>(buffer) != householdID);
-    
+
     std::getline(infile, buffer, ','); // name
-    auto householdPtr { std::make_shared<Household>(std::move(buffer)) };
+    auto householdPtr { std::make_shared<Household>(householdID, std::move(buffer)) };
     
     // gets user ids associated with this household
     std::getline(infile, buffer);
