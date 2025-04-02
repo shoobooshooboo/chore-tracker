@@ -4,7 +4,7 @@ Household::Household(std::string&& name) :
     mName(name) {}
 
 std::string_view Household::getName(void) const noexcept {
-    return mName.data();
+    return { mName.data(), mName.size() };
 }
 
 void Household::handleUserJoining(User& joiningUser) {
