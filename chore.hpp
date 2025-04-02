@@ -42,10 +42,10 @@ public:
     std::string mLocation;
     
     std::optional<timepoint_t::duration> mRecurrenceInterval;
-
-private:
+    
     // maps userIDs to availabilities
     std::unordered_map<uint64_t, Availability> mAvailabilities;
+
 };
 
 #endif
