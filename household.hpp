@@ -45,6 +45,7 @@ public:
 
     [[nodiscard]] uint64_t getID(void) const noexcept;
 
+    [[nodiscard]] const std::vector<std::reference_wrapper<User>>& getUsers(void) const noexcept;
     // HouseholdManager interface
 
     // allows this household to reference a user joining the household 

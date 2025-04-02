@@ -12,6 +12,10 @@ uint64_t Household::getID(void) const noexcept {
     return mId;
 }
 
+const std::vector<std::reference_wrapper<User>>& Household::getUsers(void) const noexcept {
+    return mUsers;
+}
+
 void Household::handleUserJoining(User& joiningUser) {
     mUsers.push_back(std::ref(joiningUser));
 }
