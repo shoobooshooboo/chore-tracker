@@ -8,6 +8,10 @@ std::string_view Household::getName(void) const noexcept {
     return { mName.data(), mName.size() };
 }
 
+uint64_t Household::getID(void) const noexcept {
+    return mId;
+}
+
 void Household::handleUserJoining(User& joiningUser) {
     mUsers.push_back(std::ref(joiningUser));
 }
