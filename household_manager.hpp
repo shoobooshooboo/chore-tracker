@@ -40,23 +40,7 @@ namespace HouseholdManager {
 
     std::shared_ptr<Household> makeNewHousehold(User& firstMemberUser, Household&& householdInfo);
 
-    void storeHousehold(const Household& household);
-
-    void createHouseholdToFile(const Household& house) {
-        std::ofstream householdsStream(householdsFile, std::ios::app);
-        householdsStream << std::format("@{},{}", house.getID(),house.getName());
-        for (uint64_t id: house.getUsers() | std::ranges::transform([](const auto& user){ return user.getID(); })) {
-            householdsStream << std::format("{}", id)
-        }
-        householdsStream << '\n';
-        for (auto &chore : house.getChores()) {
-            householdsStream << std::format("{},{},{},{},{}", chore.mName, chore.mDateAndTime, static_cast<int>(chore.mCompletionStatus), static_cast<int>(chore.mPriority), chore.mLocation);
-            for (uint64_t id: house.getUsers() | std::ranges::transform([](const auto& user){ return user.getID(); })) {
-                householdsStream << std::format(",{}",static_cast<int>(chore.mAvailabilities[id])); 
-            }
-            householdsStream << '\n';
-        }
-    }
+    void createHouseholdToFile(const Household& house);
 
     Chore parseChoreLine(const std::string& buffer, const std::vector<uint64_t>& userIDs);
 
