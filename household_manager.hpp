@@ -10,6 +10,8 @@
 #include <exception>
 #include <span>
 #include <charconv>
+#include <ctime>
+#include <chrono>
 #include <cctype>
 #include <sstream>
 #include "user.hpp"
@@ -56,9 +58,9 @@ namespace HouseholdManager {
 
     template<class ChronoType>
     ChronoType strToChrono(std::string_view sv) {
-        ChronoType t{};
-        std::istringstream { std::string(sv) } >> std::chrono::parse("%F %T", t);
-        return t;
+        std::tm tmb;
+        std::istringstream { std::string(sv) } >> std::get_time(&tmb, "%Y-%m-%d %T");
+        return std::chrono::system_clock::from_time_t(std::mktime(&tmb));
     }
 
     template<class IntegralType>
