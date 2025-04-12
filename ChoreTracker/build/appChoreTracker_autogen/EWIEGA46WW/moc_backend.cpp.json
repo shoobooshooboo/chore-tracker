@@ -1,0 +1,123 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                }
+            ],
+            "className": "Backend",
+            "constructors": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "Backend",
+                    "returnType": ""
+                }
+            ],
+            "lineNumber": 10,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "increment_toggledCount",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "get_chores_count",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "get_chore",
+                    "returnType": "QString"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "toggledCount",
+                    "notify": "toggledCount_changed",
+                    "read": "get_toggledCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "choresList",
+                    "notify": "choresList_changed",
+                    "read": "get_choresList",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "std::vector<QString>",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "dynamicText",
+                    "notify": "dynamicText_changed",
+                    "read": "get_dynamicText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "set_dynamicText"
+                }
+            ],
+            "qualifiedClassName": "Backend",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "toggledCount_changed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "choresList_changed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "dynamicText_changed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "backend.h",
+    "outputRevision": 68
+}

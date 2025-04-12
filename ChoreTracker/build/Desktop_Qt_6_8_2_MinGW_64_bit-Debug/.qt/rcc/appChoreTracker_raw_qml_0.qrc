@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/qt/qml/ChoreTracker/">
+    <file alias="Main.qml">C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/chore-tracker/Main.qml</file>
+    <file alias="Settings.qml">C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/chore-tracker/Settings.qml</file>
+    <file alias="qmldir">C:/Users/Kevin/OneDrive/Documents/QtDesignStudio/examples/tests/chore-tracker/qmldir</file>
+  </qresource>
+</RCC>
+
