@@ -1,7 +1,6 @@
 #pragma once
 #ifndef USER_HPP
 #define USER_HPP
-
 #include <cstdint>
 #include <string>
 #include <string_view>

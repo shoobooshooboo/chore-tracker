@@ -8,6 +8,7 @@ QtObject {
     property Backend backend: new Backend()
     property var mainWindow: Main{}
     property var householdWindow: Household{}
+    property var currentUser: null
 
     function background_color(){
         return darkMode ? "#000000" : "#ffffff"
@@ -20,4 +21,6 @@ QtObject {
     function toggle_dark_mode(){
         darkMode = !darkMode
     }
+
+
 }
