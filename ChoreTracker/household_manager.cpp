@@ -57,12 +57,14 @@ void HouseholdManager::createHouseholdToFile(const Household& house)  {
     }
     householdsStream << '\n';
     for (const Chore& chore : house.getChores()) {
-        householdsStream << std::format("{},{},{},{},{}", 
+        householdsStream << std::format("{},{},{},{},{},{}", 
             chore.mName, 
             chore.mDateAndTime, 
             static_cast<int>(chore.mCompletionStatus), 
             static_cast<int>(chore.mPriority), 
-            chore.mLocation);
+            chore.mLocation,
+            std::chrono::system_clock::time_point(*chore.mRecurrenceInterval)  
+        );
         for (uint64_t id : house.getUsers() 
             | std::views::transform([](const User& user){ return user.getID(); })) {
             householdsStream << std::format(",{}", static_cast<int>(chore.mAvailabilities.at(id)));
