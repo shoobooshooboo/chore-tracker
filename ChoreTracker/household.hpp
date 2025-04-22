@@ -15,16 +15,16 @@
 class User;
 
 class Household {
-private:
+public:
     // ways to sort chores for this household
     enum SortType : unsigned {
         NAME,
         DATE,
         PRIORITY,
         LOCATION,
-        count 
+        count
     };
-
+private:
     static constexpr std::array<bool (*)(const Chore&, const Chore&), SortType::count> sortingMethods {
         // stdlib sorting functions require strict weak ordering, hence < over <=  
         [](const Chore& a, const Chore& b){ return a.mName < b.mName; }, // string::operator<=> performs lexicographical compare 
@@ -39,6 +39,7 @@ private:
     std::vector<std::reference_wrapper<User>> mUsers;
 
 public:
+
     Household(uint64_t id, std::string&& name);
 
     [[nodiscard]] std::string_view getName(void) const noexcept;
@@ -61,6 +62,8 @@ public:
     void removeChore(decltype(mChores)::const_iterator toRemove);
 
     void sortChores(SortType sortType);
+
+    void setChoreStatus(int index, bool status);
 
     [[nodiscard]] const std::vector<Chore>& getChores(void) const noexcept;
     // full return type is lengthy, is std::ranges::filter_view<...>

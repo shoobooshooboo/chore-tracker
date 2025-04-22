@@ -13,63 +13,81 @@ Rectangle {
 
     property var stackViewRef
 
-    ListModel{
-        id: choresList
+
+    Text{
+        id: header
+        font.pointSize: 20
+        text: qsTr(Settings.backend.curHouseholdName)
+        anchors.horizontalCenter: parent.horizontalCenter
+        color: Settings.text_color()
     }
 
-    Column{
+    ScrollView{
+        id: scroll
         anchors.horizontalCenter: parent.horizontalCenter
-        spacing: 10
+        anchors.top: header.bottom
+        anchors.topMargin: 20
+        anchors.left: parent.left
+        anchors.leftMargin: 100
+        width: parent.width
+        height: parent.height - header.height - 40
 
-        Text{
-            id: header
-            text: qsTr("Household:")
-            anchors.horizontalCenter: parent.horizontalCenter
-            color: Settings.text_color()
-        }
+        Column{
+            id: choresColumn
+            width: parent.width
+            spacing: 16
 
-        ScrollView{
-            id: choresScrollView
-            ScrollBar.vertical.interactive: true
-            ListView{
-                model: choresList
-                spacing: 10
-                delegate: Row{
-                    Text {
-                        text: name
-                        color: Settings.text_color()
+            Repeater{
+                model: Settings.backend.choreNames.length
+
+                Column{
+                    Button{
+                        text: qsTr(Settings.backend.choreNames[index])
+                        width: 200
+                        height: 60
+                        font.pixelSize: 20
+                        padding: 12
+                        onClicked: {
+                            print("should happen")
+                        }
+                    }
+                    Text{
+                        text: qsTr(Settings.backend.choreLocations[index])
+                        font.pixelSize: 13
+                    }
+                    Text{
+                        text: qsTr(Settings.backend.choreDates[index])
+                        font.pixelSize: 13
+                    }
+                    CheckBox{
+                        text: qsTr("Completed")
+                        checked: Settings.backend.choreStatuses[index]
+                        onCheckedChanged: {
+                            Settings.backend.set_chore_status(index, checked)
+                        }
                     }
                 }
-            }
-            Component.onCompleted: {
-                y = header.y + header.height
-                height = Settings.height - y
             }
         }
     }
     Button{
         id:backButton
-        anchors.horizontalCenter: parent.left + backButton.width / 2
-        anchors.verticalCenter: parent.top + backButton.height / 2
         text: qsTr("Back")
         onClicked:{
-            if (stackViewRef){
+            if (stackViewRef)
                 stackViewRef.pop()
-                print("Woo!")
-            }else{
-                print("Boo!")
-            }
         }
     }
+    Button{
+        id:addChoreButton
+        anchors.top: parent.top
+        anchors.right: parent.right
+        width: Qt.callLater(() => backButton.width)
+        height: Qt.callLater(() => backButton.height)
+        text: qsTr("+")
+        font.pixelSize: 40
+        onClicked:{
 
-    function create_chores_list(): void{
-        var choreCount = Settings.backend.get_chores_count()
-        for(var i = 0; i < choreCount; i++){
-            choresList.append({"name": Settings.backend.get_chore(i)})
         }
-    }
-
-    Component.onCompleted:{
-        create_chores_list()
     }
 }

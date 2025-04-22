@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 485,
+                        "durationMicroseconds": 351,
                         "errorMessage": "Cannot generate efficient code for Construct",
                         "functionName": "backend",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 67,
                         "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
                         "functionName": "background_color",
                         "line": 12
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 37,
                         "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
                         "functionName": "text_color",
                         "line": 16
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 196,
+                        "durationMicroseconds": 156,
                         "errorMessage": "",
                         "functionName": "toggle_dark_mode",
                         "line": 20

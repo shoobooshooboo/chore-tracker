@@ -16,20 +16,8 @@
                     "returnType": ""
                 }
             ],
-            "lineNumber": 10,
+            "lineNumber": 12,
             "methods": [
-                {
-                    "access": "public",
-                    "index": 3,
-                    "name": "increment_toggledCount",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "index": 4,
-                    "name": "get_chores_count",
-                    "returnType": "int"
-                },
                 {
                     "access": "public",
                     "arguments": [
@@ -38,9 +26,25 @@
                             "type": "int"
                         }
                     ],
+                    "index": 4,
+                    "name": "set_household",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        },
+                        {
+                            "name": "status",
+                            "type": "bool"
+                        }
+                    ],
                     "index": 5,
-                    "name": "get_chore",
-                    "returnType": "QString"
+                    "name": "set_chore_status",
+                    "returnType": "void"
                 }
             ],
             "object": true,
@@ -50,9 +54,9 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "name": "toggledCount",
-                    "notify": "toggledCount_changed",
-                    "read": "get_toggledCount",
+                    "name": "username",
+                    "notify": "userDataChanged",
+                    "read": "get_user_name",
                     "required": false,
                     "scriptable": true,
                     "stored": true,
@@ -64,13 +68,13 @@
                     "designable": true,
                     "final": false,
                     "index": 1,
-                    "name": "choresList",
-                    "notify": "choresList_changed",
-                    "read": "get_choresList",
+                    "name": "curHouseholdName",
+                    "notify": "curHouseholdChanged",
+                    "read": "get_cur_household_name",
                     "required": false,
                     "scriptable": true,
                     "stored": true,
-                    "type": "std::vector<QString>",
+                    "type": "QString",
                     "user": false
                 },
                 {
@@ -78,15 +82,84 @@
                     "designable": true,
                     "final": false,
                     "index": 2,
-                    "name": "dynamicText",
-                    "notify": "dynamicText_changed",
-                    "read": "get_dynamicText",
+                    "name": "householdNames",
+                    "notify": "householdNamesChanged",
+                    "read": "getHouseholdNames",
                     "required": false,
                     "scriptable": true,
                     "stored": true,
-                    "type": "QString",
-                    "user": false,
-                    "write": "set_dynamicText"
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "householdUsers",
+                    "notify": "householdUsersChanged",
+                    "read": "getHouseholdUsers",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "choreNames",
+                    "notify": "curHouseholdChanged",
+                    "read": "getChoreNames",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "choreLocations",
+                    "notify": "curHouseholdChanged",
+                    "read": "getChoreLocations",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "choreDates",
+                    "notify": "curHouseholdChanged",
+                    "read": "getChoreDates",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "choreStatuses",
+                    "notify": "curHouseholdChanged",
+                    "read": "getChoreStatuses",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
                 }
             ],
             "qualifiedClassName": "Backend",
@@ -94,19 +167,25 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "name": "toggledCount_changed",
+                    "name": "userDataChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 1,
-                    "name": "choresList_changed",
+                    "name": "householdNamesChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "name": "dynamicText_changed",
+                    "name": "householdUsersChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "curHouseholdChanged",
                     "returnType": "void"
                 }
             ],

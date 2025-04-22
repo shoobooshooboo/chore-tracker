@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 14448,
+                        "durationMicroseconds": 6652,
                         "errorMessage": "Cannot load property width from const QMetaObject.",
                         "functionName": "width",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot load property height from const QMetaObject.",
                         "functionName": "height",
                         "line": 9
@@ -22,106 +22,186 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Type const QMetaObject does not have a property background_color for calling",
                         "functionName": "color",
                         "line": 10
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 5,
-                        "durationMicroseconds": 47,
+                        "column": 15,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot load property backend from const QMetaObject.",
-                        "functionName": "create_chores_list",
-                        "line": 65
+                        "functionName": "text",
+                        "line": 20
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 16,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "Type const QMetaObject does not have a property text_color for calling",
+                        "functionName": "color",
+                        "line": 22
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 337,
+                        "durationMicroseconds": 280,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 21
                     },
                     {
-                        "codegenSuccessfull": false,
-                        "column": 20,
-                        "durationMicroseconds": 34,
-                        "errorMessage": "Type const QMetaObject does not have a property text_color for calling",
-                        "functionName": "color",
-                        "line": 28
+                        "codegenSuccessfull": true,
+                        "column": 16,
+                        "durationMicroseconds": 97,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 32
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 39,
-                        "durationMicroseconds": 217,
+                        "column": 17,
+                        "durationMicroseconds": 272,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 33
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 27
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 121,
+                        "column": 22,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
+                        "functionName": "top",
+                        "line": 28
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 95,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 20,
+                        "durationMicroseconds": 61,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 37
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 24,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "Cannot load property backend from const QMetaObject.",
                         "functionName": "model",
-                        "line": 35
+                        "line": 41
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 260,
-                        "errorMessage": "Cannot access value for name name",
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot load property backend from const QMetaObject.",
                         "functionName": "text",
-                        "line": 39
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 32,
-                        "errorMessage": "Type const QMetaObject does not have a property text_color for calling",
-                        "functionName": "color",
-                        "line": 40
+                        "line": 45
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 97,
-                        "errorMessage": "Cannot load property height from const QMetaObject.",
-                        "functionName": "onCompleted",
-                        "line": 44
+                        "durationMicroseconds": 127,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onClicked",
+                        "line": 50
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 19,
-                        "durationMicroseconds": 37,
-                        "errorMessage": "Cannot access value for name stackViewRef",
-                        "functionName": "onClicked",
+                        "column": 31,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "functionName": "text",
                         "line": 55
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 35,
-                        "durationMicroseconds": 91,
-                        "errorMessage": "cannot convert from QQuickItem::left with type QQuickAnchorLine to QJSPrimitiveValue",
-                        "functionName": "horizontalCenter",
-                        "line": 52
+                        "column": 31,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "functionName": "text",
+                        "line": 59
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 33,
-                        "durationMicroseconds": 77,
-                        "errorMessage": "cannot convert from QQuickItem::top with type QQuickAnchorLine to QJSPrimitiveValue",
-                        "functionName": "verticalCenter",
-                        "line": 53
+                        "column": 34,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "functionName": "checked",
+                        "line": 64
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 43,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "functionName": "onCheckedChanged",
+                        "line": 65
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 19,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "Cannot access value for name stackViewRef",
+                        "functionName": "onClicked",
+                        "line": 76
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 16,
+                        "durationMicroseconds": 178,
+                        "errorMessage": "Cannot generate efficient code for LoadClosure",
+                        "functionName": "width",
+                        "line": 85
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 17,
+                        "durationMicroseconds": 143,
+                        "errorMessage": "Cannot generate efficient code for LoadClosure",
+                        "functionName": "height",
+                        "line": 86
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 27,
-                        "durationMicroseconds": 105,
+                        "column": 19,
+                        "durationMicroseconds": 20,
                         "errorMessage": "",
-                        "functionName": "onCompleted",
-                        "line": 72
+                        "functionName": "onClicked",
+                        "line": 89
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 22,
+                        "durationMicroseconds": 94,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 83
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 24,
+                        "durationMicroseconds": 93,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 84
                     }
                 ],
                 "filepath": "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Household.qml"

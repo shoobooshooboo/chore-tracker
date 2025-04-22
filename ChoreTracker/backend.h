@@ -13,36 +13,35 @@ class Backend : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
-    Q_PROPERTY(QString toggledCount READ get_toggledCount NOTIFY toggledCount_changed)
-    Q_PROPERTY(std::vector<QString> choresList READ get_choresList NOTIFY choresList_changed)
-    Q_PROPERTY(QString dynamicText READ get_dynamicText WRITE set_dynamicText NOTIFY dynamicText_changed)
 
-
-    Q_PROPERTY(QString userName READ get_user_name NOTIFY userDataChanged)
+    Q_PROPERTY(QString username READ get_user_name NOTIFY userDataChanged)
+    Q_PROPERTY(QString curHouseholdName READ get_cur_household_name NOTIFY curHouseholdChanged)
     Q_PROPERTY(QVariantList householdNames READ getHouseholdNames NOTIFY householdNamesChanged)
     Q_PROPERTY(QVariantList householdUsers READ getHouseholdUsers NOTIFY householdUsersChanged)
+
+    Q_PROPERTY(QVariantList choreNames READ getChoreNames NOTIFY curHouseholdChanged)
+    Q_PROPERTY(QVariantList choreLocations READ getChoreLocations NOTIFY curHouseholdChanged)
+    Q_PROPERTY(QVariantList choreDates READ getChoreDates NOTIFY curHouseholdChanged)
+    Q_PROPERTY(QVariantList choreStatuses READ getChoreStatuses NOTIFY curHouseholdChanged)
 
 
 public:
     Q_INVOKABLE Backend();
-    //toggledCount
-    QString get_toggledCount();
-    Q_INVOKABLE void increment_toggledCount();
 
-    //dynamicList
-    std::vector<QString> get_choresList();
-    Q_INVOKABLE int get_chores_count();
-    Q_INVOKABLE QString get_chore(int index);
+    Q_INVOKABLE void set_household(int index);
 
-    //dynamicText
-    QString get_dynamicText();
-    void set_dynamicText(QString &newText);
+    QString get_user_name() const;
+    QString get_cur_household_name();
 
-    Q_INVOKABLE QString get_user_name() const;
+    QVariantList getHouseholdNames();
+    QVariantList getHouseholdUsers();
 
-    Q_INVOKABLE QVariantList getHouseholdNames();
-    Q_INVOKABLE QVariantList getHouseholdUsers();
+    QVariantList getChoreNames();
+    QVariantList getChoreLocations();
+    QVariantList getChoreDates();
+    QVariantList getChoreStatuses();
 
+    Q_INVOKABLE void set_chore_status(int index, bool status);
 private:
     int _toggledCount = 0;
     QString _dynamicText;
@@ -58,14 +57,16 @@ private:
     std::shared_ptr<Household> _houseHold1;
     std::shared_ptr<Household> _houseHold2;
     std::shared_ptr<Household> _houseHold3;
+    std::shared_ptr<Household> _curHouseHold;
 
 
 signals:
-    void toggledCount_changed();
-    void choresList_changed();
-    void dynamicText_changed();
+    // void toggledCount_changed();
+    // void choresList_changed();
+    // void dynamicText_changed();
     void userDataChanged();
     void householdNamesChanged();
     void householdUsersChanged();
+    void curHouseholdChanged();
 };
 #endif // BACKEND_H

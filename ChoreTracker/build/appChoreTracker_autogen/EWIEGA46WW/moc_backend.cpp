@@ -42,18 +42,24 @@ static constexpr auto qt_meta_stringdata_ZN7BackendE = QtMocHelpers::stringData(
     "Backend",
     "QML.Element",
     "auto",
-    "toggledCount_changed",
+    "userDataChanged",
     "",
-    "choresList_changed",
-    "dynamicText_changed",
-    "increment_toggledCount",
-    "get_chores_count",
-    "get_chore",
+    "householdNamesChanged",
+    "householdUsersChanged",
+    "curHouseholdChanged",
+    "set_household",
     "index",
-    "toggledCount",
-    "choresList",
-    "std::vector<QString>",
-    "dynamicText"
+    "set_chore_status",
+    "status",
+    "username",
+    "curHouseholdName",
+    "householdNames",
+    "QVariantList",
+    "householdUsers",
+    "choreNames",
+    "choreLocations",
+    "choreDates",
+    "choreStatuses"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -66,45 +72,50 @@ Q_CONSTINIT static const uint qt_meta_data_ZN7BackendE[] = {
        0,       // classname
        1,   14, // classinfo
        6,   16, // methods
-       3,   61, // properties
+       8,   65, // properties
        0,    0, // enums/sets
-       1,   76, // constructors
+       1,  105, // constructors
        0,       // flags
-       3,       // signalCount
+       4,       // signalCount
 
  // classinfo: key, value
        1,    2,
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    0,   52,    4, 0x06,    4 /* Public */,
-       5,    0,   53,    4, 0x06,    5 /* Public */,
-       6,    0,   54,    4, 0x06,    6 /* Public */,
+       3,    0,   52,    4, 0x06,    9 /* Public */,
+       5,    0,   53,    4, 0x06,   10 /* Public */,
+       6,    0,   54,    4, 0x06,   11 /* Public */,
+       7,    0,   55,    4, 0x06,   12 /* Public */,
 
  // methods: name, argc, parameters, tag, flags, initial metatype offsets
-       7,    0,   55,    4, 0x02,    7 /* Public */,
-       8,    0,   56,    4, 0x02,    8 /* Public */,
-       9,    1,   57,    4, 0x02,    9 /* Public */,
+       8,    1,   56,    4, 0x02,   13 /* Public */,
+      10,    2,   59,    4, 0x02,   15 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
 
  // methods: parameters
-    QMetaType::Void,
-    QMetaType::Int,
-    QMetaType::QString, QMetaType::Int,   10,
+    QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void, QMetaType::Int, QMetaType::Bool,    9,   11,
 
  // constructors: parameters
     0x80000000 | 4,
 
  // properties: name, type, flags, notifyId, revision
-      11, QMetaType::QString, 0x00015001, uint(0), 0,
-      12, 0x80000000 | 13, 0x00015009, uint(1), 0,
-      14, QMetaType::QString, 0x00015003, uint(2), 0,
+      12, QMetaType::QString, 0x00015001, uint(0), 0,
+      13, QMetaType::QString, 0x00015001, uint(3), 0,
+      14, 0x80000000 | 15, 0x00015009, uint(1), 0,
+      16, 0x80000000 | 15, 0x00015009, uint(2), 0,
+      17, 0x80000000 | 15, 0x00015009, uint(3), 0,
+      18, 0x80000000 | 15, 0x00015009, uint(3), 0,
+      19, 0x80000000 | 15, 0x00015009, uint(3), 0,
+      20, 0x80000000 | 15, 0x00015009, uint(3), 0,
 
  // constructors: name, argc, parameters, tag, flags, initial metatype offsets
-       0,    0,   60,    4, 0x0e,   11 /* Public */,
+       0,    0,   64,    4, 0x0e,   18 /* Public */,
 
        0        // eod
 };
@@ -116,27 +127,39 @@ Q_CONSTINIT const QMetaObject Backend::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
     qt_metaTypeArray<
-        // property 'toggledCount'
+        // property 'username'
         QString,
-        // property 'choresList'
-        std::vector<QString>,
-        // property 'dynamicText'
+        // property 'curHouseholdName'
         QString,
+        // property 'householdNames'
+        QVariantList,
+        // property 'householdUsers'
+        QVariantList,
+        // property 'choreNames'
+        QVariantList,
+        // property 'choreLocations'
+        QVariantList,
+        // property 'choreDates'
+        QVariantList,
+        // property 'choreStatuses'
+        QVariantList,
         // Q_OBJECT / Q_GADGET
         Backend,
-        // method 'toggledCount_changed'
+        // method 'userDataChanged'
         void,
-        // method 'choresList_changed'
+        // method 'householdNamesChanged'
         void,
-        // method 'dynamicText_changed'
+        // method 'householdUsersChanged'
         void,
-        // method 'increment_toggledCount'
+        // method 'curHouseholdChanged'
         void,
-        // method 'get_chores_count'
+        // method 'set_household'
+        void,
         int,
-        // method 'get_chore'
-        QString,
-        int
+        // method 'set_chore_status'
+        void,
+        int,
+        bool
     >,
     nullptr
 } };
@@ -159,14 +182,12 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
     }
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->toggledCount_changed(); break;
-        case 1: _t->choresList_changed(); break;
-        case 2: _t->dynamicText_changed(); break;
-        case 3: _t->increment_toggledCount(); break;
-        case 4: { int _r = _t->get_chores_count();
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
-        case 5: { QString _r = _t->get_chore((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
-            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
+        case 0: _t->userDataChanged(); break;
+        case 1: _t->householdNamesChanged(); break;
+        case 2: _t->householdUsersChanged(); break;
+        case 3: _t->curHouseholdChanged(); break;
+        case 4: _t->set_household((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 5: _t->set_chore_status((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
         default: ;
         }
     }
@@ -174,22 +195,29 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _q_method_type = void (Backend::*)();
-            if (_q_method_type _q_method = &Backend::toggledCount_changed; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            if (_q_method_type _q_method = &Backend::userDataChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
         }
         {
             using _q_method_type = void (Backend::*)();
-            if (_q_method_type _q_method = &Backend::choresList_changed; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            if (_q_method_type _q_method = &Backend::householdNamesChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
             }
         }
         {
             using _q_method_type = void (Backend::*)();
-            if (_q_method_type _q_method = &Backend::dynamicText_changed; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+            if (_q_method_type _q_method = &Backend::householdUsersChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
                 *result = 2;
+                return;
+            }
+        }
+        {
+            using _q_method_type = void (Backend::*)();
+            if (_q_method_type _q_method = &Backend::curHouseholdChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+                *result = 3;
                 return;
             }
         }
@@ -197,16 +225,14 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
     if (_c == QMetaObject::ReadProperty) {
         void *_v = _a[0];
         switch (_id) {
-        case 0: *reinterpret_cast< QString*>(_v) = _t->get_toggledCount(); break;
-        case 1: *reinterpret_cast< std::vector<QString>*>(_v) = _t->get_choresList(); break;
-        case 2: *reinterpret_cast< QString*>(_v) = _t->get_dynamicText(); break;
-        default: break;
-        }
-    }
-    if (_c == QMetaObject::WriteProperty) {
-        void *_v = _a[0];
-        switch (_id) {
-        case 2: _t->set_dynamicText(*reinterpret_cast< QString*>(_v)); break;
+        case 0: *reinterpret_cast< QString*>(_v) = _t->get_user_name(); break;
+        case 1: *reinterpret_cast< QString*>(_v) = _t->get_cur_household_name(); break;
+        case 2: *reinterpret_cast< QVariantList*>(_v) = _t->getHouseholdNames(); break;
+        case 3: *reinterpret_cast< QVariantList*>(_v) = _t->getHouseholdUsers(); break;
+        case 4: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreNames(); break;
+        case 5: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreLocations(); break;
+        case 6: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreDates(); break;
+        case 7: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreStatuses(); break;
         default: break;
         }
     }
@@ -244,26 +270,32 @@ int Backend::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 8;
     }
     return _id;
 }
 
 // SIGNAL 0
-void Backend::toggledCount_changed()
+void Backend::userDataChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 
 // SIGNAL 1
-void Backend::choresList_changed()
+void Backend::householdNamesChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 
 // SIGNAL 2
-void Backend::dynamicText_changed()
+void Backend::householdUsersChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
+}
+
+// SIGNAL 3
+void Backend::curHouseholdChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 QT_WARNING_POP

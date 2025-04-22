@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 63750,
+                        "durationMicroseconds": 51676,
                         "errorMessage": "Cannot load property mainWindow from const QMetaObject.",
                         "functionName": "onCompleted",
                         "line": 15

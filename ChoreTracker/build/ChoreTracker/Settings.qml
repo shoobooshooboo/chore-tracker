@@ -2,7 +2,7 @@ pragma Singleton
 import QtQuick
 
 QtObject {
-    property bool darkMode: true
+    property bool darkMode: false
     property int height: 896
     property int width: 414
     property Backend backend: new Backend()
@@ -20,4 +20,6 @@ QtObject {
     function toggle_dark_mode(){
         darkMode = !darkMode
     }
+
+
 }

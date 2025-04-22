@@ -1,4 +1,6 @@
 #include "backend.h"
+using namespace std::chrono_literals;
+using timepoint_t = std::chrono::time_point<std::chrono::system_clock>;
 
 Backend::Backend() {
 
@@ -13,63 +15,65 @@ Backend::Backend() {
     _testUser3 = new User(04, "Dylan S.");
     _testUser4 = new User(05, "Omni-man");
 
-
     _houseHold1->handleUserJoining(*_testUser2);
     _houseHold1->handleUserJoining(*_testUser);
     _houseHold1->handleUserJoining(*_testUser3);
+    //std::string&& name, timepoint_t dateTime, bool completionStatus, Priority priority, std::string&& location, timepoint_t::duration interval
+
     _houseHold2->handleUserJoining(*_testUser3);
     _houseHold2->handleUserJoining(*_testUser2);
     _houseHold2->handleUserJoining(*_testUser);
     _houseHold3->handleUserJoining(*_testUser4);
     _houseHold3->handleUserJoining(*_testUser);
 
-
-
-
     _user->addHousehold(_houseHold1);
     _user->addHousehold(_houseHold2);
     _user->addHousehold(_houseHold3);
 
-
-
-
-    for(int i = 0; i < 100; i++){
-        this->_choresList.push_back("Chore: " + QString::number(i));
-    }
-
+    _user->getHouseholds()[0]->addChore(Chore("dishes",
+                                             std::chrono::system_clock::now() + 24h,
+                                             false,
+                                             Priority::IMMINENT,
+                                             "kitchen",
+                                             timepoint_t::duration::zero() + 24h));
+    _user->getHouseholds()[0]->addChore(Chore("beat up david",
+                                              std::chrono::system_clock::now() + 36h,
+                                              true,
+                                              Priority::MEDIUM,
+                                              "david's room",
+                                              timepoint_t::duration::zero() + 168h));
+    _user->getHouseholds()[0]->addChore(Chore("Chore3",
+                                              std::chrono::system_clock::now() + 36h,
+                                              false,
+                                              Priority::LOW,
+                                              "Location3",
+                                              timepoint_t::duration::zero() + 730h));
+    _user->getHouseholds()[0]->addChore(Chore("chore4",
+                                              std::chrono::system_clock::now() + 48h,
+                                              false,
+                                              Priority::LOW,
+                                              "Location4",
+                                              timepoint_t::duration::zero() + 48h));
+    _user->getHouseholds()[0]->addChore(Chore("Chore5",
+                                              std::chrono::system_clock::now() + 48h,
+                                              false,
+                                              Priority::LOW,
+                                              "Location5",
+                                              timepoint_t::duration::zero() + 336h));
+    _user->getHouseholds()[0]->addChore(Chore("Usurp the throne of god",
+                                              std::chrono::system_clock::now() + 8760h,
+                                              false,
+                                              Priority::IMMINENT,
+                                              "heaven",
+                                              timepoint_t::duration::zero()));
+    _user->getHouseholds()[0]->addChore(Chore("chore6",
+                                              std::chrono::system_clock::now() + 168h,
+                                              false,
+                                              Priority::LOW,
+                                              "Location6",
+                                              timepoint_t::duration::zero() + 1460h));
 
 }
-
-
-QString Backend::get_dynamicText() {
-    return _dynamicText;
-}
-
-
-QString Backend::get_toggledCount(){
-    return "Times toggled: " + QString::number(this->_toggledCount);
-}
-
-std::vector<QString> Backend::get_choresList(){
-    return this->_choresList;
-}
-
-void Backend:: increment_toggledCount(){
-    this->_toggledCount++;
-    emit toggledCount_changed();
-}
-
-int Backend::get_chores_count(){
-    return this->_choresList.size();
-}
-
-QString Backend::get_chore(int index){
-    return this->_choresList[index];
-}
-
-
-
-
 
 QString Backend::get_user_name() const {
     if (_user) {
@@ -114,23 +118,83 @@ QVariantList Backend::getHouseholdUsers() {
     return allUsers;
 }
 
-
-
-
-
-void Backend::set_dynamicText(QString &newText) {
-    if (_dynamicText != newText) {
-        _dynamicText = newText;
-        QFile file("dynamicTextLog.txt");
-        if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            QTextStream out(&file);
-            out << newText;
-            file.close();
-        }
-
-        emit dynamicText_changed();
-    }
-
+void Backend::set_household(int index){
+    this->_curHouseHold = _user->getHouseholds()[index];
+    this->_curHouseHold->sortChores(Household::SortType::DATE);
+    emit curHouseholdChanged();
 }
 
+QString Backend::get_cur_household_name(){
+    if(this->_curHouseHold)
+        return QString::fromStdString(std::string(this->_curHouseHold->getName()));
+    return QString("household not found");
+}
 
+QVariantList Backend::getChoreNames(){
+    QVariantList list;
+    if(!_curHouseHold)
+        return list;
+
+    for(const auto& chore : _curHouseHold->getChores()){
+        list.append(QString::fromStdString(chore.mName));
+    }
+
+    return list;
+}
+
+QVariantList Backend::getChoreLocations(){
+    QVariantList list;
+    if(!_curHouseHold)
+        return list;
+
+    for(const auto& chore : _curHouseHold->getChores()){
+        list.append(QString::fromStdString(chore.mLocation));
+    }
+
+    return list;
+}
+
+QVariantList Backend::getChoreDates(){
+    QVariantList list;
+    if(!_curHouseHold)
+        return list;
+
+    for(const auto& chore : _curHouseHold->getChores()){
+        std::string date = std::format("{:%m/%d/%Y}", chore.mDateAndTime);
+        if(chore.mRecurrenceInterval.has_value()){
+            unsigned long long days = std::chrono::duration_cast<std::chrono::days>(chore.mRecurrenceInterval.value()).count();
+            if(days % 30 == 0)
+                date += std::format(" (every {} month{})", days / 30, days / 30 > 1 ? "s" : "");
+            else if (days % 7 == 0)
+                date += std::format(" (every {} week{})", days / 7, days / 7 > 1 ? "s" : "");
+            else
+                date += std::format(" (every {} day{})", days, days > 1 ? "s" : "");
+
+            //date += " (recurrs)";
+        }
+        list.append(QString::fromStdString(date));
+    }
+
+    return list;
+}
+
+QVariantList Backend::getChoreStatuses(){
+    QVariantList list;
+    if(!_curHouseHold)
+        return list;
+
+    for(const auto& chore : _curHouseHold->getChores()){
+        list.append(chore.mCompletionStatus);
+    }
+
+    return list;
+}
+
+void Backend::set_chore_status(int index, bool status){
+    if(!_curHouseHold || _curHouseHold->getChores()[index].mCompletionStatus == status)
+        return;
+
+    _curHouseHold->setChoreStatus(index, status);
+
+    emit curHouseholdChanged();
+}

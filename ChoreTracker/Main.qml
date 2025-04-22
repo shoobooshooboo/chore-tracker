@@ -16,7 +16,7 @@ Rectangle {
         anchors.top: parent.top
         anchors.topMargin: 20   // Optional: add margin from the top
         anchors.horizontalCenter: parent.horizontalCenter
-        text: qsTr("Welcome, ") + Settings.backend.get_user_name()
+        text: qsTr("Welcome, ") + Settings.backend.username
         color: Settings.text_color()
         font.pointSize: 24
     }
@@ -30,9 +30,8 @@ Rectangle {
                 anchors.topMargin: 20
                 anchors.left: parent.left
                 anchors.leftMargin: 100
-                width: parent.width * 0.8
-                height: parent.height * 0.5
-
+                width: parent.width
+                height: parent.height - welcome.height
 
                 Column {
                     id: householdsColumn
@@ -44,7 +43,6 @@ Rectangle {
 
                         Column {
                             spacing: 15
-                            padding: 8
 
                             Button {
                                 text: Settings.backend.householdNames[index]
@@ -52,11 +50,19 @@ Rectangle {
                                 height: 60
                                 font.pixelSize: 20
                                 padding: 12
-                                onClicked: console.log("Clicked:", text)
+                                onClicked: {
+                                    Settings.backend.set_household(index)
+                                    if (stackViewRef){
+                                        stackViewRef.push(Settings.householdWindow)
+                                    }
+                                    else{
+                                        print("goddamnit")
+                                    }
+                                }
                             }
 
                             Text {
-                                    text: "Users:"  // Or "Members:"
+                                    text: "Members:"
                                     font.pixelSize: 16
                                     color: Settings.text_color()
 

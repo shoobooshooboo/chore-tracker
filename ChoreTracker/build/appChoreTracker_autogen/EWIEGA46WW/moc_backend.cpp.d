@@ -1,5 +1,9 @@
 C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/appChoreTracker_autogen/EWIEGA46WW/moc_backend.cpp: C:/Desktop/code/Personal/chore-tracker/ChoreTracker/backend.h \
   C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/appChoreTracker_autogen/moc_predefs.h \
+  C:/Desktop/code/Personal/chore-tracker/ChoreTracker/chore.hpp \
+  C:/Desktop/code/Personal/chore-tracker/ChoreTracker/household.hpp \
+  C:/Desktop/code/Personal/chore-tracker/ChoreTracker/settings_configuration.hpp \
+  C:/Desktop/code/Personal/chore-tracker/ChoreTracker/user.hpp \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QByteArray \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QCryptographicHash \
   C:/Qt/6.8.2/mingw_64/include/QtCore/QDeadlineTimer \
@@ -610,6 +614,7 @@ C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/appChoreTracker_autoge
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_numeric_defs.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/random \
+  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ranges \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/semaphore \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/span \

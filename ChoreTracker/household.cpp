@@ -45,6 +45,10 @@ const std::vector<Chore>& Household::getChores(void) const noexcept {
     return mChores;
 }
 
+void Household::setChoreStatus(int index, bool status){
+    mChores[index].mCompletionStatus = status;
+}
+
 void Household::expireChoreInstance(decltype(mChores)::iterator toExpire) {
     if (toExpire->mRecurrenceInterval) {
         toExpire->mDateAndTime += toExpire->mRecurrenceInterval.value();
