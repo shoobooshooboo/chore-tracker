@@ -59,7 +59,7 @@ namespace HouseholdManager {
     template<class ChronoType>
     ChronoType strToChrono(std::string_view sv) {
         std::tm tmb;
-        std::istringstream { std::string(sv) } >> std::get_time(&tmb, "%Y-%m-%d %T");
+        std::istringstream { std::string(sv) } >> std::get_time(&tmb, "%Y-%m-%w %T");
         return ChronoType(std::chrono::system_clock::from_time_t(std::mktime(&tmb)).time_since_epoch());
     }
 

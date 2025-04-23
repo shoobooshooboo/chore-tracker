@@ -1,4 +1,5 @@
 #include "household_manager.hpp"
+#include <QDebug>
 
 std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t householdID) {
     std::ifstream infile(householdsFile);
@@ -99,14 +100,25 @@ Chore HouseholdManager::parseChoreLine(const std::string& buffer, const std::vec
     auto choreFields { buffer | std::views::split(',') };
     auto it { choreFields.cbegin() };
     
+    std::string name = std::string(std::string_view(*it++));
+    Chore::timepoint_t time = strToChrono<Chore::timepoint_t>(std::string_view(*it++));
+    bool completion = std::string_view(*it++) != "0";
+    Priority priority = strToEnum<Priority>(std::string_view(*it++));
+    std::string location = std::string(std::string_view(*it++));
+    auto interval = strToChrono<Chore::timepoint_t::duration>(std::string_view(*it));
+    qInfo() << std::string_view(*it);
+    qInfo() << interval;
+
     Chore newChore( // name, time, completion, priority, location, interval
-        std::string(std::string_view(*it)),
-        strToChrono<Chore::timepoint_t>(std::string_view(*++it)),
-        std::string_view(*++it) != "0",
-        strToEnum<Priority>(std::string_view(*++it)),
-        std::string(std::string_view(*++it)),
-        strToChrono<Chore::timepoint_t::duration>(std::string_view(*++it))
+        std::move(name),
+        time,
+        completion,
+        priority,
+        std::move(location),
+        interval
     );
+
+    qInfo() << std::format("name: {}", newChore.mName);
 
     for (uint64_t userID : userIDs) { // availabilities
         // ensure that there are no more users than availabilities
