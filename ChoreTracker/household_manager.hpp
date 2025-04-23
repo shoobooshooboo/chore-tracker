@@ -28,7 +28,7 @@ namespace HouseholdManager {
     }
 
     namespace {
-        std::filesystem::path householdsFile{"houseFile.csv"};
+        std::filesystem::path householdsFile{"../houseFile.csv"};
 
         // no owning vector in namespace; ownership is solely through users.
     }

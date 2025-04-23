@@ -17,7 +17,7 @@ namespace UserManager {
     namespace {
         // entries are to be formatted as follows:
         // id number,username,password|first last,household_id,next_household_id,...,last_household_id\n
-        const std::filesystem::path userFile{"userFile.csv"};
+        const std::filesystem::path userFile{"../userFile.csv"};
 
         // deque preserves references to its elements
         using container_t = std::deque<User>;
