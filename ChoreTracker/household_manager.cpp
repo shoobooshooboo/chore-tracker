@@ -43,18 +43,19 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
 std::vector<std::shared_ptr<Household>> HouseholdManager::getLocalHouseholds(const uint64_t localUserID) {
     std::vector<std::shared_ptr<Household>> out;
     std::ifstream housestream(householdsFile);
-    while (housestream) {
+    while (housestream.good()) {
         housestream.ignore(std::numeric_limits<std::streamsize>::max(), '@');
+        uint64_t currID;
+        housestream >> currID;
         housestream.ignore(std::numeric_limits<std::streamsize>::max(), ',');
         housestream.ignore(std::numeric_limits<std::streamsize>::max(), ',');
         // ids text begins
         std::string idsString;
         std::getline(housestream, idsString);
-        for (uint64_t id : idsString
-            | std::views::split(',')
-            | std::views::transform([](auto r){ return std::stoull(std::string(r.cbegin(), r.cend())); })) 
+        if (std::ranges::contains(idsString | std::views::split(','), 
+            localUserID, [](auto&& r){ return std::stoull(std::string(r.begin(), r.end())); })) 
         {
-            out.push_back(loadHousehold(id));
+            out.push_back(loadHousehold(currID));
         }
     }
     return out;
