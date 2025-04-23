@@ -33,7 +33,7 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     }
 
     // adds chores
-    while (std::getline(infile, buffer), buffer.front() != '@') { 
+    while (std::getline(infile, buffer) && buffer.front() != '@') {
         householdPtr->addChore(parseChoreLine(buffer, userIDs));
     }
 
