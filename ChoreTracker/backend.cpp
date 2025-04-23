@@ -94,8 +94,8 @@ QVariantList Backend::getChoreDates(){
     for(const auto& chore : _curHouseHold->getChores()){
         std::string date = std::format("{:%m/%d/%Y}", chore.mDateAndTime);
         if(chore.mRecurrenceInterval.has_value()){
-            unsigned long long days = std::chrono::duration_cast<std::chrono::days>(chore.mRecurrenceInterval.value()).count();
-            if(days % 30 == 0)
+            unsigned long long days = std::chrono::duration_cast<std::chrono::days>(*chore.mRecurrenceInterval).count();
+            if (days % 30 == 0)
                 date += std::format(" (every {} month{})", days / 30, days / 30 > 1 ? "s" : "");
             else if (days % 7 == 0)
                 date += std::format(" (every {} week{})", days / 7, days / 7 > 1 ? "s" : "");

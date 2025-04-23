@@ -25,7 +25,7 @@ container_t::iterator loadUser(const uint64_t userID) {
         infile.ignore(std::numeric_limits<std::streamsize>::max(), '|');
 
         std::string name;
-        std::getline(infile, name, ',');
+        std::getline(infile, name);
         loadedUsers.emplace_back(testID, std::move(name));
         
         it = std::prev(loadedUsers.end());

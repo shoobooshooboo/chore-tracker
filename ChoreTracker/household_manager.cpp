@@ -40,6 +40,25 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
     return householdPtr;
 }
 
+std::vector<std::shared_ptr<Household>> HouseholdManager::getLocalHouseholds(const uint64_t localUserID) {
+    std::vector<std::shared_ptr<Household>> out;
+    std::ifstream housestream(householdsFile);
+    while (housestream) {
+        housestream.ignore(std::numeric_limits<std::streamsize>::max(), '@');
+        housestream.ignore(std::numeric_limits<std::streamsize>::max(), ',');
+        housestream.ignore(std::numeric_limits<std::streamsize>::max(), ',');
+        // ids text begins
+        std::string idsString;
+        std::getline(housestream, idsString);
+        for (uint64_t id : idsString
+            | std::views::split(',')
+            | std::views::transform([](auto r){ return std::stoull(std::string(r.cbegin(), r.cend())); })) 
+        {
+            out.push_back(loadHousehold(id));
+        }
+    }
+}
+
 std::shared_ptr<Household> HouseholdManager::makeNewHousehold(User& firstMemberUser, Household&& householdInfo) {
     auto householdPtr{ std::make_shared<Household>(householdInfo) };
 

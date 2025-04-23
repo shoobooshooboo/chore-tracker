@@ -38,6 +38,8 @@ namespace HouseholdManager {
     // return value is owning pointer of the household, with all users loaded
     std::shared_ptr<Household> loadHousehold(const uint64_t householdID); 
 
+    std::vector<std::shared_ptr<Household>> getLocalHouseholds(const uint64_t localUserID);
+
     std::shared_ptr<Household> makeNewHousehold(User& firstMemberUser, Household&& householdInfo);
 
     void createHouseholdToFile(const Household& house);
