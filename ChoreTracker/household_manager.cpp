@@ -29,7 +29,7 @@ std::shared_ptr<Household> HouseholdManager::loadHousehold(const uint64_t househ
 
     // adds users
     for (uint64_t userID : userIDs) { 
-        mutuallyLink(UserManager::loadUser(userID), householdPtr);
+        mutuallyLink(*UserManager::loadUser(userID), householdPtr);
     }
 
     // adds chores

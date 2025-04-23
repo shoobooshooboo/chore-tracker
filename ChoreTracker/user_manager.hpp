@@ -27,7 +27,7 @@ namespace UserManager {
 
     [[nodiscard]] container_t::iterator findLoadedUser(const uint64_t userID);
     // returns iterator to the user, or end if no user matching ID was found
-    User& loadUser(const uint64_t userID);
+    User* loadUser(const uint64_t userID);
     void createUserToFile(const User& user, const std::string& username, const std::string& password, const uint64_t firstHousehold);
 };
 
