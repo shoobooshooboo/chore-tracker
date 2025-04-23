@@ -436,7 +436,7 @@ build .rcc/qmlcache/appChoreTracker_WindowManager_qml.cpp .rcc/qmlcache/appChore
 #############################################
 # Custom command for .qt\rcc\qrc_appChoreTracker_raw_qml_0.cpp
 
-build .qt/rcc/qrc_appChoreTracker_raw_qml_0.cpp | ${cmake_ninja_workdir}.qt/rcc/qrc_appChoreTracker_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/Main.qml C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/Settings.qml C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/Household.qml C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/WindowManager.qml C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/qmldir C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/houseFile.csv .qt/rcc/appChoreTracker_raw_qml_0.qrc C$:/Qt/6.8.2/mingw_64/bin/rcc.exe || appChoreTracker_autogen appChoreTracker_autogen_timestamp_deps appChoreTracker_copy_qml appChoreTracker_copy_res appChoreTracker_qmlimportscan
+build .qt/rcc/qrc_appChoreTracker_raw_qml_0.cpp | ${cmake_ninja_workdir}.qt/rcc/qrc_appChoreTracker_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/Main.qml C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/Settings.qml C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/Household.qml C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/WindowManager.qml C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/qmldir C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/houseFile.csv C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/userFile.csv .qt/rcc/appChoreTracker_raw_qml_0.qrc C$:/Qt/6.8.2/mingw_64/bin/rcc.exe || appChoreTracker_autogen appChoreTracker_autogen_timestamp_deps appChoreTracker_copy_qml appChoreTracker_copy_res appChoreTracker_qmlimportscan
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Desktop\code\Personal\chore-tracker\ChoreTracker\build && C:\Qt\6.8.2\mingw_64\bin\rcc.exe --output C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/.qt/rcc/qrc_appChoreTracker_raw_qml_0.cpp --name appChoreTracker_raw_qml_0 C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/.qt/rcc/appChoreTracker_raw_qml_0.qrc --no-zstd"
   DESC = Running rcc for resource appChoreTracker_raw_qml_0
   restat = 1
@@ -513,7 +513,7 @@ build CMakeFiles/appChoreTracker_copy_res | ${cmake_ninja_workdir}CMakeFiles/app
 #############################################
 # Custom command for .qt\appChoreTracker_res.txt
 
-build .qt/appChoreTracker_res.txt | ${cmake_ninja_workdir}.qt/appChoreTracker_res.txt: CUSTOM_COMMAND C$:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/qmldir C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/houseFile.csv
+build .qt/appChoreTracker_res.txt | ${cmake_ninja_workdir}.qt/appChoreTracker_res.txt: CUSTOM_COMMAND C$:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/qmldir C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/houseFile.csv C$:/Desktop/code/Personal/chore-tracker/ChoreTracker/userFile.csv
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Desktop\code\Personal\chore-tracker\ChoreTracker\build && C:\Qt\Tools\CMake_64\bin\cmake.exe -DFILES_INFO_PATH=C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/.qt/appChoreTracker_res.cmake -P C:/Qt/6.8.2/mingw_64/lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake"
   DESC = Copying appChoreTracker qml resources into build dir
   restat = 1

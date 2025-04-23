@@ -1091,11 +1091,11 @@
 			"id" : "appChoreTracker_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 79,
-			"id" : "appChoreTracker_qmlimportscan::@6890427a1f51a3e7e1df"
+			"id" : "appChoreTracker_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "appChoreTracker_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 79,
+			"id" : "appChoreTracker_qmlimportscan::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,
@@ -1250,8 +1250,7 @@
 			"sourceIndexes" : 
 			[
 				0,
-				35,
-				47,
+				36,
 				48,
 				49,
 				50,
@@ -1259,7 +1258,8 @@
 				52,
 				53,
 				54,
-				55
+				55,
+				56
 			]
 		},
 		{
@@ -1295,7 +1295,8 @@
 				27,
 				31,
 				33,
-				34
+				34,
+				35
 			]
 		},
 		{
@@ -1324,7 +1325,6 @@
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				36,
 				37,
 				38,
 				39,
@@ -1334,7 +1334,8 @@
 				43,
 				44,
 				45,
-				46
+				46,
+				47
 			]
 		}
 	],
@@ -1543,6 +1544,11 @@
 		{
 			"backtrace" : 107,
 			"path" : "houseFile.csv",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 107,
+			"path" : "userFile.csv",
 			"sourceGroupIndex" : 2
 		},
 		{

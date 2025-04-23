@@ -6,15 +6,15 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 351,
-                        "errorMessage": "Cannot generate efficient code for Construct",
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type Backend for binding on backend.",
                         "functionName": "backend",
                         "line": 8
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 104,
                         "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
                         "functionName": "background_color",
                         "line": 12
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 22,
                         "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
                         "functionName": "text_color",
                         "line": 16
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 156,
+                        "durationMicroseconds": 184,
                         "errorMessage": "",
                         "functionName": "toggle_dark_mode",
                         "line": 20

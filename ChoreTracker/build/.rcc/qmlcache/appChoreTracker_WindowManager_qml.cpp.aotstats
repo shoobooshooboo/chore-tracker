@@ -30,8 +30,8 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 51676,
-                        "errorMessage": "Cannot load property mainWindow from const QMetaObject.",
+                        "durationMicroseconds": 48729,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
                         "functionName": "onCompleted",
                         "line": 15
                     }

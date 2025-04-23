@@ -6,6 +6,8 @@ set(src_and_dest_list
     "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker/qmldir"
     "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/houseFile.csv"
     "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker/houseFile.csv"
+    "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/userFile.csv"
+    "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker/userFile.csv"
 
 )
 set(timestamp_file "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/.qt/appChoreTracker_res.txt")

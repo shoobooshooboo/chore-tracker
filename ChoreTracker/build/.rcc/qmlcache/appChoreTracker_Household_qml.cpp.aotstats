@@ -4,49 +4,49 @@
             {
                 "entries": [
                     {
-                        "codegenSuccessfull": false,
+                        "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 6652,
-                        "errorMessage": "Cannot load property width from const QMetaObject.",
+                        "durationMicroseconds": 10484,
+                        "errorMessage": "",
                         "functionName": "width",
                         "line": 8
                     },
                     {
-                        "codegenSuccessfull": false,
+                        "codegenSuccessfull": true,
                         "column": 13,
-                        "durationMicroseconds": 19,
-                        "errorMessage": "Cannot load property height from const QMetaObject.",
+                        "durationMicroseconds": 128,
+                        "errorMessage": "",
                         "functionName": "height",
                         "line": 9
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 25,
-                        "errorMessage": "Type const QMetaObject does not have a property background_color for calling",
+                        "durationMicroseconds": 250,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 10
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 16,
-                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "durationMicroseconds": 41,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 20
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 14,
-                        "errorMessage": "Type const QMetaObject does not have a property text_color for calling",
+                        "durationMicroseconds": 219,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 22
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 280,
+                        "durationMicroseconds": 194,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 21
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 137,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 32
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 17,
-                        "durationMicroseconds": 272,
+                        "durationMicroseconds": 484,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 33
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 192,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 27
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 193,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 28
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 171,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 37
@@ -102,23 +102,23 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 22,
-                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "durationMicroseconds": 39,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "model",
                         "line": 41
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 19,
-                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "durationMicroseconds": 38,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 45
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 206,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "onClicked",
                         "line": 50
@@ -126,39 +126,39 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 17,
-                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "durationMicroseconds": 32,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 55
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 14,
-                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "durationMicroseconds": 25,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 59
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 34,
-                        "durationMicroseconds": 13,
-                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "durationMicroseconds": 37,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "checked",
                         "line": 64
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 43,
-                        "durationMicroseconds": 17,
-                        "errorMessage": "Cannot load property backend from const QMetaObject.",
+                        "durationMicroseconds": 30,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "onCheckedChanged",
                         "line": 65
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 19,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot access value for name stackViewRef",
                         "functionName": "onClicked",
                         "line": 76
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 178,
+                        "durationMicroseconds": 277,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "width",
                         "line": 85
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 143,
+                        "durationMicroseconds": 231,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "height",
                         "line": 86
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 19,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 89
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 171,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 83
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 129,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 84

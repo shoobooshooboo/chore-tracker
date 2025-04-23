@@ -993,7 +993,131 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_MSVC(4573)
 extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
 extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[] = {
-{ 5, 0, [](QV4::ExecutableCompilationUnit *unit, QMetaType *argTypes) {
+{ 0, 0, [](QV4::ExecutableCompilationUnit *unit, QMetaType *argTypes) {
+    struct { QV4::ExecutableCompilationUnit *compilationUnit; } c { unit };
+    const auto *aotContext = &c;
+    Q_UNUSED(aotContext);
+    argTypes[0] = QMetaType::fromType<double>();
+}, 
+    [](const QQmlPrivate::AOTCompiledContext *aotContext, void **argv) {
+Q_UNUSED(aotContext)
+Q_UNUSED(argv)
+// expression for width at line 8, column 5
+QObject *r2_0;
+double r2_1;
+// generate_LoadQmlContextPropertyLookup
+#ifndef QT_NO_DEBUG
+aotContext->setInstructionPointer(2);
+#endif
+while (!aotContext->loadSingletonLookup(0, &r2_0)) {
+#ifdef QT_NO_DEBUG
+aotContext->setInstructionPointer(2);
+#endif
+aotContext->initLoadSingletonLookup(0, QQmlPrivate::AOTCompiledContext::InvalidStringId);
+if (aotContext->engine->hasError()) {
+aotContext->setReturnValueUndefined();
+if (argv[0]) {
+    *static_cast<double *>(argv[0]) = double();
+}
+return;
+}
+}
+{
+}
+// generate_GetLookup
+{
+int retrieved;
+#ifndef QT_NO_DEBUG
+aotContext->setInstructionPointer(4);
+#endif
+while (!aotContext->getObjectLookup(1, r2_0, &retrieved)) {
+#ifdef QT_NO_DEBUG
+aotContext->setInstructionPointer(4);
+#endif
+aotContext->initGetObjectLookup(1, r2_0, QMetaType::fromType<int>());
+if (aotContext->engine->hasError()) {
+aotContext->setReturnValueUndefined();
+if (argv[0]) {
+    *static_cast<double *>(argv[0]) = double();
+}
+return;
+}
+}
+r2_1 = double(std::move(retrieved));
+}
+{
+}
+{
+}
+// generate_Ret
+if (argv[0]) {
+    *static_cast<double *>(argv[0]) = r2_1;
+}
+return;
+}
+ },{ 1, 0, [](QV4::ExecutableCompilationUnit *unit, QMetaType *argTypes) {
+    struct { QV4::ExecutableCompilationUnit *compilationUnit; } c { unit };
+    const auto *aotContext = &c;
+    Q_UNUSED(aotContext);
+    argTypes[0] = QMetaType::fromType<double>();
+}, 
+    [](const QQmlPrivate::AOTCompiledContext *aotContext, void **argv) {
+Q_UNUSED(aotContext)
+Q_UNUSED(argv)
+// expression for height at line 9, column 5
+QObject *r2_0;
+double r2_1;
+// generate_LoadQmlContextPropertyLookup
+#ifndef QT_NO_DEBUG
+aotContext->setInstructionPointer(2);
+#endif
+while (!aotContext->loadSingletonLookup(2, &r2_0)) {
+#ifdef QT_NO_DEBUG
+aotContext->setInstructionPointer(2);
+#endif
+aotContext->initLoadSingletonLookup(2, QQmlPrivate::AOTCompiledContext::InvalidStringId);
+if (aotContext->engine->hasError()) {
+aotContext->setReturnValueUndefined();
+if (argv[0]) {
+    *static_cast<double *>(argv[0]) = double();
+}
+return;
+}
+}
+{
+}
+// generate_GetLookup
+{
+int retrieved;
+#ifndef QT_NO_DEBUG
+aotContext->setInstructionPointer(4);
+#endif
+while (!aotContext->getObjectLookup(3, r2_0, &retrieved)) {
+#ifdef QT_NO_DEBUG
+aotContext->setInstructionPointer(4);
+#endif
+aotContext->initGetObjectLookup(3, r2_0, QMetaType::fromType<int>());
+if (aotContext->engine->hasError()) {
+aotContext->setReturnValueUndefined();
+if (argv[0]) {
+    *static_cast<double *>(argv[0]) = double();
+}
+return;
+}
+}
+r2_1 = double(std::move(retrieved));
+}
+{
+}
+{
+}
+// generate_Ret
+if (argv[0]) {
+    *static_cast<double *>(argv[0]) = r2_1;
+}
+return;
+}
+ },{ 5, 0, [](QV4::ExecutableCompilationUnit *unit, QMetaType *argTypes) {
     struct { QV4::ExecutableCompilationUnit *compilationUnit; } c { unit };
     const auto *aotContext = &c;
     Q_UNUSED(aotContext);

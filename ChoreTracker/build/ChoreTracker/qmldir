@@ -1,8 +1,5 @@
 module ChoreTracker
-typeinfo appChoreTracker.qmltypes
-prefer :/qt/qml/ChoreTracker/
-Main 1.0 Main.qml
-Settings 1.0 Settings.qml
-Household 1.0 Household.qml
 WindowManager 1.0 WindowManager.qml
-
+Main 1.0 Main.qml
+Household 1.0 Household.qml
+singleton Settings 1.0 Settings.qml
