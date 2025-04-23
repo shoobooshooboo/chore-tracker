@@ -5,7 +5,7 @@ using timepoint_t = std::chrono::time_point<std::chrono::system_clock>;
 
 Backend::Backend() {
     // hardCodedConstructor();
-    _user = &*UserManager::loadUser(12345);
+    _user = &UserManager::loadUser(12345);
     qInfo() << std::format("name: {}, id: {}", _user->getName(), _user->getID());
     for(auto& hh :HouseholdManager::getLocalHouseholds(_user->getID())){
         _user->addHousehold(hh);

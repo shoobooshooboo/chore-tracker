@@ -8,7 +8,7 @@ container_t::iterator findLoadedUser(const uint64_t userID) {
     );
 }
 
-container_t::iterator loadUser(const uint64_t userID) {
+User& loadUser(const uint64_t userID) {
     auto it{findLoadedUser(userID)};
     if (it == loadedUsers.cend()) { // user is not yet loaded
         std::ifstream infile(userFile);
@@ -31,7 +31,7 @@ container_t::iterator loadUser(const uint64_t userID) {
         it = std::prev(loadedUsers.end());
     } 
 
-    return it;
+    return *it;
 }
 
 void createUserToFile(const User& user, const std::string& username, const std::string& password, const uint64_t firstHousehold) {
