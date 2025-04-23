@@ -1,10 +1,15 @@
 #include "backend.h"
+#include <QDebug>
 using namespace std::chrono_literals;
 using timepoint_t = std::chrono::time_point<std::chrono::system_clock>;
 
 Backend::Backend() {
     // hardCodedConstructor();
     _user = &*UserManager::loadUser(12345);
+    qInfo() << std::format("name: {}, id: {}", _user->getName(), _user->getID());
+    for(auto& hh :HouseholdManager::getLocalHouseholds(_user->getID())){
+        _user->addHousehold(hh);
+    }
 }
 
 QString Backend::get_user_name() const {

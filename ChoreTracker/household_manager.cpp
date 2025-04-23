@@ -57,6 +57,7 @@ std::vector<std::shared_ptr<Household>> HouseholdManager::getLocalHouseholds(con
             out.push_back(loadHousehold(id));
         }
     }
+    return out;
 }
 
 std::shared_ptr<Household> HouseholdManager::makeNewHousehold(User& firstMemberUser, Household&& householdInfo) {
