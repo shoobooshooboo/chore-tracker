@@ -51,7 +51,7 @@ void Household::setChoreStatus(int index, bool status){
 
 void Household::expireChoreInstance(decltype(mChores)::iterator toExpire) {
     if (toExpire->mRecurrenceInterval) {
-        toExpire->mDateAndTime += toExpire->mRecurrenceInterval.value();
+        toExpire->mDateAndTime += toExpire->mRecurrenceInterval.value() * (std::chrono::duration_cast<std::chrono::system_clock::duration>(std::chrono::days(1)));
     } else {
         mChores.erase(toExpire);
     }
