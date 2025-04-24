@@ -8,7 +8,6 @@ Backend::Backend() {
     _user = UserManager::loadUser(12345);
     qInfo() << std::format("name: {}, id: {}", _user->getName(), _user->getID());
     HouseholdManager::getLocalHouseholds(_user->getID());
-
 }
 
 QString Backend::get_user_name() const {
