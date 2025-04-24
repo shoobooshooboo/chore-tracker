@@ -7,9 +7,8 @@ Backend::Backend() {
     // hardCodedConstructor();
     _user = UserManager::loadUser(12345);
     qInfo() << std::format("name: {}, id: {}", _user->getName(), _user->getID());
-    for(auto& hh :HouseholdManager::getLocalHouseholds(_user->getID())){
-        _user->addHousehold(hh);
-    }
+    HouseholdManager::getLocalHouseholds(_user->getID());
+
 }
 
 QString Backend::get_user_name() const {
@@ -99,7 +98,7 @@ QVariantList Backend::getChoreDates(){
     for(const auto& chore : _curHouseHold->getChores()){
         std::string date = std::format("{:%m/%d/%Y}", chore.mDateAndTime);
         if(chore.mRecurrenceInterval.has_value()){
-            unsigned long long days = std::chrono::duration_cast<std::chrono::days>(*chore.mRecurrenceInterval).count();
+            unsigned long long days = (*chore.mRecurrenceInterval);
             if (days % 30 == 0)
                 date += std::format(" (every {} month{})", days / 30, days / 30 > 1 ? "s" : "");
             else if (days % 7 == 0)
@@ -168,42 +167,42 @@ void Backend::hardCodedConstructor(){
                                               false,
                                               Priority::IMMINENT,
                                               "kitchen",
-                                              timepoint_t::duration::zero() + 24h));
+                                              1));
     _user->getHouseholds()[0]->addChore(Chore("beat up david",
                                               std::chrono::system_clock::now() + 36h,
                                               true,
                                               Priority::MEDIUM,
                                               "david's room",
-                                              timepoint_t::duration::zero() + 168h));
+                                              7));
     _user->getHouseholds()[0]->addChore(Chore("Chore3",
                                               std::chrono::system_clock::now() + 36h,
                                               false,
                                               Priority::LOW,
                                               "Location3",
-                                              timepoint_t::duration::zero() + 730h));
+                                              30));
     _user->getHouseholds()[0]->addChore(Chore("chore4",
                                               std::chrono::system_clock::now() + 48h,
                                               false,
                                               Priority::LOW,
                                               "Location4",
-                                              timepoint_t::duration::zero() + 48h));
+                                              2));
     _user->getHouseholds()[0]->addChore(Chore("Chore5",
                                               std::chrono::system_clock::now() + 48h,
                                               false,
                                               Priority::LOW,
                                               "Location5",
-                                              timepoint_t::duration::zero() + 336h));
+                                              14));
     _user->getHouseholds()[0]->addChore(Chore("Usurp the throne of god",
                                               std::chrono::system_clock::now() + 8760h,
                                               false,
                                               Priority::IMMINENT,
                                               "heaven",
-                                              timepoint_t::duration::zero()));
+                                              0));
     _user->getHouseholds()[0]->addChore(Chore("chore6",
                                               std::chrono::system_clock::now() + 168h,
                                               false,
                                               Priority::LOW,
                                               "Location6",
-                                              timepoint_t::duration::zero() + 1460h));
+                                              60));
 
 }

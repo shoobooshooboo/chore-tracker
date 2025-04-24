@@ -101,11 +101,11 @@ Chore HouseholdManager::parseChoreLine(const std::string& buffer, const std::vec
     auto it { choreFields.cbegin() };
     
     std::string name = std::string(std::string_view(*it++));
-    Chore::timepoint_t time = strToChrono<Chore::timepoint_t>(std::string_view(*it++));
+    Chore::timepoint_t time = strToTimepoint<Chore::timepoint_t>(std::string_view(*it++));
     bool completion = std::string_view(*it++) != "0";
     Priority priority = strToEnum<Priority>(std::string_view(*it++));
     std::string location = std::string(std::string_view(*it++));
-    unsigned interval = *it;
+    unsigned interval = std::stoul(std::string(std::string_view(*it)));
     qInfo() << std::string_view(*it);
     qInfo() << interval;
 

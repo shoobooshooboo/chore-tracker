@@ -59,13 +59,8 @@ namespace HouseholdManager {
     template<class TimepointType>
     TimepointType strToTimepoint(std::string_view sv) {
         std::tm tmb;
-<<<<<<< Updated upstream
-        std::istringstream { std::string(sv) } >> std::get_time(&tmb, "%Y-%m-%w %T");
-        return ChronoType(std::chrono::system_clock::from_time_t(std::mktime(&tmb)).time_since_epoch());
-=======
         std::istringstream{ std::string(sv) } >> std::get_time(&tmb, "%Y-%m-%d %T");
         return TimepointType(std::chrono::system_clock::from_time_t(std::mktime(&tmb)));
->>>>>>> Stashed changes
     }
 
     template<class IntegralType>
