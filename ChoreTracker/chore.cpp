@@ -1,15 +1,14 @@
 #include "chore.hpp"
 
-Chore::Chore(std::string&& name, timepoint_t dateTime, bool completionStatus, Priority priority, std::string&& location, timepoint_t::duration interval) :
+Chore::Chore(std::string&& name, timepoint_t dateTime, bool completionStatus, Priority priority, std::string&& location, unsigned intervalDays) :
     mName(std::forward<std::string>(name)),
     mDateAndTime(dateTime),
     mCompletionStatus(completionStatus),
     mPriority(priority),
-    mLocation(std::forward<std::string>(location)),
-    mRecurrenceInterval(interval) 
+    mLocation(std::forward<std::string>(location))
 {
-    if (mRecurrenceInterval == timepoint_t::duration::zero()) 
-        mRecurrenceInterval.reset();
+    if (mRecurrenceInterval != 0) 
+        mRecurrenceInterval = intervalDays;
 }
 
 

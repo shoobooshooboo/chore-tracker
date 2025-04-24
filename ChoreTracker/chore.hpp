@@ -30,7 +30,7 @@ struct Chore {
 public:
     using timepoint_t = std::chrono::time_point<std::chrono::system_clock>;
 
-    Chore(std::string&& name, timepoint_t dateTime, bool completionStatus, Priority priority, std::string&& location, timepoint_t::duration interval);
+    Chore(std::string&& name, timepoint_t dateTime, bool completionStatus, Priority priority, std::string&& location, unsigned intervalDays);
     
     // return value indicates success 
     bool addAvailability(uint64_t userID, Availability availability);
@@ -41,7 +41,7 @@ public:
     Priority mPriority;
     std::string mLocation;
     
-    std::optional<timepoint_t::duration> mRecurrenceInterval;
+    std::optional<unsigned> mRecurrenceInterval;
     
     // maps userIDs to availabilities
     std::unordered_map<uint64_t, Availability> mAvailabilities;

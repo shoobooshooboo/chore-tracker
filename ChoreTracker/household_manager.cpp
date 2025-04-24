@@ -85,7 +85,7 @@ void HouseholdManager::createHouseholdToFile(const Household& house)  {
             static_cast<int>(chore.mCompletionStatus), 
             static_cast<int>(chore.mPriority), 
             chore.mLocation,
-            std::chrono::system_clock::time_point(*chore.mRecurrenceInterval)  
+            *chore.mRecurrenceInterval
         );
         for (uint64_t id : house.getUsers() 
             | std::views::transform([](const User& user){ return user.getID(); })) {
@@ -110,12 +110,21 @@ Chore HouseholdManager::parseChoreLine(const std::string& buffer, const std::vec
     qInfo() << interval;
 
     Chore newChore( // name, time, completion, priority, location, interval
+<<<<<<< Updated upstream
         std::move(name),
         time,
         completion,
         priority,
         std::move(location),
         interval
+=======
+        std::string(std::string_view(*it++)),
+        strToTimepoint<Chore::timepoint_t>(std::string_view(*it++)),
+        std::string_view(*it++).contains('1'),
+        strToEnum<Priority>(std::string_view(*it++)),
+        std::string(std::string_view(*it++)),
+        *it
+>>>>>>> Stashed changes
     );
 
     qInfo() << std::format("name: {}", newChore.mName);
