@@ -143,6 +143,7 @@ Module {
             Parameter { name: "doesRecurr"; type: "bool" }
             Parameter { name: "recurrence"; type: "QString" }
         }
+        Method { name: "delete_chore" }
         Method { name: "Backend"; isConstructor: true }
     }
 }

@@ -228,6 +228,15 @@ void Backend::edit_chore(QString name, QString location, QString dueDate, bool d
     emit curHouseholdChanged();
 }
 
+void Backend::delete_chore(){
+    if(!_curHouseHold)
+        return;
+
+    _curHouseHold->removeChore(_curChoreIndex);
+
+    emit curHouseholdChanged();
+}
+
 // void Backend::hardCodedConstructor(){
 //     _user = new User(01,"Parteek");
 

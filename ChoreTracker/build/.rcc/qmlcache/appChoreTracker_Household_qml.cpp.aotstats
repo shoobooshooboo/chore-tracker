@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 40284,
+                        "durationMicroseconds": 18518,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 13,
-                        "durationMicroseconds": 156,
+                        "durationMicroseconds": 114,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 9
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 371,
+                        "durationMicroseconds": 234,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 20
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 288,
+                        "durationMicroseconds": 213,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 22
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 297,
+                        "durationMicroseconds": 196,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 21
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 175,
+                        "durationMicroseconds": 141,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 32
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 17,
-                        "durationMicroseconds": 941,
+                        "durationMicroseconds": 351,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 33
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 300,
+                        "durationMicroseconds": 152,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 27
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 362,
+                        "durationMicroseconds": 137,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 28
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 223,
+                        "durationMicroseconds": 229,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 143,
+                        "durationMicroseconds": 154,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 37
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "model",
                         "line": 41
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 45
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "onClicked",
                         "line": 50
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 58
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 62
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 34,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "checked",
                         "line": 67
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 43,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "onCheckedChanged",
                         "line": 68
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 19,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name stackViewRef",
                         "functionName": "onClicked",
                         "line": 79
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 336,
+                        "durationMicroseconds": 268,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "width",
                         "line": 88
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 317,
+                        "durationMicroseconds": 216,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "height",
                         "line": 89
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 19,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot access value for name stackViewRef",
                         "functionName": "onClicked",
                         "line": 92
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 233,
+                        "durationMicroseconds": 164,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 86
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 200,
+                        "durationMicroseconds": 149,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 87

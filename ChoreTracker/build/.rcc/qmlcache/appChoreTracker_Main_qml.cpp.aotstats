@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 36490,
+                        "durationMicroseconds": 22277,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 13,
-                        "durationMicroseconds": 117,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 9
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 242,
+                        "durationMicroseconds": 163,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 219,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 195,
+                        "durationMicroseconds": 169,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 20
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 183,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 16
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 149,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 18
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 33
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 233,
+                        "durationMicroseconds": 249,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 34
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 148,
+                        "durationMicroseconds": 171,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 28
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 30,
-                        "durationMicroseconds": 145,
+                        "durationMicroseconds": 163,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 29
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 154,
+                        "durationMicroseconds": 252,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 31
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "model",
                         "line": 41
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 39,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 48
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 44,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "onClicked",
                         "line": 53
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 44,
-                        "durationMicroseconds": 219,
+                        "durationMicroseconds": 193,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 67
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "model",
                         "line": 75
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 56,
-                        "durationMicroseconds": 355,
+                        "durationMicroseconds": 321,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 77
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 57,
-                        "durationMicroseconds": 194,
+                        "durationMicroseconds": 214,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 79
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 40,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 86

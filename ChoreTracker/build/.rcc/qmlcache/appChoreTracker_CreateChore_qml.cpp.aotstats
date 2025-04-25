@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 39593,
+                        "durationMicroseconds": 21092,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 13,
-                        "durationMicroseconds": 182,
+                        "durationMicroseconds": 84,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 9
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 368,
+                        "durationMicroseconds": 185,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 847,
+                        "durationMicroseconds": 962,
                         "errorMessage": "",
                         "functionName": "reset",
                         "line": 97
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 308,
+                        "durationMicroseconds": 146,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 19
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 315,
+                        "durationMicroseconds": 149,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 27
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 259,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 26
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 74,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Instruction \"generate_MoveRegExp\" not implemented",
                         "functionName": "regularExpression",
                         "line": 50
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 231,
+                        "durationMicroseconds": 101,
                         "errorMessage": "",
                         "functionName": "readOnly",
                         "line": 64
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 19,
-                        "durationMicroseconds": 506,
+                        "durationMicroseconds": 505,
                         "errorMessage": "method reset cannot be resolved.",
                         "functionName": "onClicked",
                         "line": 75
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 418,
+                        "durationMicroseconds": 201,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "width",
                         "line": 85
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 362,
+                        "durationMicroseconds": 161,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "height",
                         "line": 86
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 19,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "onClicked",
                         "line": 89
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 303,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 83
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 350,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 84

@@ -28,6 +28,10 @@ void Household::removeChore(decltype(mChores)::const_iterator toRemove) {
     mChores.erase(toRemove);
 }
 
+void Household::removeChore(int index){
+    mChores.erase(mChores.begin() + index);
+}
+
 void Household::sortChores(SortType sortType) {
     std::ranges::sort(mChores, Household::sortingMethods[sortType]);
 }

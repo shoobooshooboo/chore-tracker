@@ -114,6 +114,12 @@
                         "index": 9,
                         "name": "edit_chore",
                         "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 10,
+                        "name": "delete_chore",
+                        "returnType": "void"
                     }
                 ],
                 "object": true,

@@ -61,6 +61,8 @@ public:
 
     void removeChore(decltype(mChores)::const_iterator toRemove);
 
+    void removeChore(int index);
+
     void sortChores(SortType sortType);
 
     void setChoreStatus(int index, bool status);

@@ -60,6 +60,7 @@ static constexpr auto qt_meta_stringdata_ZN7BackendE = QtMocHelpers::stringData(
     "doesRecurr",
     "recurrence",
     "edit_chore",
+    "delete_chore",
     "username",
     "curHouseholdName",
     "householdNames",
@@ -84,10 +85,10 @@ Q_CONSTINIT static const uint qt_meta_data_ZN7BackendE[] = {
       12,       // revision
        0,       // classname
        1,   14, // classinfo
-      10,   16, // methods
-      12,  115, // properties
+      11,   16, // methods
+      12,  122, // properties
        0,    0, // enums/sets
-       1,  175, // constructors
+       1,  182, // constructors
        0,       // flags
        5,       // signalCount
 
@@ -95,18 +96,19 @@ Q_CONSTINIT static const uint qt_meta_data_ZN7BackendE[] = {
        1,    2,
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    0,   76,    4, 0x06,   13 /* Public */,
-       5,    0,   77,    4, 0x06,   14 /* Public */,
-       6,    0,   78,    4, 0x06,   15 /* Public */,
-       7,    0,   79,    4, 0x06,   16 /* Public */,
-       8,    0,   80,    4, 0x06,   17 /* Public */,
+       3,    0,   82,    4, 0x06,   13 /* Public */,
+       5,    0,   83,    4, 0x06,   14 /* Public */,
+       6,    0,   84,    4, 0x06,   15 /* Public */,
+       7,    0,   85,    4, 0x06,   16 /* Public */,
+       8,    0,   86,    4, 0x06,   17 /* Public */,
 
  // methods: name, argc, parameters, tag, flags, initial metatype offsets
-       9,    1,   81,    4, 0x02,   18 /* Public */,
-      11,    1,   84,    4, 0x02,   20 /* Public */,
-      12,    2,   87,    4, 0x02,   22 /* Public */,
-      14,    5,   92,    4, 0x02,   25 /* Public */,
-      20,    5,  103,    4, 0x02,   31 /* Public */,
+       9,    1,   87,    4, 0x02,   18 /* Public */,
+      11,    1,   90,    4, 0x02,   20 /* Public */,
+      12,    2,   93,    4, 0x02,   22 /* Public */,
+      14,    5,   98,    4, 0x02,   25 /* Public */,
+      20,    5,  109,    4, 0x02,   31 /* Public */,
+      21,    0,  120,    4, 0x02,   37 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -121,26 +123,27 @@ Q_CONSTINIT static const uint qt_meta_data_ZN7BackendE[] = {
     QMetaType::Void, QMetaType::Int, QMetaType::Bool,   10,   13,
     QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Bool, QMetaType::QString,   15,   16,   17,   18,   19,
     QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Bool, QMetaType::QString,   15,   16,   17,   18,   19,
+    QMetaType::Void,
 
  // constructors: parameters
     0x80000000 | 4,
 
  // properties: name, type, flags, notifyId, revision
-      21, QMetaType::QString, 0x00015001, uint(0), 0,
-      22, QMetaType::QString, 0x00015001, uint(3), 0,
-      23, 0x80000000 | 24, 0x00015009, uint(1), 0,
-      25, 0x80000000 | 24, 0x00015009, uint(2), 0,
-      26, 0x80000000 | 24, 0x00015009, uint(3), 0,
-      27, 0x80000000 | 24, 0x00015009, uint(3), 0,
-      28, 0x80000000 | 24, 0x00015009, uint(3), 0,
-      29, 0x80000000 | 24, 0x00015009, uint(3), 0,
-      30, 0x80000000 | 24, 0x00015009, uint(3), 0,
-      31, 0x80000000 | 24, 0x00015009, uint(3), 0,
-      32, 0x80000000 | 24, 0x00015009, uint(3), 0,
-      33, QMetaType::Int, 0x00015103, uint(4), 0,
+      22, QMetaType::QString, 0x00015001, uint(0), 0,
+      23, QMetaType::QString, 0x00015001, uint(3), 0,
+      24, 0x80000000 | 25, 0x00015009, uint(1), 0,
+      26, 0x80000000 | 25, 0x00015009, uint(2), 0,
+      27, 0x80000000 | 25, 0x00015009, uint(3), 0,
+      28, 0x80000000 | 25, 0x00015009, uint(3), 0,
+      29, 0x80000000 | 25, 0x00015009, uint(3), 0,
+      30, 0x80000000 | 25, 0x00015009, uint(3), 0,
+      31, 0x80000000 | 25, 0x00015009, uint(3), 0,
+      32, 0x80000000 | 25, 0x00015009, uint(3), 0,
+      33, 0x80000000 | 25, 0x00015009, uint(3), 0,
+      34, QMetaType::Int, 0x00015103, uint(4), 0,
 
  // constructors: name, argc, parameters, tag, flags, initial metatype offsets
-       0,    0,  114,    4, 0x0e,   37 /* Public */,
+       0,    0,  121,    4, 0x0e,   38 /* Public */,
 
        0        // eod
 };
@@ -211,7 +214,9 @@ Q_CONSTINIT const QMetaObject Backend::staticMetaObject = { {
         QString,
         QString,
         bool,
-        QString
+        QString,
+        // method 'delete_chore'
+        void
     >,
     nullptr
 } };
@@ -244,6 +249,7 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 7: _t->set_chore_status((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
         case 8: _t->add_chore((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[5]))); break;
         case 9: _t->edit_chore((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[5]))); break;
+        case 10: _t->delete_chore(); break;
         default: ;
         }
     }
@@ -331,14 +337,14 @@ int Backend::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 11)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 10;
+        _id -= 11;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

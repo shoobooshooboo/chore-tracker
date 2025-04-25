@@ -91,6 +91,21 @@ Rectangle {
         }
     }
 
+    Button{
+        id:deleteButton
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        width: Qt.callLater(() => backButton.width)
+        height: Qt.callLater(() => backButton.height)
+        text: qsTr("Delete")
+        font.pixelSize: 30
+        onClicked:{
+            Settings.backend.delete_chore()
+            if(stackViewRef)
+                stackViewRef.pop()
+        }
+    }
+
     function prep(){
         name.text = Settings.backend.choreNames[Settings.backend.curChoreIndex]
         location.text = Settings.backend.choreLocations[Settings.backend.curChoreIndex]
