@@ -5,8 +5,7 @@
 		"commands" : 
 		[
 			"add_custom_target",
-			"_qt_internal_deferred_aotstats_setup",
-			"add_dependencies"
+			"_qt_internal_deferred_aotstats_setup"
 		],
 		"files" : 
 		[
@@ -33,13 +32,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 1138,
-				"parent" : 2
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 1143,
+				"line" : 1199,
 				"parent" : 2
 			}
 		]
@@ -47,16 +40,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 4,
-			"id" : "appChoreTracker_qmltyperegistration::@6890427a1f51a3e7e1df"
+			"id" : "module_appChoreTracker_aotstats_target::@6890427a1f51a3e7e1df"
 		}
 	],
-	"folder" : 
-	{
-		"name" : "QtInternalTargets"
-	},
-	"id" : "module_appChoreTracker_aotstats_target::@6890427a1f51a3e7e1df",
-	"name" : "module_appChoreTracker_aotstats_target",
+	"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+	"name" : "all_aotstats",
 	"paths" : 
 	{
 		"build" : ".",
@@ -81,7 +69,9 @@
 				4,
 				5,
 				6,
-				7
+				7,
+				8,
+				9
 			]
 		}
 	],
@@ -90,19 +80,31 @@
 		{
 			"backtrace" : 3,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/module_appChoreTracker_aotstats_target",
+			"path" : "build/CMakeFiles/all_aotstats",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/module_appChoreTracker_aotstats_target.rule",
+			"path" : "build/CMakeFiles/all_aotstats.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/.rcc/qmlcache/all_aotstats.aotstats.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/.rcc/qmlcache/module_appChoreTracker.aotstats.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/.rcc/qmlcache/appChoreTracker_CreateChore_qml.cpp.rule",
 			"sourceGroupIndex" : 1
 		},
 		{

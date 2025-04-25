@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 48729,
+                        "durationMicroseconds": 72327,
                         "errorMessage": "Cannot retrieve a non-object type by ID: stackView",
                         "functionName": "onCompleted",
                         "line": 15

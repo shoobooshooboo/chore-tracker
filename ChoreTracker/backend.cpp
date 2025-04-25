@@ -6,7 +6,7 @@ using timepoint_t = std::chrono::time_point<std::chrono::system_clock>;
 Backend::Backend() {
     // hardCodedConstructor();
     _user = UserManager::loadUser(12345);
-    qInfo() << std::format("name: {}, id: {}", _user->getName(), _user->getID());
+    // qInfo() << std::format("name: {}, id: {}", _user->getName(), _user->getID());
     HouseholdManager::getLocalHouseholds(_user->getID());
 }
 
@@ -130,6 +130,24 @@ void Backend::set_chore_status(int index, bool status){
         return;
 
     _curHouseHold->setChoreStatus(index, status);
+
+    emit curHouseholdChanged();
+}
+
+void Backend::add_chore(QString name, QString location, QString dueDate, bool doesRecurr, QString recurrence){
+    if(!_curHouseHold)
+        return;
+
+    auto date = HouseholdManager::strToTimepoint<timepoint_t>(std::string_view(dueDate.toStdString() + " 16:45:00"));
+    auto days = doesRecurr ? recurrence.toUInt() : 0;
+    qInfo() << name.toStdString() << std::format("{:%Y-%m-%d}", date)<< dueDate.toStdString() << doesRecurr << recurrence.toStdString();
+
+    _curHouseHold->addChore(Chore(std::move(name.toStdString()),
+                                  date,
+                                  false,
+                                  Priority::LOW,
+                                  std::move(location.toStdString()),
+                                  days));
 
     emit curHouseholdChanged();
 }

@@ -90,6 +90,14 @@ Module {
             Parameter { name: "index"; type: "int" }
             Parameter { name: "status"; type: "bool" }
         }
+        Method {
+            name: "add_chore"
+            Parameter { name: "name"; type: "QString" }
+            Parameter { name: "location"; type: "QString" }
+            Parameter { name: "dueDate"; type: "QString" }
+            Parameter { name: "doesRecurr"; type: "bool" }
+            Parameter { name: "recurrence"; type: "QString" }
+        }
         Method { name: "Backend"; isConstructor: true }
     }
 }

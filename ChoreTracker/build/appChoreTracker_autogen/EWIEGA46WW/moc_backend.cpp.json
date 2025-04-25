@@ -45,6 +45,34 @@
                     "index": 5,
                     "name": "set_chore_status",
                     "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "location",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "dueDate",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "doesRecurr",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "recurrence",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "add_chore",
+                    "returnType": "void"
                 }
             ],
             "object": true,

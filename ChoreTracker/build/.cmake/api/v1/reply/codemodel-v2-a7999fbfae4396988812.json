@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-fdaee2bed98a55ec5cf6.json",
+					"jsonFile" : "directory-.-Debug-f850656ef0368d71c843.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -70,7 +70,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-all_aotstats-Debug-6af5130313eba94c651f.json",
+					"jsonFile" : "target-all_aotstats-Debug-990e1350e87ba86fc998.json",
 					"name" : "all_aotstats",
 					"projectIndex" : 0
 				},
@@ -105,7 +105,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "appChoreTracker::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-appChoreTracker-Debug-e0fefa6937fddaa3c089.json",
+					"jsonFile" : "target-appChoreTracker-Debug-7e4f8e53cc79783fb181.json",
 					"name" : "appChoreTracker",
 					"projectIndex" : 0
 				},
@@ -175,7 +175,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "module_appChoreTracker_aotstats_target::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-module_appChoreTracker_aotstats_target-Debug-232748360adba57e2105.json",
+					"jsonFile" : "target-module_appChoreTracker_aotstats_target-Debug-4d132b497121dbe3637a.json",
 					"name" : "module_appChoreTracker_aotstats_target",
 					"projectIndex" : 0
 				}

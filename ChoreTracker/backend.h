@@ -44,6 +44,7 @@ public:
     QVariantList getChoreStatuses();
 
     Q_INVOKABLE void set_chore_status(int index, bool status);
+    Q_INVOKABLE void add_chore(QString name, QString location, QString dueDate, bool doesRecurr, QString recurrence);
 private:
     User *_user;
     std::shared_ptr<Household> _curHouseHold;

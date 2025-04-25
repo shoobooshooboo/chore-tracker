@@ -1,0 +1,11 @@
+@0,1P0Chore,12345
+FirstChore,2025-03-04 16:45:00,0,2,kitchen,7,3
+@2,Nothing,22222,44444,66666
+@3,ManyPManyC,12345,23456,34567,45678,56789
+FirstChore,2025-03-04 16:45:00,0,2,kitchen,1,3,3,2,1,4
+SecondChore,2025-03-04 16:45:00,1,1,bathroom,7,1,2,3,2,1
+ThreeChore,2025-03-05 16:45:00,0,0,livingroom,30,3,2,1,2,3
+FourChore,2026-06-14 16:45:00,1,3,house,2,1,1,0,1,1
+FiveChore,2025-03-18 16:45:00,0,2,bedroom,14,0,1,1,2,3
+SixChore,2027-12-25 16:45:00,1,1,garage,60,1,3,2,0,3
+SevenChore,2069-04-20 16:45:00,0,3,livingroom,0,4,4,4,4,4

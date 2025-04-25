@@ -15,6 +15,7 @@ ApplicationWindow {
     Component.onCompleted:{
         Settings.mainWindow.stackViewRef = stackView
         Settings.householdWindow.stackViewRef = stackView
+        Settings.createChoreWindow.stackViewRef = stackView
         stackView.push(Settings.mainWindow)
     }
 }

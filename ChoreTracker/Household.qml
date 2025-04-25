@@ -87,7 +87,8 @@ Rectangle {
         text: qsTr("+")
         font.pixelSize: 40
         onClicked:{
-
+            if(stackViewRef)
+                stackViewRef.push(Settings.createChoreWindow)
         }
     }
 }

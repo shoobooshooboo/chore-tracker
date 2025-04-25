@@ -8,6 +8,7 @@ QtObject {
     property Backend backend: new Backend()
     property var mainWindow: Main{}
     property var householdWindow: Household{}
+    property var createChoreWindow: CreateChore{}
 
     function background_color(){
         return darkMode ? "#000000" : "#ffffff"

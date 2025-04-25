@@ -106,8 +106,8 @@ Chore HouseholdManager::parseChoreLine(const std::string& buffer, const std::vec
     Priority priority = strToEnum<Priority>(std::string_view(*it++));
     std::string location = std::string(std::string_view(*it++));
     unsigned interval = std::stoul(std::string(std::string_view(*it)));
-    qInfo() << std::string_view(*it);
-    qInfo() << interval;
+    // qInfo() << std::string_view(*it);
+    // qInfo() << interval;
 
     Chore newChore( // name, time, completion, priority, location, interval
         std::move(name),
@@ -118,7 +118,7 @@ Chore HouseholdManager::parseChoreLine(const std::string& buffer, const std::vec
         interval
     );
 
-    qInfo() << std::format("name: {}", newChore.mName);
+    // qInfo() << std::format("name: {}", newChore.mName);
 
     for (uint64_t userID : userIDs) { // availabilities
         // ensure that there are no more users than availabilities

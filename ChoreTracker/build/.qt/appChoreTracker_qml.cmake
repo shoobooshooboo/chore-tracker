@@ -10,6 +10,8 @@ set(src_and_dest_list
     "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker/Household.qml"
     "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/WindowManager.qml"
     "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker/WindowManager.qml"
+    "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/CreateChore.qml"
+    "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/ChoreTracker/CreateChore.qml"
 
 )
 set(timestamp_file "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/build/.qt/appChoreTracker_qml.txt")
