@@ -3,4 +3,5 @@ WindowManager 1.0 WindowManager.qml
 Main 1.0 Main.qml
 Household 1.0 Household.qml
 CreateChore 1.0 CreateChore.qml
+EditChore 1.0 EditChore.qml
 singleton Settings 1.0 Settings.qml

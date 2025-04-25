@@ -16,6 +16,7 @@ ApplicationWindow {
         Settings.mainWindow.stackViewRef = stackView
         Settings.householdWindow.stackViewRef = stackView
         Settings.createChoreWindow.stackViewRef = stackView
+        Settings.editChoreWindow.stackViewRef = stackView
         stackView.push(Settings.mainWindow)
     }
 }

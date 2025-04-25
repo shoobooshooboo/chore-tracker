@@ -40,6 +40,13 @@ namespace _qt_qml_ChoreTracker_CreateChore_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_ChoreTracker_EditChore_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -59,6 +66,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/ChoreTracker/Household.qml"), &QmlCacheGeneratedCode::_qt_qml_ChoreTracker_Household_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/ChoreTracker/WindowManager.qml"), &QmlCacheGeneratedCode::_qt_qml_ChoreTracker_WindowManager_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/ChoreTracker/CreateChore.qml"), &QmlCacheGeneratedCode::_qt_qml_ChoreTracker_CreateChore_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/ChoreTracker/EditChore.qml"), &QmlCacheGeneratedCode::_qt_qml_ChoreTracker_EditChore_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

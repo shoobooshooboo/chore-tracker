@@ -25,12 +25,16 @@ class Backend : public QObject
     Q_PROPERTY(QVariantList choreLocations READ getChoreLocations NOTIFY curHouseholdChanged)
     Q_PROPERTY(QVariantList choreDates READ getChoreDates NOTIFY curHouseholdChanged)
     Q_PROPERTY(QVariantList choreStatuses READ getChoreStatuses NOTIFY curHouseholdChanged)
-
+    Q_PROPERTY(QVariantList choreDueDates READ getChoreDueDates NOTIFY curHouseholdChanged)
+    Q_PROPERTY(QVariantList choreDoesReccurs READ getChoreDoesReccurs NOTIFY curHouseholdChanged)
+    Q_PROPERTY(QVariantList choreReccurances READ getChoreReccurances NOTIFY curHouseholdChanged)
+    Q_PROPERTY(int curChoreIndex READ getCurChoreIndex WRITE setCurChoreIndex NOTIFY curChoreIndexChanged)
 
 public:
     Q_INVOKABLE Backend();
 
     Q_INVOKABLE void set_household(int index);
+    Q_INVOKABLE void set_chore(int index);
 
     QString get_user_name() const;
     QString get_cur_household_name();
@@ -42,27 +46,36 @@ public:
     QVariantList getChoreLocations();
     QVariantList getChoreDates();
     QVariantList getChoreStatuses();
+    QVariantList getChoreDueDates();
+    QVariantList getChoreDoesReccurs();
+    QVariantList getChoreReccurances();
+
+    int getCurChoreIndex();
+    void setCurChoreIndex(int index);
 
     Q_INVOKABLE void set_chore_status(int index, bool status);
     Q_INVOKABLE void add_chore(QString name, QString location, QString dueDate, bool doesRecurr, QString recurrence);
+    Q_INVOKABLE void edit_chore(QString name, QString location, QString dueDate, bool doesRecurr, QString recurrence);
 private:
     User *_user;
     std::shared_ptr<Household> _curHouseHold;
+    int _curChoreIndex = -1;
 
-    User *_testUser;
-    User *_testUser1;
-    User *_testUser2;
-    User *_testUser3;
-    User *_testUser4;
-    std::shared_ptr<Household> _houseHold1;
-    std::shared_ptr<Household> _houseHold2;
-    std::shared_ptr<Household> _houseHold3;
+    // User *_testUser;
+    // User *_testUser1;
+    // User *_testUser2;
+    // User *_testUser3;
+    // User *_testUser4;
+    // std::shared_ptr<Household> _houseHold1;
+    // std::shared_ptr<Household> _houseHold2;
+    // std::shared_ptr<Household> _houseHold3;
 
-    void hardCodedConstructor();
+    //void hardCodedConstructor();
 signals:
     void userDataChanged();
     void householdNamesChanged();
     void householdUsersChanged();
     void curHouseholdChanged();
+    void curChoreIndexChanged();
 };
 #endif // BACKEND_H

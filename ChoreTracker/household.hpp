@@ -74,6 +74,8 @@ public:
 
     // updates the time of the chore to its next instance if one exists, else deletes the chore
     void expireChoreInstance(decltype(mChores)::iterator toExpire);
+
+    void editChore(int index, std::string name, Chore::timepoint_t dateTime, bool completionStatus, Priority priority, std::string location, unsigned intervalDays);
 };
 
 #endif

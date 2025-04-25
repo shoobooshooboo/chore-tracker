@@ -27,8 +27,20 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 4,
+                        "index": 5,
                         "name": "set_household",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 6,
+                        "name": "set_chore",
                         "returnType": "void"
                     },
                     {
@@ -43,7 +55,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 5,
+                        "index": 7,
                         "name": "set_chore_status",
                         "returnType": "void"
                     },
@@ -71,8 +83,36 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 6,
+                        "index": 8,
                         "name": "add_chore",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "name",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "location",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "dueDate",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "doesRecurr",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "recurrence",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 9,
+                        "name": "edit_chore",
                         "returnType": "void"
                     }
                 ],
@@ -189,6 +229,63 @@
                         "stored": true,
                         "type": "QVariantList",
                         "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 8,
+                        "name": "choreDueDates",
+                        "notify": "curHouseholdChanged",
+                        "read": "getChoreDueDates",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 9,
+                        "name": "choreDoesReccurs",
+                        "notify": "curHouseholdChanged",
+                        "read": "getChoreDoesReccurs",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 10,
+                        "name": "choreReccurances",
+                        "notify": "curHouseholdChanged",
+                        "read": "getChoreReccurances",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 11,
+                        "name": "curChoreIndex",
+                        "notify": "curChoreIndexChanged",
+                        "read": "getCurChoreIndex",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "write": "setCurChoreIndex"
                     }
                 ],
                 "qualifiedClassName": "Backend",
@@ -215,6 +312,12 @@
                         "access": "public",
                         "index": 3,
                         "name": "curHouseholdChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "name": "curChoreIndexChanged",
                         "returnType": "void"
                     }
                 ],

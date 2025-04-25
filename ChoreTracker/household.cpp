@@ -57,4 +57,7 @@ void Household::expireChoreInstance(decltype(mChores)::iterator toExpire) {
     }
 }
 
-
+void Household::editChore(int index, std::string name, Chore::timepoint_t dateTime,
+                          bool completionStatus, Priority priority, std::string location, unsigned intervalDays){
+    mChores[index] = Chore(std::move(name), dateTime, completionStatus, priority, std::move(location), intervalDays);
+}

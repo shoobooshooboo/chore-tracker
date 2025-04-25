@@ -14,26 +14,26 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 169,
+                        "durationMicroseconds": 143,
                         "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
                         "functionName": "background_color",
-                        "line": 13
+                        "line": 14
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 122,
+                        "durationMicroseconds": 31,
                         "errorMessage": "function without return type annotation returns conversion to QString. This may prevent proper compilation to Cpp.",
                         "functionName": "text_color",
-                        "line": 17
+                        "line": 18
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 292,
+                        "durationMicroseconds": 260,
                         "errorMessage": "",
                         "functionName": "toggle_dark_mode",
-                        "line": 21
+                        "line": 22
                     }
                 ],
                 "filepath": "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Settings.qml"

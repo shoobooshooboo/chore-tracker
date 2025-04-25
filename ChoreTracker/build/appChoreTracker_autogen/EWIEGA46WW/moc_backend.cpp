@@ -47,8 +47,10 @@ static constexpr auto qt_meta_stringdata_ZN7BackendE = QtMocHelpers::stringData(
     "householdNamesChanged",
     "householdUsersChanged",
     "curHouseholdChanged",
+    "curChoreIndexChanged",
     "set_household",
     "index",
+    "set_chore",
     "set_chore_status",
     "status",
     "add_chore",
@@ -57,6 +59,7 @@ static constexpr auto qt_meta_stringdata_ZN7BackendE = QtMocHelpers::stringData(
     "dueDate",
     "doesRecurr",
     "recurrence",
+    "edit_chore",
     "username",
     "curHouseholdName",
     "householdNames",
@@ -65,7 +68,11 @@ static constexpr auto qt_meta_stringdata_ZN7BackendE = QtMocHelpers::stringData(
     "choreNames",
     "choreLocations",
     "choreDates",
-    "choreStatuses"
+    "choreStatuses",
+    "choreDueDates",
+    "choreDoesReccurs",
+    "choreReccurances",
+    "curChoreIndex"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -77,53 +84,63 @@ Q_CONSTINIT static const uint qt_meta_data_ZN7BackendE[] = {
       12,       // revision
        0,       // classname
        1,   14, // classinfo
-       7,   16, // methods
-       8,   82, // properties
+      10,   16, // methods
+      12,  115, // properties
        0,    0, // enums/sets
-       1,  122, // constructors
+       1,  175, // constructors
        0,       // flags
-       4,       // signalCount
+       5,       // signalCount
 
  // classinfo: key, value
        1,    2,
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    0,   58,    4, 0x06,    9 /* Public */,
-       5,    0,   59,    4, 0x06,   10 /* Public */,
-       6,    0,   60,    4, 0x06,   11 /* Public */,
-       7,    0,   61,    4, 0x06,   12 /* Public */,
+       3,    0,   76,    4, 0x06,   13 /* Public */,
+       5,    0,   77,    4, 0x06,   14 /* Public */,
+       6,    0,   78,    4, 0x06,   15 /* Public */,
+       7,    0,   79,    4, 0x06,   16 /* Public */,
+       8,    0,   80,    4, 0x06,   17 /* Public */,
 
  // methods: name, argc, parameters, tag, flags, initial metatype offsets
-       8,    1,   62,    4, 0x02,   13 /* Public */,
-      10,    2,   65,    4, 0x02,   15 /* Public */,
-      12,    5,   70,    4, 0x02,   18 /* Public */,
+       9,    1,   81,    4, 0x02,   18 /* Public */,
+      11,    1,   84,    4, 0x02,   20 /* Public */,
+      12,    2,   87,    4, 0x02,   22 /* Public */,
+      14,    5,   92,    4, 0x02,   25 /* Public */,
+      20,    5,  103,    4, 0x02,   31 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
 
  // methods: parameters
-    QMetaType::Void, QMetaType::Int,    9,
-    QMetaType::Void, QMetaType::Int, QMetaType::Bool,    9,   11,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Bool, QMetaType::QString,   13,   14,   15,   16,   17,
+    QMetaType::Void, QMetaType::Int,   10,
+    QMetaType::Void, QMetaType::Int,   10,
+    QMetaType::Void, QMetaType::Int, QMetaType::Bool,   10,   13,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Bool, QMetaType::QString,   15,   16,   17,   18,   19,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString, QMetaType::Bool, QMetaType::QString,   15,   16,   17,   18,   19,
 
  // constructors: parameters
     0x80000000 | 4,
 
  // properties: name, type, flags, notifyId, revision
-      18, QMetaType::QString, 0x00015001, uint(0), 0,
-      19, QMetaType::QString, 0x00015001, uint(3), 0,
-      20, 0x80000000 | 21, 0x00015009, uint(1), 0,
-      22, 0x80000000 | 21, 0x00015009, uint(2), 0,
-      23, 0x80000000 | 21, 0x00015009, uint(3), 0,
-      24, 0x80000000 | 21, 0x00015009, uint(3), 0,
-      25, 0x80000000 | 21, 0x00015009, uint(3), 0,
-      26, 0x80000000 | 21, 0x00015009, uint(3), 0,
+      21, QMetaType::QString, 0x00015001, uint(0), 0,
+      22, QMetaType::QString, 0x00015001, uint(3), 0,
+      23, 0x80000000 | 24, 0x00015009, uint(1), 0,
+      25, 0x80000000 | 24, 0x00015009, uint(2), 0,
+      26, 0x80000000 | 24, 0x00015009, uint(3), 0,
+      27, 0x80000000 | 24, 0x00015009, uint(3), 0,
+      28, 0x80000000 | 24, 0x00015009, uint(3), 0,
+      29, 0x80000000 | 24, 0x00015009, uint(3), 0,
+      30, 0x80000000 | 24, 0x00015009, uint(3), 0,
+      31, 0x80000000 | 24, 0x00015009, uint(3), 0,
+      32, 0x80000000 | 24, 0x00015009, uint(3), 0,
+      33, QMetaType::Int, 0x00015103, uint(4), 0,
 
  // constructors: name, argc, parameters, tag, flags, initial metatype offsets
-       0,    0,   81,    4, 0x0e,   24 /* Public */,
+       0,    0,  114,    4, 0x0e,   37 /* Public */,
 
        0        // eod
 };
@@ -151,6 +168,14 @@ Q_CONSTINIT const QMetaObject Backend::staticMetaObject = { {
         QVariantList,
         // property 'choreStatuses'
         QVariantList,
+        // property 'choreDueDates'
+        QVariantList,
+        // property 'choreDoesReccurs'
+        QVariantList,
+        // property 'choreReccurances'
+        QVariantList,
+        // property 'curChoreIndex'
+        int,
         // Q_OBJECT / Q_GADGET
         Backend,
         // method 'userDataChanged'
@@ -161,7 +186,12 @@ Q_CONSTINIT const QMetaObject Backend::staticMetaObject = { {
         void,
         // method 'curHouseholdChanged'
         void,
+        // method 'curChoreIndexChanged'
+        void,
         // method 'set_household'
+        void,
+        int,
+        // method 'set_chore'
         void,
         int,
         // method 'set_chore_status'
@@ -169,6 +199,13 @@ Q_CONSTINIT const QMetaObject Backend::staticMetaObject = { {
         int,
         bool,
         // method 'add_chore'
+        void,
+        QString,
+        QString,
+        QString,
+        bool,
+        QString,
+        // method 'edit_chore'
         void,
         QString,
         QString,
@@ -201,9 +238,12 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 1: _t->householdNamesChanged(); break;
         case 2: _t->householdUsersChanged(); break;
         case 3: _t->curHouseholdChanged(); break;
-        case 4: _t->set_household((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 5: _t->set_chore_status((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 6: _t->add_chore((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[5]))); break;
+        case 4: _t->curChoreIndexChanged(); break;
+        case 5: _t->set_household((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 6: _t->set_chore((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 7: _t->set_chore_status((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 8: _t->add_chore((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[5]))); break;
+        case 9: _t->edit_chore((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[5]))); break;
         default: ;
         }
     }
@@ -237,6 +277,13 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
                 return;
             }
         }
+        {
+            using _q_method_type = void (Backend::*)();
+            if (_q_method_type _q_method = &Backend::curChoreIndexChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+                *result = 4;
+                return;
+            }
+        }
     }
     if (_c == QMetaObject::ReadProperty) {
         void *_v = _a[0];
@@ -249,6 +296,17 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 5: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreLocations(); break;
         case 6: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreDates(); break;
         case 7: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreStatuses(); break;
+        case 8: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreDueDates(); break;
+        case 9: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreDoesReccurs(); break;
+        case 10: *reinterpret_cast< QVariantList*>(_v) = _t->getChoreReccurances(); break;
+        case 11: *reinterpret_cast< int*>(_v) = _t->getCurChoreIndex(); break;
+        default: break;
+        }
+    }
+    if (_c == QMetaObject::WriteProperty) {
+        void *_v = _a[0];
+        switch (_id) {
+        case 11: _t->setCurChoreIndex(*reinterpret_cast< int*>(_v)); break;
         default: break;
         }
     }
@@ -273,20 +331,20 @@ int Backend::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 10;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 10;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 12;
     }
     return _id;
 }
@@ -313,5 +371,11 @@ void Backend::householdUsersChanged()
 void Backend::curHouseholdChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
+}
+
+// SIGNAL 4
+void Backend::curChoreIndexChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 QT_WARNING_POP

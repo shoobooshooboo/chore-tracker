@@ -9,6 +9,7 @@ QtObject {
     property var mainWindow: Main{}
     property var householdWindow: Household{}
     property var createChoreWindow: CreateChore{}
+    property var editChoreWindow: EditChore{}
 
     function background_color(){
         return darkMode ? "#000000" : "#ffffff"

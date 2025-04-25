@@ -77,12 +77,49 @@ Module {
             index: 7
             isReadonly: true
         }
+        Property {
+            name: "choreDueDates"
+            type: "QVariantList"
+            read: "getChoreDueDates"
+            notify: "curHouseholdChanged"
+            index: 8
+            isReadonly: true
+        }
+        Property {
+            name: "choreDoesReccurs"
+            type: "QVariantList"
+            read: "getChoreDoesReccurs"
+            notify: "curHouseholdChanged"
+            index: 9
+            isReadonly: true
+        }
+        Property {
+            name: "choreReccurances"
+            type: "QVariantList"
+            read: "getChoreReccurances"
+            notify: "curHouseholdChanged"
+            index: 10
+            isReadonly: true
+        }
+        Property {
+            name: "curChoreIndex"
+            type: "int"
+            read: "getCurChoreIndex"
+            write: "setCurChoreIndex"
+            notify: "curChoreIndexChanged"
+            index: 11
+        }
         Signal { name: "userDataChanged" }
         Signal { name: "householdNamesChanged" }
         Signal { name: "householdUsersChanged" }
         Signal { name: "curHouseholdChanged" }
+        Signal { name: "curChoreIndexChanged" }
         Method {
             name: "set_household"
+            Parameter { name: "index"; type: "int" }
+        }
+        Method {
+            name: "set_chore"
             Parameter { name: "index"; type: "int" }
         }
         Method {
@@ -92,6 +129,14 @@ Module {
         }
         Method {
             name: "add_chore"
+            Parameter { name: "name"; type: "QString" }
+            Parameter { name: "location"; type: "QString" }
+            Parameter { name: "dueDate"; type: "QString" }
+            Parameter { name: "doesRecurr"; type: "bool" }
+            Parameter { name: "recurrence"; type: "QString" }
+        }
+        Method {
+            name: "edit_chore"
             Parameter { name: "name"; type: "QString" }
             Parameter { name: "location"; type: "QString" }
             Parameter { name: "dueDate"; type: "QString" }

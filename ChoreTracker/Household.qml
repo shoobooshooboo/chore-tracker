@@ -48,7 +48,10 @@ Rectangle {
                         font.pixelSize: 20
                         padding: 12
                         onClicked: {
-                            print("should happen")
+                            Settings.backend.curChoreIndex = index
+                            Settings.editChoreWindow.prep()
+                            if(stackViewRef)
+                                stackViewRef.push(Settings.editChoreWindow)
                         }
                     }
                     Text{

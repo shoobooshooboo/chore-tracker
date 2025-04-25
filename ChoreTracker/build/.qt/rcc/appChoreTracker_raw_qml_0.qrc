@@ -5,6 +5,7 @@
     <file alias="Household.qml">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Household.qml</file>
     <file alias="WindowManager.qml">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/WindowManager.qml</file>
     <file alias="CreateChore.qml">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/CreateChore.qml</file>
+    <file alias="EditChore.qml">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/EditChore.qml</file>
     <file alias="qmldir">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/qmldir</file>
     <file alias="houseFile.csv">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/houseFile.csv</file>
     <file alias="userFile.csv">C:/Desktop/code/Personal/chore-tracker/ChoreTracker/userFile.csv</file>

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 20272,
+                        "durationMicroseconds": 40284,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 8
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 13,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 156,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 9
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 217,
+                        "durationMicroseconds": 371,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 20
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 170,
+                        "durationMicroseconds": 288,
                         "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: QVariant -> QColor stored as QVariant",
                         "functionName": "color",
                         "line": 22
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 160,
+                        "durationMicroseconds": 297,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 21
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 158,
+                        "durationMicroseconds": 175,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 32
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 17,
-                        "durationMicroseconds": 320,
+                        "durationMicroseconds": 941,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 33
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 220,
+                        "durationMicroseconds": 300,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 27
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 155,
+                        "durationMicroseconds": 362,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 28
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 145,
+                        "durationMicroseconds": 223,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 143,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 37
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "model",
                         "line": 41
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
                         "line": 45
@@ -118,34 +118,34 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 166,
-                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "durationMicroseconds": 45,
+                        "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "onClicked",
                         "line": 50
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
-                        "line": 55
+                        "line": 58
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "text",
-                        "line": 59
+                        "line": 62
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 34,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "checked",
-                        "line": 64
+                        "line": 67
                     },
                     {
                         "codegenSuccessfull": false,
@@ -153,55 +153,55 @@
                         "durationMicroseconds": 33,
                         "errorMessage": "Cannot load property backend from Settings stored as QObject.",
                         "functionName": "onCheckedChanged",
-                        "line": 65
+                        "line": 68
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 19,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot access value for name stackViewRef",
                         "functionName": "onClicked",
-                        "line": 76
+                        "line": 79
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 249,
+                        "durationMicroseconds": 336,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "width",
-                        "line": 85
+                        "line": 88
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 192,
+                        "durationMicroseconds": 317,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "height",
-                        "line": 86
+                        "line": 89
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 19,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot access value for name stackViewRef",
                         "functionName": "onClicked",
-                        "line": 89
+                        "line": 92
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 203,
+                        "durationMicroseconds": 233,
                         "errorMessage": "",
                         "functionName": "top",
-                        "line": 83
+                        "line": 86
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 162,
+                        "durationMicroseconds": 200,
                         "errorMessage": "",
                         "functionName": "right",
-                        "line": 84
+                        "line": 87
                     }
                 ],
                 "filepath": "C:/Desktop/code/Personal/chore-tracker/ChoreTracker/Household.qml"

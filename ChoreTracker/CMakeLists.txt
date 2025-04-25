@@ -33,6 +33,7 @@ qt_add_qml_module(appChoreTracker
             settings_configuration.hpp
         RESOURCES houseFile.csv userFile.csv
         QML_FILES CreateChore.qml
+        QML_FILES EditChore.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

@@ -71,7 +71,7 @@ Rectangle {
 
     Button{
         id:backButton
-        text: qsTr("Back")
+        text: qsTr("Cancel")
         onClicked:{
             reset()
             if (stackViewRef)
@@ -84,7 +84,7 @@ Rectangle {
         anchors.right: parent.right
         width: Qt.callLater(() => backButton.width)
         height: Qt.callLater(() => backButton.height)
-        text: qsTr("Done")
+        text: qsTr("Confirm")
         font.pixelSize: 30
         onClicked:{
             Settings.backend.add_chore(name.text, location.text, dueDate.text, doesReccur.checked, recurrance.text)
